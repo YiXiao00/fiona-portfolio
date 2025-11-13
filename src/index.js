@@ -32,6 +32,49 @@ import photo7 from "./assets/PhotoGal/7.png";
 import photo8 from "./assets/PhotoGal/8.png";
 import photo9 from "./assets/PhotoGal/9.png";
 
+// SeeIt images
+import seeIt1 from "./assets/SeeIt/1.png";
+import seeIt2 from "./assets/SeeIt/2.png";
+import seeItMain from "./assets/SeeIt/main.png";
+import seeIt4 from "./assets/SeeIt/4.png";
+import seeIt5 from "./assets/SeeIt/5.png";
+import seeIt6_2 from "./assets/SeeIt/6-2.png";
+// Import PDF as URL
+import seeItPdfUrl from "url:./assets/SeeIt/6-1.pdf";
+
+// LACERTA Showroom images
+import lacertaPhoto1 from "./assets/LACERTA Showroom/photo1.png";
+import lacertaPhoto2 from "./assets/LACERTA Showroom/photo2.png";
+import lacertaPhoto3 from "./assets/LACERTA Showroom/photo3.png";
+import lacertaPhoto4 from "./assets/LACERTA Showroom/photo4.png";
+import lacertaPhoto5 from "./assets/LACERTA Showroom/photo5.png";
+import lacertamodel1 from "./assets/LACERTA Showroom/model1.png";
+import lacertrendering1 from "./assets/LACERTA Showroom/rendering1.png";
+import lacertrendering2 from "./assets/LACERTA Showroom/rendering2.png";
+import lacertrendering3 from "./assets/LACERTA Showroom/rendering3.png";
+import lacertrendering4 from "./assets/LACERTA Showroom/rendering4.png";
+import lacertrendering5 from "./assets/LACERTA Showroom/rendering5.png";
+import lacertrendering6 from "./assets/LACERTA Showroom/rendering6.png";
+import lacertrendering7 from "./assets/LACERTA Showroom/rendering7.png";
+
+// From here to Eternity images
+import eternityMain1 from "./assets/From here to Eternity/main and 1.png";
+import eternity2 from "./assets/From here to Eternity/2.png";
+import eternity3 from "./assets/From here to Eternity/3.png";
+import eternity4 from "./assets/From here to Eternity/4.png";
+import eternity5 from "./assets/From here to Eternity/5.png";
+import eternity6 from "./assets/From here to Eternity/6.png";
+import eternity7 from "./assets/From here to Eternity/7.png";
+import eternity8 from "./assets/From here to Eternity/8rendering.png";
+import eternitySet1 from "./assets/From here to Eternity/set1.png";
+import eternitySet2 from "./assets/From here to Eternity/set2.png";
+import eternitySet3 from "./assets/From here to Eternity/set3.png";
+import eternitySet4 from "./assets/From here to Eternity/set4.png";
+import eternitySet5 from "./assets/From here to Eternity/set5.png";
+import eternitySet6 from "./assets/From here to Eternity/set6.png";
+import eternitySet7 from "./assets/From here to Eternity/set7.png";
+import eternitySet8 from "./assets/From here to Eternity/set8.png";
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -75,7 +118,7 @@ const projectData = {
   "project-b": {
     title: "TaTaBowls Restaurant",
     desc:
-      "<strong>Site:</strong> Legoland Shanghai<br><strong>Time:</strong> 2025<br><br>Situated within the newly opened Legoland in Shanghai, the restaurant draws its visual identity from the vibrant palette of LEGO bricks. Contrasting materials and modular compositions transform the interior into a playful, kinetic landscape — an environment that blurs the boundary between dining and play, extending the park's immersive narrative beyond its rides and attractions.",
+      "<strong>Site:</strong> Legoland Shanghai<br><strong>Time:</strong> 2025<br>Situated within the newly opened Legoland in Shanghai, the restaurant draws its visual identity from the vibrant palette of LEGO bricks. Contrasting materials and modular compositions transform the interior into a playful, kinetic landscape — an environment that blurs the boundary between dining and play, extending the park's immersive narrative beyond its rides and attractions.",
     image: mainImage,
     // scenes是项目细节页的分场景数据，每个元素对应一个详细的“分镜”或内容块，包括标题、描述、配图等，用于在详情页分步展示项目的不同设计/表现环节。
     scenes: [
@@ -122,17 +165,175 @@ const projectData = {
   "project-d": {
     title: "See it",
     desc: "<strong>Exhibition Zine Design 2025</strong>",
-    image: "assets/project.jpg",
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: seeIt1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: seeIt2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: seeItMain,
+      },
+      {
+        title: "",
+        desc: "",
+        image: seeIt4,
+      },
+      {
+        title: "",
+        desc: "",
+        image: seeIt5,
+      },
+      {
+        title: "",
+        desc: "",
+        image: seeIt6_2,
+      },
+      {
+        title: "",
+        desc: "",
+        pdf: seeItPdfUrl,
+      },
+    ],
   },
   "project-e": {
-    title: "Project E",
-    desc: "项目简介占位文本。",
-    image: "assets/project.jpg",
+    title: "LACERTA Showroom",
+    desc: "<strong>Site:</strong> He Dong Mansion, Shanghai<br><strong>Time:</strong> 2025<br>This project was designed for the fashion brand LACERTA, creating a multifunctional space that integrates office, reception, and retail functions. <br>The original site was a square-shaped room. The design process began with understanding the studio’s operational needs, including equipment, staff capacity, and workflow — as well as the quantity and type of garments to be displayed in the showroom. The spatial layout and atmosphere were developed in response to the brand’s distinctive identity and aesthetic tone.",
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        images: [lacertaPhoto1, lacertaPhoto2],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertaPhoto3, lacertaPhoto4],
+      },
+      {
+        title: "",
+        desc: "",
+        image: lacertaPhoto5,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertrendering1, lacertrendering2],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertrendering3, lacertrendering4],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertrendering5, lacertrendering6],
+      },
+      {
+        title: "",
+        desc: "",
+        image: lacertrendering7,
+      },
+      {
+        title: "",
+        desc: "",
+        image: lacertamodel1,
+      },
+    ],
   },
   "project-f": {
-    title: "Project F",
-    desc: "项目简介占位文本。",
-    image: "assets/project.jpg",
+    title: "From here to eternity",
+    desc: "In 2023, marking the 70th anniversary of Eugene O'Neill's death, the title Long Day's Journey Into Night is borrowed from his iconic play — paying tribute to the tradition of the living room drama through spatial scenes.<br><br>As playwright Edward Bond once said:<br><br>\"The living room is the world.\"<br><br>This project focuses on constructing theatrical space, divided into two parts — an interior domestic setting and a stage environment. Through the use of spatial symbolism, lighting, and shadow, the design explores how physical space can embody emotional tension and narrative atmosphere, paying homage to the tradition of the drama.",
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: eternityMain1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity3,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity4,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity5,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity6,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity7,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity8,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet3,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet4,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet5,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet6,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet7,
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternitySet8,
+      },
+    ],
   },
   "project-g": {
     title: "Project G",
@@ -237,6 +438,23 @@ function setupProjectDetail() {
           const safeDesc = scene?.desc ? String(scene.desc) : "";
           const imgSrc = scene?.image || "";
           const images = scene?.images || [];
+          const pdfSrc = scene?.pdf || "";
+          
+          // Handle PDF
+          if (pdfSrc) {
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+                <div class="detail-pdf mt-3">
+                  <iframe src="${pdfSrc}" width="100%" height="800px" style="border: none;"></iframe>
+                  <div class="mt-2">
+                    <a href="${pdfSrc}" target="_blank" class="btn btn-outline-primary">在新窗口中打开 PDF</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
           
           // Handle multi-image grid layout
           if (images.length > 1) {
