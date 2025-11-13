@@ -1,0 +1,139 @@
+<!--
+  Hello!
+  -
+  Simplefolio is a clean and responsive portfolio template for Developers!
+  Created by Jacobo Martinez.
+  -
+  Github Repo: https://github.com/cobiwave/simplefolio/
+  Readme: https://github.com/cobiwave/simplefolio/README.md
+  -
+  For business & inquires, contact me -> jacobojavier98@gmail.com
+-->
+<!DOCTYPE html>
+<html lang="en" class="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Todo: put here your site title -->
+    <title>[Fiona LAN] | Artist</title>
+    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
+    <meta name="keywords" content="[username], [name], skill" />
+    <!-- Todo: improve your SEO by adding a small description of you -->
+    <meta name="description" content="[Your name here] | Developer" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+    <script
+      defer
+      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
+    ></script>
+
+    <!-- Todo: remove the below script once you finish your portfolio -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+
+  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
+  <body>
+    <div id="top"></div>
+
+    <!-- **** Three Column Layout **** -->
+    <section id="portfolio" class="three-column-layout">
+      <div class="container-fluid">
+        <div class="row h-100">
+          <!-- Column 1: About & Contact -->
+          <div class="col-lg-2 col-md-4 col-12 column-about">
+            <div class="content-block">
+              <h2 class="section-head">ABOUT</h2>
+              <p class="section-text">Fiona LAN 是一位 Spatial Designer，关注空间的叙事与再利用。</p>
+              <p class="section-link"><a href="#about">More About →</a></p>
+              <p class="section-link mt-2"><a href="#top" class="back-home">Back to homepage</a></p>
+            </div>
+            <div class="content-block">
+              <h2 class="section-head">CONTACT</h2>
+              <div class="section-text">
+                <div>(E) example@email.com</div>
+                <div>(W) portfolio.local</div>
+                <div>(IG) @yourhandle</div>
+              </div>
+              <p class="section-link"><a href="#contact">Get in touch →</a></p>
+              <p class="section-link mt-2"><a href="#top" class="back-home">Back to homepage</a></p>
+            </div>
+          </div>
+
+          <!-- Column 2: Project Categories -->
+          <div class="col-lg-2 col-md-4 col-12 column-projects">
+            <div class="content-block">
+              <h2 class="section-head">PROJECTS</h2>
+              <div class="project-categories">
+                <div class="category-group">
+                  <h3 class="category-title">HOSPITALITY</h3>
+                  <ul class="project-list">
+                    <li><span class="project-link" data-project="project-a">The Municipal Pigeon</span></li>
+                    <li><span class="project-link" data-project="project-b">The Sound of the Sun</span></li>
+                    <li><span class="project-link" data-project="project-c">The Empty Hotel</span></li>
+                    <li><span class="project-link" data-project="project-d">The Ghost of the Wind</span></li>
+                  </ul>
+                </div>
+                <div class="category-group">
+                  <h3 class="category-title">RETAIL</h3>
+                  <ul class="project-list">
+                    <li><span class="project-link" data-project="project-e">Project E</span></li>
+                    <li><span class="project-link" data-project="project-f">Project F</span></li>
+                  </ul>
+                </div>
+                <div class="category-group">
+                  <h3 class="category-title">RESIDENTIAL</h3>
+                  <ul class="project-list">
+                    <li><span class="project-link" data-project="project-g">Project G</span></li>
+                    <li><span class="project-link" data-project="project-h">Project H</span></li>
+                    <li><span class="project-link" data-project="project-i">Project I</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Project Images -->
+          <div class="col-lg-8 col-md-4 col-12 column-images">
+            <!-- Default: image grid -->
+            <div class="image-grid" id="imageGrid">
+              <div class="image-item" data-project="project-a"><img src="./assets/TheMunicipalPigeon/gezi4.png" alt="Project A" class="img-fluid"></div>
+              <div class="image-item" data-project="project-b"><img src="./assets/FirstInternProject/main.png" alt="Project B" class="img-fluid"></div>
+              <div class="image-item" data-project="project-c"><img src="./assets/PhotoGal/main-notputinwebsite.png" alt="Project C" class="img-fluid"></div>
+              <div class="image-item" data-project="project-d"><img src="assets/project.jpg" alt="Project D" class="img-fluid"></div>
+              <div class="image-item" data-project="project-e"><img src="assets/project.jpg" alt="Project E" class="img-fluid"></div>
+              <div class="image-item" data-project="project-f"><img src="assets/project.jpg" alt="Project F" class="img-fluid"></div>
+              <div class="image-item" data-project="project-g"><img src="assets/project.jpg" alt="Project G" class="img-fluid"></div>
+              <div class="image-item" data-project="project-h"><img src="assets/project.jpg" alt="Project H" class="img-fluid"></div>
+            </div>
+
+            <!-- Project detail: project title, scene title, description, image, nav -->
+            <div class="project-detail d-none" id="projectDetail">
+              <h2 class="detail-title" id="detailTitle"></h2>
+              <div id="detailContent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END Three Column Layout -->
+
+    <div id="imageLightbox" class="lightbox-overlay d-none" role="dialog" aria-modal="true">
+      <div class="lightbox-content">
+        <img id="lightboxImage" alt="" />
+      </div>
+    </div>
+
+    <!-- 原 Hero+Projects 区块移除，采用极简首页 -->
+
+    <script defer type="module" src="index.js"></script>
+    <!-- Bootstrap JS for navbar functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

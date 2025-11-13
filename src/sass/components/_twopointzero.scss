@@ -1,0 +1,67 @@
+// Minimal landing (Two Point Zero inspired)
+.twpz-landing {
+  background: #fff;
+  color: #000;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+  .twpz-head {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .twpz-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .twpz-link a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+  }
+
+  .twpz-block + .twpz-block {
+    margin-top: 2rem;
+  }
+
+  .twpz-groups {
+    .twpz-group-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .twpz-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .twpz-list li {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .twpz-list li span {
+      display: inline-block;
+      color: #000;
+    }
+  }
+
+  // spacing tweaks for landscape small height
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    .twpz-left { margin-bottom: 1rem; }
+    .twpz-group-title { margin-top: 0.25rem; }
+    .twpz-list li { padding: 0.25rem 0; }
+  }
+}
+
+// Dark navbar override spacing
+.twpz-navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+

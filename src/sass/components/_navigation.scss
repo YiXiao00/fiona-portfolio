@@ -1,0 +1,51 @@
+// Custom navigation styles
+.navbar {
+  z-index: 1000 !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #000 !important;
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #940094 !important; // 使用您的品牌色
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #940094 !important; // 悬停时使用品牌色
+    }
+  }
+  
+  // 横屏模式优化
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    padding: 0.3rem 0;
+    
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+    
+    .nav-link {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+    }
+  }
+}
+
+// 为固定导航栏添加body padding
+body {
+  padding-top: 56px; // Bootstrap默认导航栏高度
+  
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    padding-top: 40px; // 横屏模式下减少padding
+  }
+}
+
+// 平滑滚动
+html {
+  scroll-behavior: smooth;
+}
+
+

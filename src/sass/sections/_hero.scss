@@ -1,0 +1,120 @@
+#hero {
+  min-height: 100vh;
+  height: auto; // 改为auto以适应内容
+  display: flex;
+  align-items: flex-start; // 改为flex-start避免居中截断
+  border-bottom: 0px;
+  background: $white-color;
+  font-weight: 400;
+  color: $dark-blue-text;
+  padding: 2rem 5.6rem; // 增加顶部padding
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  // Set position sticky so the jumbotron stays fixed while you scroll.
+  // position: sticky;
+
+  // If you want to set a background image on the hero section, uncomment these with your custom image
+
+  /* background: url("/src/assets/[your-image].png");
+  background-position: center;
+  background-size: cover; */
+
+  @include respond(phone) {
+    padding: 1rem $default-font-size;
+  }
+
+  // 添加横屏模式特殊处理
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    min-height: auto;
+    height: auto;
+    padding: 0.5rem 1rem; // 减少左右间距
+    
+    .container {
+      max-width: 100% !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    
+    .hero-title {
+      font-size: 3rem !important;
+      margin-bottom: 1rem !important;
+      line-height: 1.2 !important;
+    }
+    
+    .hero-cta {
+      margin-bottom: 1rem !important;
+      
+      a {
+        font-size: 1.8rem !important;
+      }
+    }
+    
+    // 调整项目列间距 - 增加列之间的空隙
+    .col-lg-6 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    
+    // 增加项目之间的垂直间距
+    .row {
+      margin-bottom: 1rem !important;
+    }
+    
+    // 调整项目内容间距
+    .project-wrapper__text {
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .project-wrapper__text-title {
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .project-wrapper__text p {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  .hero-title {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+    line-height: 1.1; // 添加行高控制
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    & a {
+      font-size: 2.4rem;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+}

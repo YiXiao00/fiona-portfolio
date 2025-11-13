@@ -1,0 +1,279 @@
+// Custom spacing for Hero section with projects
+.hero-with-projects {
+  // 横屏模式特殊处理
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 0.5rem 1rem !important; // 减少左右间距
+    
+    .container {
+      max-width: 100% !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem !important;
+      margin-bottom: 0.5rem !important;
+      line-height: 1.1 !important;
+    }
+    
+    .hero-cta {
+      margin-bottom: 0.5rem !important;
+      
+      a {
+        font-size: 1.5rem !important;
+      }
+    }
+    
+    .projects-title {
+      font-size: 2rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .project-item {
+      margin-bottom: 0.5rem !important;
+    }
+    
+    // 调整项目列间距 - 增加列之间的空隙
+    .col-lg-6 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    
+    // 增加项目之间的垂直间距
+    .row {
+      margin-bottom: 1rem !important;
+    }
+    
+    // 调整项目内容间距
+    .project-wrapper__text {
+      padding: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .project-wrapper__image {
+      padding: 0.25rem !important;
+    }
+    
+    // 增加项目标题和描述之间的间距
+    .project-wrapper__text-title {
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .project-wrapper__text p {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+  // Adjust hero title margin
+  .hero-title {
+    margin-bottom: 2rem !important; // 减少标题底部间距
+    
+    @include respond(phone) {
+      margin-bottom: 1.5rem !important;
+    }
+  }
+  
+  // Adjust hero CTA margin
+  .hero-cta {
+    margin-bottom: 2rem !important; // 减少按钮底部间距
+    
+    @include respond(phone) {
+      margin-bottom: 1.5rem !important;
+    }
+  }
+  
+  // Adjust projects title margin
+  .projects-title {
+    margin-bottom: 2rem !important; // 减少项目标题底部间距
+    
+    @include respond(phone) {
+      margin-bottom: 1.5rem !important;
+    }
+  }
+  
+  // Adjust project spacing
+  .project-item {
+    margin-bottom: 2rem !important; // 减少项目间距
+    
+    @include respond(phone) {
+      margin-bottom: 1.5rem !important;
+    }
+    
+    // Adjust project text margin
+    .project-wrapper__text {
+      margin-bottom: 1rem !important;
+      
+      @include respond(phone) {
+        margin-bottom: 0.8rem !important;
+      }
+    }
+    
+    // Adjust project image margin
+    .project-wrapper__image {
+      margin-top: 1rem !important;
+      
+      @include respond(phone) {
+        margin-top: 0.8rem !important;
+      }
+    }
+  }
+  
+  // Adjust project description margin
+  .project-description {
+    margin-bottom: 1rem !important;
+    
+    @include respond(phone) {
+      margin-bottom: 0.8rem !important;
+    }
+  }
+  
+  // Adjust button spacing
+  .project-buttons {
+    margin-top: 1rem !important;
+    
+    @include respond(phone) {
+      margin-top: 0.8rem !important;
+    }
+  }
+}
+
+// Compact layout option
+.hero-compact {
+  // 横屏模式特殊处理
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 0.3rem 0.5rem !important; // 进一步减少左右间距
+    
+    .container {
+      max-width: 100% !important;
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
+    }
+    
+    .hero-title {
+      font-size: 2.2rem !important;
+      margin-bottom: 0.3rem !important;
+      line-height: 1.1 !important;
+    }
+    
+    .hero-cta {
+      margin-bottom: 0.3rem !important;
+      
+      a {
+        font-size: 1.4rem !important;
+      }
+    }
+    
+    .projects-title {
+      font-size: 1.8rem !important;
+      margin-bottom: 0.3rem !important;
+    }
+    
+    .project-item {
+      margin-bottom: 0.3rem !important;
+    }
+    
+    // 调整项目列间距 - 增加列之间的空隙
+    .col-lg-6 {
+      padding-left: 0.4rem !important;
+      padding-right: 0.4rem !important;
+    }
+    
+    // 增加项目之间的垂直间距
+    .row {
+      margin-bottom: 0.8rem !important;
+    }
+    
+    // 调整项目内容间距
+    .project-wrapper__text {
+      padding: 0.4rem !important;
+      margin-bottom: 0.4rem !important;
+    }
+    
+    .project-wrapper__image {
+      padding: 0.2rem !important;
+    }
+    
+    // 增加项目标题和描述之间的间距
+    .project-wrapper__text-title {
+      margin-bottom: 0.4rem !important;
+    }
+    
+    .project-wrapper__text p {
+      margin-bottom: 0.4rem !important;
+      font-size: 0.9rem !important;
+      line-height: 1.3 !important;
+    }
+    
+    // 调整按钮大小和间距
+    .cta-btn {
+      font-size: 0.9rem !important;
+      padding: 0.3rem 0.6rem !important;
+      margin-right: 0.3rem !important;
+    }
+  }
+  
+  .hero-title {
+    margin-bottom: 1rem !important;
+    font-size: 4rem !important;
+    
+    @include respond(phone) {
+      font-size: 3rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+  }
+  
+  .hero-cta {
+    margin-bottom: 1rem !important;
+  }
+  
+  .projects-title {
+    margin-bottom: 1rem !important;
+    font-size: 2.5rem !important;
+    
+    @include respond(phone) {
+      font-size: 2rem !important;
+    }
+  }
+  
+  .project-item {
+    margin-bottom: 1rem !important;
+  }
+}
+
+// Spacious layout option
+.hero-spacious {
+  .hero-title {
+    margin-bottom: 3rem !important;
+    
+    @include respond(phone) {
+      margin-bottom: 2rem !important;
+    }
+  }
+  
+  .hero-cta {
+    margin-bottom: 3rem !important;
+    
+    @include respond(phone) {
+      margin-bottom: 2rem !important;
+    }
+  }
+  
+  .projects-title {
+    margin-bottom: 3rem !important;
+    
+    @include respond(phone) {
+      margin-bottom: 2rem !important;
+    }
+  }
+  
+  .project-item {
+    margin-bottom: 3rem !important;
+    
+    @include respond(phone) {
+      margin-bottom: 2rem !important;
+    }
+  }
+}
