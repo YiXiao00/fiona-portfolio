@@ -9,7 +9,7 @@ import scene1Image from "./assets/TheMunicipalPigeon/sence1.png";
 import scene2Image from "./assets/TheMunicipalPigeon/sence2.png";
 import scene3Image from "./assets/TheMunicipalPigeon/sence3.png";
 import scene4Image from "./assets/TheMunicipalPigeon/sence4.png";
-import tmp from "./assets/TheMunicipalPigeon/tmp.png";
+import tmp from "./assets/TheMunicipalPigeon/TMP.png";
 
 // FirstInternProject images
 import mainImage from "./assets/FirstInternProject/main.png";
