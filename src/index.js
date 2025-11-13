@@ -42,20 +42,20 @@ import seeIt6_2 from "./assets/SeeIt/6-2.png";
 // Import PDF as URL
 import seeItPdfUrl from "url:./assets/SeeIt/6-1.pdf";
 
-// LACERTA Showroom images
-import lacertaPhoto1 from "./assets/LACERTA Showroom/photo1.png";
-import lacertaPhoto2 from "./assets/LACERTA Showroom/photo2.png";
-import lacertaPhoto3 from "./assets/LACERTA Showroom/photo3.png";
-import lacertaPhoto4 from "./assets/LACERTA Showroom/photo4.png";
-import lacertaPhoto5 from "./assets/LACERTA Showroom/photo5.png";
-import lacertamodel1 from "./assets/LACERTA Showroom/model1.png";
-import lacertrendering1 from "./assets/LACERTA Showroom/rendering1.png";
-import lacertrendering2 from "./assets/LACERTA Showroom/rendering2.png";
-import lacertrendering3 from "./assets/LACERTA Showroom/rendering3.png";
-import lacertrendering4 from "./assets/LACERTA Showroom/rendering4.png";
-import lacertrendering5 from "./assets/LACERTA Showroom/rendering5.png";
-import lacertrendering6 from "./assets/LACERTA Showroom/rendering6.png";
-import lacertrendering7 from "./assets/LACERTA Showroom/rendering7.png";
+// LACERTA Showroom images (using url: to bypass Parcel image transformer)
+import lacertaPhoto1 from "url:./assets/LACERTA Showroom/photo1.png";
+import lacertaPhoto2 from "url:./assets/LACERTA Showroom/photo2.png";
+import lacertaPhoto3 from "url:./assets/LACERTA Showroom/photo3.png";
+import lacertaPhoto4 from "url:./assets/LACERTA Showroom/photo4.png";
+import lacertaPhoto5 from "url:./assets/LACERTA Showroom/photo5.png";
+import lacertamodel1 from "url:./assets/LACERTA Showroom/model1.png";
+import lacertrendering1 from "url:./assets/LACERTA Showroom/rendering1.png";
+import lacertrendering2 from "url:./assets/LACERTA Showroom/rendering2.png";
+import lacertrendering3 from "url:./assets/LACERTA Showroom/rendering3.png";
+import lacertrendering4 from "url:./assets/LACERTA Showroom/rendering4.png";
+import lacertrendering5 from "url:./assets/LACERTA Showroom/rendering5.png";
+import lacertrendering6 from "url:./assets/LACERTA Showroom/rendering6.png";
+import lacertrendering7 from "url:./assets/LACERTA Showroom/rendering7.png";
 
 // From here to Eternity images
 import eternityMain1 from "./assets/From here to Eternity/main and 1.png";
