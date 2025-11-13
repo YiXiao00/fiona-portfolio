@@ -194,6 +194,17 @@
       &.grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+      &.grid-3-2 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        // First 3 images: normal flow (1, 2, 3)
+        // Last 2 images: left-aligned
+        .grid-item:nth-child(4) {
+          grid-column: 1;
+        }
+        .grid-item:nth-child(5) {
+          grid-column: 2;
+        }
+      }
       &.grid-1 {
         grid-template-columns: minmax(0, 1fr);
       }

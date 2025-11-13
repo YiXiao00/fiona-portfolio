@@ -75,6 +75,38 @@ import eternitySet6 from "./assets/From here to Eternity/set6.png";
 import eternitySet7 from "./assets/From here to Eternity/set7.png";
 import eternitySet8 from "./assets/From here to Eternity/set8.png";
 
+// 15 Rules for Rebuilding the World images
+import rulesMain from "./assets/15 Rules for Rebuilding the World/2main.png";
+import rules1 from "./assets/15 Rules for Rebuilding the World/1.png";
+import rules2main from "./assets/15 Rules for Rebuilding the World/2main.png";
+import rules3 from "./assets/15 Rules for Rebuilding the World/3.png";
+import rules4 from "./assets/15 Rules for Rebuilding the World/4.png";
+import rules5 from "./assets/15 Rules for Rebuilding the World/5.png";
+import rules6modul from "./assets/15 Rules for Rebuilding the World/6modul.png";
+import rules7elevation from "./assets/15 Rules for Rebuilding the World/7elevation.png";
+import rules8plan from "./assets/15 Rules for Rebuilding the World/8PLAN .png";
+import rulesSmall1 from "./assets/15 Rules for Rebuilding the World/small1.png";
+import rulesSmall2 from "./assets/15 Rules for Rebuilding the World/small2.png";
+import rulesSmall3 from "./assets/15 Rules for Rebuilding the World/small3.png";
+import rulesSmall4 from "./assets/15 Rules for Rebuilding the World/small4.png";
+import rulesSmall5 from "./assets/15 Rules for Rebuilding the World/small5.png";
+
+// Hidden Order images
+import hiddenMain from "./assets/Hidden Order/main.png";
+import hiddenSameline1 from "./assets/Hidden Order/sameline1.GIF";
+import hidden1 from "./assets/Hidden Order/1.png";
+import hidden2 from "./assets/Hidden Order/2.png";
+import hidden3 from "./assets/Hidden Order/3.png";
+import hidden4 from "./assets/Hidden Order/4.png";
+import hidden5 from "./assets/Hidden Order/5.png";
+import hidden6 from "./assets/Hidden Order/6.png";
+import hidden7 from "./assets/Hidden Order/7.png";
+import hidden8 from "./assets/Hidden Order/8.png";
+import hidden9 from "./assets/Hidden Order/9.png";
+import hidden10 from "./assets/Hidden Order/10.png";
+import hiddenSameline2 from "./assets/Hidden Order/sameline2.GIF";
+import hiddenAxonometric from "./assets/Hidden Order/Axonometric drawing.png";
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -336,14 +368,128 @@ const projectData = {
     ],
   },
   "project-g": {
-    title: "Project G",
-    desc: "项目简介占位文本。",
-    image: "assets/project.jpg",
+    title: "15 Rules for Rebuilding the World",
+    desc: "This exhibition invites you to experience Christopher Alexander's \"Fifteen Fundamental Properties\" through the evocative and immersive world of Pina Bausch's stage photography. Pina's groundbreaking stage designs and choreography transcend mere aesthetics, channeling deep emotional currents and architectural precision. <br><br>Each photograph captures these principles in action—Scale, Centers, Rhythm, Contrast, Simplicity—manifesting a vibrant tension and flow that transforms space. Through these dynamic scenes, we uncover how these properties animate space, crafting environments that pulse with a compelling, almost visceral sense of life. Prepare to step into a world where design principles are not just visible, but deeply felt, alive, and unbound.",
+    image: rulesMain,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: rules1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules2main,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules3,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules4,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules5,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules6modul,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules7elevation,
+      },
+      {
+        title: "",
+        desc: "",
+        image: rules8plan,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [rulesSmall1, rulesSmall2, rulesSmall3, rulesSmall4, rulesSmall5],
+      },
+    ],
   },
   "project-h": {
-    title: "Project H",
-    desc: "项目简介占位文本。",
-    image: "assets/project.jpg",
+    title: "Hidden Order | CAA Graduation Season 2024 World Tree",
+    desc: "<strong>Site:</strong> Zhejiang Library, Hangzhou, China<br><strong>Time:</strong> 6/1/2024-6/10/2024<br><br>The exhibition takes place on the lower level of the building, in a compact space of approximately 1,000 square feet.<br><br> Within this limited area, 21 students present artworks across various media, including installation, models, video, and photography. <br><br>The curatorial process involved documenting each work’s dimensions and lighting requirements to design an efficient spatial layout.With two separate entrances and exits, the circulation strategy became essential—ensuring a clear flow between the two access points while maintaining visual rhythm and spatial coherence across diverse works.",
+    image: hiddenMain,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: hiddenSameline1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden3,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden4,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden5,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden6,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden7,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden8,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden9,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hidden10,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hiddenSameline2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: hiddenAxonometric,
+      },
+    ],
   },
   "project-i": {
     title: "Project I",
@@ -419,16 +565,12 @@ function setupProjectDetail() {
     detailTitle.textContent = data.title || "";
     // build scenes list
     if (Array.isArray(data.scenes) && data.scenes.length > 0) {
-      // Show top-level description and optional lead image first if they exist
+      // Show top-level description first if it exists
+      // Note: data.image is only used for homepage thumbnail, not displayed in project details
       const topDesc =
-        data.desc || data.image
+        data.desc
           ? `<div class="scene-block">
               ${data.desc ? `<div class="detail-desc">${data.desc}</div>` : ""}
-              ${
-                data.image
-                  ? `<div class="detail-image mt-3"><img src="${data.image}" alt="${data.title || "Project"}" class="img-fluid" /></div>`
-                  : ""
-              }
             </div>`
           : "";
       
@@ -458,7 +600,12 @@ function setupProjectDetail() {
           
           // Handle multi-image grid layout
           if (images.length > 1) {
-            const gridClass = images.length >= 7 ? "grid-3" : "grid-2";
+            let gridClass = "grid-2";
+            if (images.length >= 7) {
+              gridClass = "grid-3";
+            } else if (images.length === 5) {
+              gridClass = "grid-3-2"; // Special 3+2 layout for 5 images
+            }
             const gridImages = images
               .map((img, idx) => `<div class="grid-item"><img src="${img}" alt="Image ${idx + 1}" class="img-fluid" /></div>`)
               .join("");
