@@ -110,6 +110,18 @@ import hidden10 from "./assets/Hidden Order/10.png";
 import hiddenSameline2 from "./assets/Hidden Order/sameline2.GIF";
 import hiddenAxonometric from "./assets/Hidden Order/Axonometric drawing.png";
 
+// Installation images
+import installationMain from "./assets/Installation/main.png";
+import installation1 from "./assets/Installation/1.png";
+import installation3 from "./assets/Installation/3.png";
+import installation4 from "./assets/Installation/4.png";
+import installation5 from "./assets/Installation/5.png";
+import installation6 from "./assets/Installation/6.png";
+import installation7 from "./assets/Installation/7.png";
+import installation8 from "./assets/Installation/8.png";
+import installationAnalyze1 from "./assets/Installation/analyze1.png";
+import installationAnalyze2 from "./assets/Installation/analyze2.png";
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -385,43 +397,43 @@ const projectData = {
   },
   "project-h": {
     title: "Hidden Order | CAA Graduation Season 2024 World Tree",
-    desc: "<strong>Site:</strong> Zhejiang Library, Hangzhou, China<br><strong>Time:</strong> 6/1/2024-6/10/2024<br><br>The exhibition takes place on the lower level of the building, in a compact space of approximately 1,000 square feet.<br><br> Within this limited area, 21 students present artworks across various media, including installation, models, video, and photography. <br><br>The curatorial process involved documenting each work’s dimensions and lighting requirements to design an efficient spatial layout.With two separate entrances and exits, the circulation strategy became essential—ensuring a clear flow between the two access points while maintaining visual rhythm and spatial coherence across diverse works.",
+    desc: "<strong>Site:</strong> Zhejiang Library, Hangzhou, China<br><strong>Time:</strong> 6/1/2024-6/10/2024",
     image: hiddenMain,
     scenes: [
       {
         title: "",
+        desc: "The exhibition takes place on the lower level of the building, in a compact space of approximately 1,000 square feet.<br><br>Within this limited area, 21 students present artworks across various media, including installation, models, video, and photography.",
+      },
+      {
+        title: "",
         desc: "",
         image: hiddenSameline1,
+        center: true,
+        scale: 0.5,
       },
       {
         title: "",
         desc: "",
-        image: hidden1,
+        image: hiddenAxonometric,
+      },
+      {
+        title: "",
+        desc: "The curatorial process involved documenting each work's dimensions and lighting requirements to design an efficient spatial layout.With two separate entrances and exits, the circulation strategy became essential—ensuring a clear flow between the two access points while maintaining visual rhythm and spatial coherence across diverse works.",
       },
       {
         title: "",
         desc: "",
-        image: hidden2,
+        images: [hidden1, hidden4],
       },
       {
         title: "",
         desc: "",
-        image: hidden3,
+        images: [hidden2, hidden6, hidden8],
       },
       {
         title: "",
         desc: "",
-        image: hidden4,
-      },
-      {
-        title: "",
-        desc: "",
-        image: hidden5,
-      },
-      {
-        title: "",
-        desc: "",
-        image: hidden6,
+        images: [hidden3, hidden5],
       },
       {
         title: "",
@@ -430,35 +442,56 @@ const projectData = {
       },
       {
         title: "",
-        desc: "",
-        image: hidden8,
+        desc: "I also participated in both the installation and de-installation of the exhibition.<br><br>Due to the large scale of certain photographic works and display structures, we coordinated an early move-in sequence to ensure safe handling before closing the walls.<br><br>Pieces requiring electrical connections were positioned first, with dedicated openings left in the wall system for power access and cable management.",
       },
       {
         title: "",
         desc: "",
-        image: hidden9,
-      },
-      {
-        title: "",
-        desc: "",
-        image: hidden10,
-      },
-      {
-        title: "",
-        desc: "",
-        image: hiddenSameline2,
-      },
-      {
-        title: "",
-        desc: "",
-        image: hiddenAxonometric,
+        images: [hidden9, hidden10],
       },
     ],
   },
   "project-i": {
-    title: "Project I",
-    desc: "项目简介占位文本。",
-    image: "assets/project.jpg",
+    title: "Simulfactory",
+    desc: "This project is inspired by Jean Baudrillard's Simulacra and Simulation, particularly his concept of the three orders of simulacra. In this theory, Baudrillard describes how images and representations gradually detach from reality, eventually producing a hyperreality in which the boundary between the real and the artificial dissolves.<br><br>In my work, I deconstruct the three stages of simulacra and translate them into the narrative of an imagined \"Simulacra Factory\"—a surreal production line where ancient Greek sculptures are collected, transported, copied, and mechanized. The interior spatial sequence is constructed through mirrored surfaces, reflective materials, and carefully orchestrated lighting, creating visual loops and distortions that echo Baudrillard's idea of repetition without an original.",
+    image: installationMain,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: installationMain,
+      },
+      {
+        title: "",
+        desc: "",
+        image: installation1,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [installation6, installation4, installation7],
+        noCrop: true,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [installation8, installation3],
+      },
+      {
+        title: "",
+        desc: "",
+        image: installation5,
+      },
+      {
+        title: "",
+        desc: "Externally, a system of stepped platforms and layered curtains frames the entire installation like a theatrical set. This scenographic approach positions the audience as both observer and participant, inviting them to navigate shifting realities while \"watching\" the factory unfold as a staged performance. The design reinforces Baudrillard's argument that modern experience often exists between fiction and reality, between production and reproduction.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [installationAnalyze1, installationAnalyze2],
+      },
+    ],
   },
 };
 
@@ -588,11 +621,14 @@ function setupProjectDetail() {
           }
           
           // Handle single image
+          const centerClass = scene?.center ? " detail-image-center" : "";
+          const scaleClass = scene?.scale ? " detail-image-scaled" : "";
+          const scaleStyle = scene?.scale ? ` style="width: ${scene.scale * 100}%; height: auto; margin: 0 auto;"` : "";
           return `
             <div class="scene-block">
               ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
               ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
-              ${imgSrc ? `<div class="detail-image mt-3"><img src="${imgSrc}" alt="${safeTitle}" class="img-fluid" /></div>` : ""}
+              ${imgSrc ? `<div class="detail-image mt-3${centerClass}${scaleClass}"><img src="${imgSrc}" alt="${safeTitle}" class="img-fluid"${scaleStyle} /></div>` : ""}
             </div>
           `;
         })

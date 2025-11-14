@@ -185,6 +185,28 @@
       object-fit: cover;
       border-radius: 2px;
     }
+    .detail-image-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        transform-origin: center;
+      }
+    }
+    .detail-image-scaled {
+      margin-top: 0.25rem !important;
+      margin-bottom: 0.25rem !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        display: block;
+      }
+    }
     .detail-image-grid {
       display: grid;
       gap: 0.75rem;
