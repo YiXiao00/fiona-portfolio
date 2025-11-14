@@ -49,6 +49,9 @@ import lacertaPhoto3 from "./assets/LACERTA Showroom/photo3.jpg";
 import lacertaPhoto4 from "./assets/LACERTA Showroom/photo4.jpg";
 import lacertaPhoto5 from "./assets/LACERTA Showroom/photo5.jpg";
 import lacertamodel1 from "./assets/LACERTA Showroom/model1.jpg";
+import lacertamodel2 from "./assets/LACERTA Showroom/model2.jpg";
+import lacertaPlan from "./assets/LACERTA Showroom/plan.png";
+import lacertaMoodboard from "./assets/LACERTA Showroom/moodboard.png";
 import lacertrendering1 from "./assets/LACERTA Showroom/rendering1.jpg";
 import lacertrendering2 from "./assets/LACERTA Showroom/rendering2.jpg";
 import lacertrendering3 from "./assets/LACERTA Showroom/rendering3.jpg";
@@ -59,13 +62,13 @@ import lacertrendering7 from "./assets/LACERTA Showroom/rendering7.jpg";
 
 // From here to Eternity images
 import eternityMain1 from "./assets/From here to Eternity/main and 1.png";
+import eternityNew from "./assets/From here to Eternity/NEW.png";
 import eternity2 from "./assets/From here to Eternity/2.png";
 import eternity3 from "./assets/From here to Eternity/3.png";
 import eternity4 from "./assets/From here to Eternity/4.png";
 import eternity5 from "./assets/From here to Eternity/5.png";
 import eternity6 from "./assets/From here to Eternity/6.png";
 import eternity7 from "./assets/From here to Eternity/7.png";
-import eternity8 from "./assets/From here to Eternity/8rendering.png";
 import eternitySet1 from "./assets/From here to Eternity/set1.png";
 import eternitySet2 from "./assets/From here to Eternity/set2.png";
 import eternitySet3 from "./assets/From here to Eternity/set3.png";
@@ -188,9 +191,14 @@ const projectData = {
     image: null,
     scenes: [
       {
-        title: "Gallery",
+        title: "",
         desc: "",
-        images: [photo1, photo2, photo3, photo5, photo6, photo7, photo8, photo9],
+        images: [photo6, photo2, photo3, photo5],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [photo1, photo7, photo8, photo9],
       },
     ],
   },
@@ -237,27 +245,33 @@ const projectData = {
   },
   "project-e": {
     title: "LACERTA Showroom",
-    desc: "<strong>Site:</strong> He Dong Mansion, Shanghai<br><strong>Time:</strong> 2025<br>This project was designed for the fashion brand LACERTA, creating a multifunctional space that integrates office, reception, and retail functions. <br>The original site was a square-shaped room. The design process began with understanding the studio’s operational needs, including equipment, staff capacity, and workflow — as well as the quantity and type of garments to be displayed in the showroom. The spatial layout and atmosphere were developed in response to the brand’s distinctive identity and aesthetic tone.",
+    desc: "<strong>Site:</strong> He Dong Mansion, Shanghai<br><strong>Time:</strong> 2025<br>This project was designed for the fashion brand LACERTA, creating a multifunctional space that integrates office, reception, and retail functions. <br>",
     scenes: [
       {
-        title: "",
+        title: "Moodboard",
         desc: "",
-        images: [lacertaPhoto1, lacertaPhoto2],
+        image: lacertaMoodboard,
       },
       {
         title: "",
         desc: "",
-        images: [lacertaPhoto3, lacertaPhoto4],
+        images: [lacertaPhoto1, lacertaPhoto4],
+        noCrop: true,
       },
       {
         title: "",
         desc: "",
-        image: lacertaPhoto5,
+        images: [lacertaPhoto2, lacertaPhoto3],
+      },
+      {
+        title: "Plan",
+        desc: "The original site was a square-shaped room. The design process began with understanding the studio’s operational needs, including equipment, staff capacity, and workflow — as well as the quantity and type of garments to be displayed in the showroom. The spatial layout and atmosphere were developed in response to the brand’s distinctive identity and aesthetic tone.",
+        image: lacertaPlan,
       },
       {
         title: "",
         desc: "",
-        images: [lacertrendering1, lacertrendering2],
+        images: [lacertrendering1, lacertrendering5, lacertrendering7],
       },
       {
         title: "",
@@ -267,17 +281,7 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [lacertrendering5, lacertrendering6],
-      },
-      {
-        title: "",
-        desc: "",
-        image: lacertrendering7,
-      },
-      {
-        title: "",
-        desc: "",
-        image: lacertamodel1,
+        images: [lacertamodel1, lacertamodel2],
       },
     ],
   },
@@ -293,7 +297,12 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: eternity2,
+        image: eternityNew,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [eternity2, eternity6, eternity5],
       },
       {
         title: "",
@@ -303,27 +312,7 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: eternity4,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternity5,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternity6,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternity7,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternity8,
+        images: [eternity4, eternity7],
       },
       {
         title: "",
@@ -333,37 +322,12 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: eternitySet2,
+        images: [eternitySet2, eternitySet3, eternitySet6, eternitySet7],
       },
       {
         title: "",
         desc: "",
-        image: eternitySet3,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternitySet4,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternitySet5,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternitySet6,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternitySet7,
-      },
-      {
-        title: "",
-        desc: "",
-        image: eternitySet8,
+        images: [eternitySet4, eternitySet5, eternitySet8],
       },
     ],
   },
@@ -601,11 +565,14 @@ function setupProjectDetail() {
           // Handle multi-image grid layout
           if (images.length > 1) {
             let gridClass = "grid-2";
-            if (images.length >= 7) {
+            if (images.length === 4) {
+              gridClass = "grid-4";
+            } else if (images.length >= 7 || images.length === 3) {
               gridClass = "grid-3";
             } else if (images.length === 5) {
               gridClass = "grid-3-2"; // Special 3+2 layout for 5 images
             }
+            const noCropClass = scene?.noCrop ? " no-crop" : "";
             const gridImages = images
               .map((img, idx) => `<div class="grid-item"><img src="${img}" alt="Image ${idx + 1}" class="img-fluid" /></div>`)
               .join("");
@@ -613,7 +580,7 @@ function setupProjectDetail() {
               <div class="scene-block">
                 ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
                 ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
-                <div class="detail-image-grid mt-3 ${gridClass}">
+                <div class="detail-image-grid mt-3 ${gridClass}${noCropClass}">
                   ${gridImages}
                 </div>
               </div>
