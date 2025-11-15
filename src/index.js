@@ -197,20 +197,37 @@ const projectData = {
     ],
   },
   "project-c": {
-    title: "PhotoGal Series",
-    desc:
-      "<strong>Series:</strong> PhotoGal Collection<br><strong>Format:</strong> 2025 photographic study focusing on rhythm, color, and urban texture.",
+    title: "A GRAIN OF HANGZHOU 2021",
+    desc: "The exhibition is located on the first floor of the CAA Nanshan Campus, within a semi-circular gallery space strongly shaped by daylight. Running from 9:00 to 18:00, the show is highly influenced by the shifting quality of natural light throughout the day.<br><br>Titled Hangzhou Visual Chronicle, the exhibition presents the work of forty students, each documenting the city from a unique perspective through black-and-white documentary photography. The works are organized into thematic sections and displayed at varied scales. In addition to framed prints, the exhibition incorporates lightboxes, posters, postcards, and other graphic formats to extend the visual narrative.",
     image: null,
     scenes: [
       {
         title: "",
         desc: "",
-        images: [photo6, photo2, photo3, photo5],
+        images: [photo6, photo2],
       },
       {
         title: "",
         desc: "",
-        images: [photo1, photo7, photo8, photo9],
+        images: [photo3, photo5],
+      },
+      {
+        title: "",
+        desc: "The spatial layout also includes several functional zones:<br><br>Opening Ceremony Area — designed with a backdrop featuring the exhibition's key visual identity.<br><br>Signing Area — accommodating guest interaction and event flow.<br><br>Archive & Documentation Zone — showcasing process materials and supporting texts.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [photo1, photo7],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [photo8, photo9],
+      },
+      {
+        title: "",
+        desc: "Across the curved space, the design responds to changing daylight while balancing multiple modes of display, creating a cohesive environment for viewing, gathering, and storytelling.",
       },
     ],
   },
