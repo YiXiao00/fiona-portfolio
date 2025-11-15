@@ -107,7 +107,6 @@ import hidden7 from "./assets/Hidden Order/7.png";
 import hidden8 from "./assets/Hidden Order/8.png";
 import hidden9 from "./assets/Hidden Order/9.png";
 import hidden10 from "./assets/Hidden Order/10.png";
-import hiddenSameline2 from "./assets/Hidden Order/sameline2.GIF";
 import hiddenAxonometric from "./assets/Hidden Order/Axonometric drawing.png";
 
 // Installation images
@@ -121,6 +120,20 @@ import installation7 from "./assets/Installation/7.png";
 import installation8 from "./assets/Installation/8.png";
 import installationAnalyze1 from "./assets/Installation/analyze1.png";
 import installationAnalyze2 from "./assets/Installation/analyze2.png";
+
+// Silver Valley Exhibition images
+import silverMain from "./assets/Silver Valley Exhibition/main.png";
+import silver1 from "./assets/Silver Valley Exhibition/1.png";
+import silver2 from "./assets/Silver Valley Exhibition/2.png";
+import silver3 from "./assets/Silver Valley Exhibition/3.png";
+import silver4 from "./assets/Silver Valley Exhibition/4.png";
+import silver6 from "./assets/Silver Valley Exhibition/6.png";
+import silver7 from "./assets/Silver Valley Exhibition/7.png";
+import silver8 from "./assets/Silver Valley Exhibition/8.png";
+import silverSite from "./assets/Silver Valley Exhibition/site.png";
+import silverStructure from "./assets/Silver Valley Exhibition/structure.png";
+import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
+import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
@@ -510,6 +523,77 @@ const projectData = {
       },
     ],
   },
+  "project-j": {
+    title: "Silver Valley Exhibition",
+    desc: "<strong>Time：</strong>2023<br>This project proposes a redesign of the village reception hall in Baiyingou, drawing from the village's mining heritage rather than relying on commercialized or homogenized rural design approaches. By reactivating the historical memory of coal mining, the space becomes an immersive environment that encourages visitors to engage with the site on a sensory and emotional level.",
+    image: silverMain,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: silver1,
+      },
+      {
+        title: "",
+        desc: "Upon entry, each visitor receives a kerosene lamp—an object that symbolically connects them to the labor and daily life of miners. Natural light is intentionally minimized to evoke the atmosphere of an original mineshaft. As visitors move through the space, the kerosene lamp becomes their primary tool for navigation, revealing exhibition details, material textures, and interpretive labels in dim, intimate light.<br><br>Through this experiential narrative, the project transforms the reception hall into a journey of discovery, where history is not merely displayed but actively explored.",
+      },
+      {
+        title: "Site Analysis",
+        desc: "The central area of ​​the village still retains a wealth of historical relics, including old-style houses, stone structures, and abandoned production facilities, which together form an important part of the village's cultural fabric.<br><br>Several abandoned buildings are scattered halfway up the mountain; although they have lost their original function. Looking out from inside or on the terrace, one can overlook the entire layout of the village.",
+        image: silverSite,
+        layout: "side-by-side",
+      },
+      {
+        title: "Narrative structure",
+        desc: "",
+        image: silverNarrative,
+      },
+      {
+        title: "Floor plan",
+        desc: "",
+        image: silverFloorplan,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [silverNarrative, silverStructure],
+        flexEqualHeight: true,
+      },
+      {
+        title: "",
+        desc: "There is an automated kerosene-lamp dispensing system in the space, allowing visitors to collect a lamp at the beginning of the exhibition and return it at the end.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [silver2, silver3, silver4],
+        noCrop: true,
+        flexEqualHeight: true,
+      },
+      {
+        title: "",
+        desc: "Passing through the mine, visitors follow the guidance of gradual changes on the ground and witness the gradual crushing process of the ore.",
+      },
+      {
+        title: "",
+        desc: "",
+        image: silver6,
+      },
+      {
+        title: "",
+        desc: "Mine carts loaded with crushed ore are transported out of the mine. The audience watches a small animation inside the mine cart.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [silver7, silver8],
+      },
+      {
+        title: "",
+        desc: "The audience passes through the fragment track, drawn by a beam of red light, and enters the next space through an arched door.<br><br>The exterior of this space resembles a furnace, and people descend down a ramp 1 to observe the \"smelting\" process.",
+      },
+    ],
+  },
 };
 
 function setupProjectDetail() {
@@ -615,14 +699,32 @@ function setupProjectDetail() {
           // Handle multi-image grid layout
           if (images.length > 1) {
             let gridClass = "grid-2";
-            if (images.length === 4) {
-              gridClass = "grid-4";
-            } else if (images.length >= 7 || images.length === 3) {
-              gridClass = "grid-3";
-            } else if (images.length === 5) {
-              gridClass = "grid-3-2"; // Special 3+2 layout for 5 images
+            let customGridStyle = "";
+            
+            // Check if custom width ratios are provided
+            if (scene?.widthRatios && Array.isArray(scene.widthRatios) && scene.widthRatios.length === images.length) {
+              // Use custom width ratios (convert to fr units)
+              const gridTemplateColumns = scene.widthRatios.map(ratio => `${ratio}fr`).join(" ");
+              customGridStyle = ` style="grid-template-columns: ${gridTemplateColumns};"`;
+              gridClass = ""; // Don't use default grid class
+            } else {
+              // Use default grid classes
+              if (images.length === 4) {
+                gridClass = "grid-4";
+              } else if (images.length >= 7 || images.length === 3) {
+                gridClass = "grid-3";
+              } else if (images.length === 5) {
+                gridClass = "grid-3-2"; // Special 3+2 layout for 5 images
+              }
             }
+            
             const noCropClass = scene?.noCrop ? " no-crop" : "";
+            const equalHeightClass = scene?.equalHeight ? " equal-height" : "";
+            const flexEqualHeightClass = scene?.flexEqualHeight ? " flex-equal-height" : "";
+            
+            // If flexEqualHeight is used, don't use grid classes
+            const finalGridClass = flexEqualHeightClass ? "" : gridClass;
+            
             const gridImages = images
               .map((img, idx) => `<div class="grid-item"><img src="${img}" alt="Image ${idx + 1}" class="img-fluid" /></div>`)
               .join("");
@@ -630,8 +732,25 @@ function setupProjectDetail() {
               <div class="scene-block">
                 ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
                 ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
-                <div class="detail-image-grid mt-3 ${gridClass}${noCropClass}">
+                <div class="detail-image-grid mt-3 ${finalGridClass}${noCropClass}${equalHeightClass}${flexEqualHeightClass}"${customGridStyle}>
                   ${gridImages}
+                </div>
+              </div>
+            `;
+          }
+          
+          // Handle side-by-side layout (image left, text right)
+          if (scene?.layout === "side-by-side" && imgSrc && safeDesc) {
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                <div class="detail-side-by-side">
+                  <div class="detail-side-image">
+                    <img src="${imgSrc}" alt="${safeTitle}" class="img-fluid" />
+                  </div>
+                  <div class="detail-side-text">
+                    <div class="detail-desc">${safeDesc}</div>
+                  </div>
                 </div>
               </div>
             `;
@@ -651,6 +770,260 @@ function setupProjectDetail() {
         })
         .join("");
       detailContent.innerHTML = topDesc + blocks;
+      
+      // Adjust equal-height grids to have the same height and match image sizes
+      const equalHeightGrids = detailContent.querySelectorAll(".detail-image-grid.equal-height");
+      
+      // Store resize handlers for cleanup
+      const resizeHandlers = [];
+      
+      equalHeightGrids.forEach((grid) => {
+        const items = Array.from(grid.querySelectorAll(".grid-item"));
+        if (items.length > 1) {
+          // Wait for images to load
+          const images = Array.from(grid.querySelectorAll("img"));
+          let loadedCount = 0;
+          const totalImages = images.length;
+          
+          const setEqualHeightAndSize = () => {
+            // Use requestAnimationFrame to ensure DOM is fully rendered
+            requestAnimationFrame(() => {
+              // Get grid width
+              const gridWidth = grid.offsetWidth;
+              // Use 0 gap for equal-height grids to make images touch each other
+              const gap = 0;
+              const totalAvailableWidth = gridWidth - gap * (items.length - 1);
+              
+              // Get image natural dimensions and calculate aspect ratios
+              const imageData = images.map((img, idx) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+                const aspectRatio = naturalWidth / naturalHeight;
+                return {
+                  img,
+                  item: items[idx],
+                  naturalWidth,
+                  naturalHeight,
+                  aspectRatio
+                };
+              });
+              
+              // Calculate heights for each image if each takes equal width
+              const equalWidth = totalAvailableWidth / items.length;
+              const heights = imageData.map(data => equalWidth / data.aspectRatio);
+              
+              // Use the maximum height for all containers (to ensure same height)
+              const maxHeight = Math.max(...heights);
+              
+              // Calculate widths based on max height and aspect ratios
+              const widths = imageData.map(data => maxHeight * data.aspectRatio);
+              const totalWidth = widths.reduce((sum, w) => sum + w, 0);
+              
+              // If total width exceeds available space, scale down proportionally
+              let scale = 1;
+              if (totalWidth > totalAvailableWidth) {
+                scale = totalAvailableWidth / totalWidth;
+              }
+              
+              // Apply scale and set container and image sizes
+              imageData.forEach((data, idx) => {
+                const item = data.item;
+                const img = data.img;
+                
+                // Calculate final dimensions with scale
+                const containerHeight = maxHeight * scale;
+                const containerWidth = widths[idx] * scale;
+                
+                // Set container size
+                item.style.width = `${containerWidth}px`;
+                item.style.height = `${containerHeight}px`;
+                item.style.minWidth = "0";
+                item.style.minHeight = "0";
+                item.style.maxWidth = "100%";
+                item.style.maxHeight = "none";
+                item.style.flexShrink = "1";
+                item.style.flexGrow = "0";
+                item.style.margin = "0";
+                item.style.padding = "0";
+                
+                // Set image size to match container
+                img.style.width = "100%";
+                img.style.height = "100%";
+                img.style.maxWidth = "100%";
+                img.style.maxHeight = "100%";
+                img.style.objectFit = "contain";
+                img.style.margin = "0";
+                img.style.padding = "0";
+                img.style.display = "block";
+              });
+            });
+          };
+          
+          if (totalImages === 0) {
+            // No images, skip
+            return;
+          } else {
+            // Check if all images are already loaded
+            const allLoaded = images.every(img => img.complete && img.naturalHeight > 0);
+            
+            if (allLoaded) {
+              setTimeout(setEqualHeightAndSize, 0);
+            } else {
+              images.forEach((img) => {
+                if (img.complete && img.naturalHeight > 0) {
+                  loadedCount++;
+                } else {
+                  img.addEventListener("load", () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                      setTimeout(setEqualHeightAndSize, 0);
+                    }
+                  }, { once: true });
+                  img.addEventListener("error", () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                      setTimeout(setEqualHeightAndSize, 0);
+                    }
+                  }, { once: true });
+                }
+              });
+              
+              // Also check if all loaded after initial check
+              if (loadedCount === totalImages) {
+                setTimeout(setEqualHeightAndSize, 0);
+              }
+            }
+          }
+          
+          // Add resize listener to recalculate on window resize
+          const resizeHandler = () => {
+            if (images.every(img => img.complete && img.naturalHeight > 0)) {
+              setEqualHeightAndSize();
+            }
+          };
+          window.addEventListener("resize", resizeHandler);
+          resizeHandlers.push(resizeHandler);
+        }
+      });
+      
+      // Clean up previous resize handlers when project changes
+      if (window._equalHeightResizeHandlers) {
+        window._equalHeightResizeHandlers.forEach(handler => {
+          window.removeEventListener("resize", handler);
+        });
+      }
+      if (resizeHandlers.length > 0) {
+        window._equalHeightResizeHandlers = resizeHandlers;
+      }
+      
+      // Handle flex-equal-height grids (different sizes, same height, left-aligned, consistent gaps)
+      const flexEqualHeightGrids = detailContent.querySelectorAll(".detail-image-grid.flex-equal-height");
+      const flexResizeHandlers = [];
+      
+      flexEqualHeightGrids.forEach((grid) => {
+        const items = Array.from(grid.querySelectorAll(".grid-item"));
+        if (items.length > 1) {
+          const images = Array.from(grid.querySelectorAll("img"));
+          let loadedCount = 0;
+          const totalImages = images.length;
+          
+          const setFlexEqualHeight = () => {
+            requestAnimationFrame(() => {
+              // Reset all heights first
+              items.forEach((item) => {
+                item.style.height = "auto";
+              });
+              
+              // Force a reflow
+              void grid.offsetHeight;
+              
+              // Get available width and gap
+              const gridWidth = grid.offsetWidth;
+              const gap = parseFloat(getComputedStyle(grid).gap) || 0.75 * 16; // Default 0.75rem in px
+              const totalGap = gap * (items.length - 1);
+              const availableWidth = gridWidth - totalGap;
+              
+              // Get image natural dimensions and calculate aspect ratios
+              const imageData = images.map((img, idx) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+                const aspectRatio = naturalWidth / naturalHeight;
+                
+                return {
+                  img,
+                  item: items[idx],
+                  aspectRatio
+                };
+              });
+              
+              // Calculate height so that total width equals available width
+              // Formula: availableWidth = sum(height * aspectRatio[i])
+              // So: height = availableWidth / sum(aspectRatio[i])
+              const totalAspectRatio = imageData.reduce((sum, data) => sum + data.aspectRatio, 0);
+              const calculatedHeight = totalAspectRatio > 0 ? availableWidth / totalAspectRatio : 400;
+              
+              // Set all items to calculated height
+              if (calculatedHeight > 0) {
+                items.forEach((item) => {
+                  item.style.height = `${calculatedHeight}px`;
+                });
+              }
+            });
+          };
+          
+          if (totalImages === 0) {
+            return;
+          } else {
+            const allLoaded = images.every(img => img.complete && img.naturalHeight > 0);
+            
+            if (allLoaded) {
+              setTimeout(setFlexEqualHeight, 0);
+            } else {
+              images.forEach((img) => {
+                if (img.complete && img.naturalHeight > 0) {
+                  loadedCount++;
+                } else {
+                  img.addEventListener("load", () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                      setTimeout(setFlexEqualHeight, 0);
+                    }
+                  }, { once: true });
+                  img.addEventListener("error", () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                      setTimeout(setFlexEqualHeight, 0);
+                    }
+                  }, { once: true });
+                }
+              });
+              
+              if (loadedCount === totalImages) {
+                setTimeout(setFlexEqualHeight, 0);
+              }
+            }
+          }
+          
+          // Add resize listener
+          const resizeHandler = () => {
+            if (images.every(img => img.complete && img.naturalHeight > 0)) {
+              setFlexEqualHeight();
+            }
+          };
+          window.addEventListener("resize", resizeHandler);
+          flexResizeHandlers.push(resizeHandler);
+        }
+      });
+      
+      // Clean up previous flex resize handlers
+      if (window._flexEqualHeightResizeHandlers) {
+        window._flexEqualHeightResizeHandlers.forEach(handler => {
+          window.removeEventListener("resize", handler);
+        });
+      }
+      if (flexResizeHandlers.length > 0) {
+        window._flexEqualHeightResizeHandlers = flexResizeHandlers;
+      }
     } else {
       // fallback single content
       const safeDesc = data.desc ? String(data.desc) : "";

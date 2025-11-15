@@ -207,9 +207,31 @@
         display: block;
       }
     }
+    .detail-side-by-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      .detail-side-image {
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 2px;
+        }
+      }
+      .detail-side-text {
+        display: flex;
+        align-items: center;
+        .detail-desc {
+          margin: 0;
+        }
+      }
+    }
     .detail-image-grid {
       display: grid;
       gap: 0.75rem;
+      align-items: stretch;
       &.grid-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -251,6 +273,55 @@
             object-fit: contain;
             height: auto;
             max-height: none;
+          }
+        }
+      }
+      &.equal-height {
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0 !important;
+        .grid-item {
+          aspect-ratio: auto !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          margin: 0 !important;
+          padding: 0 !important;
+          // Size will be set by JavaScript
+          img {
+            object-fit: contain;
+            display: block;
+            margin: 0 !important;
+            padding: 0 !important;
+            // Size will be set by JavaScript
+          }
+        }
+      }
+      &.flex-equal-height {
+        display: flex !important;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        .grid-item {
+          aspect-ratio: auto !important;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          margin: 0 !important;
+          padding: 0 !important;
+          flex-shrink: 0;
+          img {
+            object-fit: contain;
+            display: block;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
           }
         }
       }
@@ -339,6 +410,10 @@
     }
     .detail-image-grid.grid-4 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .detail-side-by-side {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
 
