@@ -130,9 +130,6 @@ import projectMain from "./assets/[ProjectName]/main.png";
 - **No crop**: `{ images: [img1, img2], noCrop: true }`
 - **Centered & scaled**: `{ image: img, center: true, scale: 0.5 }`
 
-## Contact
-
-**Email**: lllllllanxiaoyu@gmail.com
 
 ## License
 
