@@ -1049,7 +1049,7 @@ function setupProjectDetail() {
   }
 
   // Function to show project detail
-  function showProjectDetail(projectKey, clickedElement) {
+  function showProjectDetail(projectKey, clickedElement, updateHistory = true) {
     const data = projectData[projectKey];
     if (!data) return;
 
@@ -1066,13 +1066,38 @@ function setupProjectDetail() {
     // show detail, hide grid
     imageGrid.classList.add("d-none");
     detail.classList.remove("d-none");
+
+    // Update browser history
+    if (updateHistory) {
+      const newUrl = `#project=${projectKey}`;
+      window.history.pushState({ project: projectKey }, "", newUrl);
+    }
+  }
+
+  // Function to show home (image grid)
+  function showHome(updateHistory = true) {
+    currentProjectKey = null;
+    // clear active state
+    links.forEach((n) => n.classList.remove("is-active"));
+    
+    // show grid, hide detail
+    if (imageGrid) imageGrid.classList.remove("d-none");
+    if (detail) detail.classList.add("d-none");
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Update browser history
+    if (updateHistory) {
+      window.history.pushState({ project: null }, "", "#");
+    }
   }
 
   // Add click listeners to project links
   links.forEach((el) => {
     el.addEventListener("click", () => {
       const key = el.getAttribute("data-project");
-      showProjectDetail(key, el);
+      showProjectDetail(key, el, true);
     });
   });
 
@@ -1080,8 +1105,23 @@ function setupProjectDetail() {
   imageItems.forEach((el) => {
     el.addEventListener("click", () => {
       const key = el.getAttribute("data-project");
-      showProjectDetail(key, el);
+      showProjectDetail(key, el, true);
     });
+  });
+
+  // Handle browser back/forward buttons
+  window.addEventListener("popstate", (event) => {
+    // Check both event.state and URL hash
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#project=")) {
+      const projectKey = hash.replace("#project=", "");
+      if (projectData[projectKey]) {
+        showProjectDetail(projectKey, null, false);
+        return;
+      }
+    }
+    // If no project in URL, show home
+    showHome(false);
   });
 
   detailContent.addEventListener("click", (event) => {
@@ -1112,6 +1152,22 @@ function setupProjectDetail() {
     }
   });
 
+  // Check URL on page load
+  const hash = window.location.hash;
+  if (hash && hash.startsWith("#project=")) {
+    const projectKey = hash.replace("#project=", "");
+    if (projectData[projectKey]) {
+      // Set initial history state
+      window.history.replaceState({ project: projectKey }, "", hash);
+      showProjectDetail(projectKey, null, false);
+    }
+  } else {
+    // Set initial history state for home
+    window.history.replaceState({ project: null }, "", "#");
+  }
+
+  // Return functions for external use
+  return { showProjectDetail, showHome };
 }
 
 function setupBackHome() {
@@ -1123,12 +1179,13 @@ function setupBackHome() {
       // 返回到默认图片网格视图
       if (detail && !detail.classList.contains("d-none")) {
         e.preventDefault();
-        detail.classList.add("d-none");
-        if (imageGrid) imageGrid.classList.remove("d-none");
-        // clear active state
+        // Use history API to update URL and trigger popstate
+        window.history.pushState({ project: null }, "", "#");
+        // Manually trigger the home view
         const links = document.querySelectorAll(".project-link[data-project]");
         links.forEach((n) => n.classList.remove("is-active"));
-        // 可选：滚动到页面顶部
+        detail.classList.add("d-none");
+        if (imageGrid) imageGrid.classList.remove("d-none");
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     });
@@ -1136,12 +1193,13 @@ function setupBackHome() {
 }
 
 // initialize after DOM ready
+let projectDetailHandlers = null;
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
-    setupProjectDetail();
+    projectDetailHandlers = setupProjectDetail();
     setupBackHome();
   });
 } else {
-  setupProjectDetail();
+  projectDetailHandlers = setupProjectDetail();
   setupBackHome();
 }
