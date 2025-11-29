@@ -52,6 +52,8 @@ import lacertamodel1 from "./assets/LACERTA Showroom/model1.jpg";
 import lacertamodel2 from "./assets/LACERTA Showroom/model2.jpg";
 import lacertaPlan from "./assets/LACERTA Showroom/plan.png";
 import lacertaMoodboard from "./assets/LACERTA Showroom/moodboard.png";
+import lacertaMaterial from "./assets/LACERTA Showroom/material.png";
+import lacertaPiger from "./assets/LACERTA Showroom/piger.png";
 import lacertrendering1 from "./assets/LACERTA Showroom/rendering1.jpg";
 import lacertrendering2 from "./assets/LACERTA Showroom/rendering2.jpg";
 import lacertrendering3 from "./assets/LACERTA Showroom/rendering3.jpg";
@@ -132,7 +134,7 @@ import silver7 from "./assets/Silver Valley Exhibition/7.png";
 import silver8 from "./assets/Silver Valley Exhibition/8.png";
 import silverSite from "./assets/Silver Valley Exhibition/site.png";
 import silverStructure from "./assets/Silver Valley Exhibition/structure.png";
-import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
+import silverCirculation from "./assets/Silver Valley Exhibition/circulation.png";
 import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
 
 initScrollReveal(targetElements, defaultProps);
@@ -292,7 +294,8 @@ const projectData = {
       {
         title: "Moodboard",
         desc: "",
-        image: lacertaMoodboard,
+        images: [lacertaMoodboard, lacertaMaterial],
+        flexEqualHeight: true,
       },
       {
         title: "",
@@ -307,8 +310,13 @@ const projectData = {
       },
       {
         title: "Plan",
-        desc: "The original site was a square-shaped room. The design process began with understanding the studio’s operational needs, including equipment, staff capacity, and workflow — as well as the quantity and type of garments to be displayed in the showroom. The spatial layout and atmosphere were developed in response to the brand’s distinctive identity and aesthetic tone.",
+        desc: "The original site was a square-shaped room. The design process began with understanding the studio's operational needs, including equipment, staff capacity, and workflow — as well as the quantity and type of garments to be displayed in the showroom. The spatial layout and atmosphere were developed in response to the brand's distinctive identity and aesthetic tone.",
         image: lacertaPlan,
+      },
+      {
+        title: "",
+        desc: "Based on the brand's needs, I designed a mobile display cabinet whose materials and color palette align with the overall aesthetic of the showroom.<br>The top section features a pull-out drawer intended for accessories, while the lower compartment is designed with increased height to accommodate bags and shoes.",
+        image: lacertaPiger,
       },
       {
         title: "",
@@ -520,6 +528,7 @@ const projectData = {
         title: "",
         desc: "",
         images: [installationAnalyze1, installationAnalyze2],
+        flexEqualHeight: true,
       },
     ],
   },
@@ -546,7 +555,7 @@ const projectData = {
       {
         title: "Narrative structure",
         desc: "",
-        image: silverNarrative,
+        image: silverCirculation,
       },
       {
         title: "Floor plan",
@@ -556,7 +565,7 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [silverNarrative, silverStructure],
+        images: [silverCirculation, silverStructure],
         flexEqualHeight: true,
       },
       {
