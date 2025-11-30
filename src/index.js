@@ -53,6 +53,7 @@ import lacertamodel2 from "./assets/LACERTA Showroom/model2.jpg";
 import lacertaPlan from "./assets/LACERTA Showroom/plan.png";
 import lacertaMoodboard from "./assets/LACERTA Showroom/moodboard.png";
 import lacertaMaterial from "./assets/LACERTA Showroom/material.png";
+import lacertaPhotnew from "./assets/LACERTA Showroom/photnew.png";
 import lacertaPiger from "./assets/LACERTA Showroom/piger.png";
 import lacertrendering1 from "./assets/LACERTA Showroom/rendering1.jpg";
 import lacertrendering2 from "./assets/LACERTA Showroom/rendering2.jpg";
@@ -136,6 +137,7 @@ import silverSite from "./assets/Silver Valley Exhibition/site.png";
 import silverStructure from "./assets/Silver Valley Exhibition/structure.png";
 import silverCirculation from "./assets/Silver Valley Exhibition/circulation.png";
 import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
+import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
@@ -296,6 +298,11 @@ const projectData = {
         desc: "",
         images: [lacertaMoodboard, lacertaMaterial],
         flexEqualHeight: true,
+      },
+      {
+        title: "",
+        desc: "",
+        image: lacertaPhotnew,
       },
       {
         title: "",
@@ -555,7 +562,7 @@ const projectData = {
       {
         title: "Narrative structure",
         desc: "",
-        image: silverCirculation,
+        image: silverNarrative,
       },
       {
         title: "Floor plan",
