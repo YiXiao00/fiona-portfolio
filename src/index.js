@@ -97,6 +97,10 @@ import rulesSmall3 from "./assets/15 Rules for Rebuilding the World/small3.png";
 import rulesSmall4 from "./assets/15 Rules for Rebuilding the World/small4.png";
 import rulesSmall5 from "./assets/15 Rules for Rebuilding the World/small5.png";
 
+// From Screen to Space images
+import fromScreenCover from "./assets/From Screen to Space/1andfengmian.png";
+import fromScreenFig1 from "./assets/From Screen to Space/2.png";
+
 // Hidden Order images
 import hiddenMain from "./assets/Hidden Order/main.png";
 import hiddenSameline1 from "./assets/Hidden Order/sameline1.GIF";
@@ -437,6 +441,19 @@ const projectData = {
         title: "",
         desc: "",
         images: [rulesSmall1, rulesSmall2, rulesSmall3, rulesSmall4, rulesSmall5],
+      },
+    ],
+  },
+  "project-k": {
+    title: "From Screen to Space",
+    desc:
+      "Film has long been an important source of inspiration for my spatial thinking. The use of lighting, framing, and camera movement in cinema offers valuable lessons for how space can be constructed, revealed, and experienced.<br><br>This project was developed as an academic exploration aimed at expanding my narrative thinking and visual expression through cinematic storytelling. By analyzing film not only as a story but as a spatial system, I sought to translate cinematic language into spatial design strategies.<br><br>I chose the Korean film <em>Parasite</em> as the primary reference. It translates elements from the film's content, cinematography, visual composition, and objects' symbolism into spatial design.<br><br>Through mapping character relationships and narrative progression, I developed a spatial circulation framework that reflects the film’s underlying social tension and hierarchy. The movement of characters and shifts in perspective within the film became the basis for generating spatial sequences and transitions.",
+    image: fromScreenCover,
+    scenes: [
+      {
+        title: "Figure 1",
+        desc: "",
+        image: fromScreenFig1,
       },
     ],
   },
