@@ -100,6 +100,13 @@ import rulesSmall5 from "./assets/15 Rules for Rebuilding the World/small5.png";
 // From Screen to Space images
 import fromScreenCover from "./assets/From Screen to Space/1andfengmian.png";
 import fromScreenFig1 from "./assets/From Screen to Space/2.png";
+import fromScreen3 from "./assets/From Screen to Space/3.png";
+import fromScreen4 from "./assets/From Screen to Space/4.png";
+import fromScreen5 from "./assets/From Screen to Space/5.png";
+import fromScreen6 from "./assets/From Screen to Space/6.png";
+import fromScreen7 from "./assets/From Screen to Space/7.png";
+import fromScreen8 from "./assets/From Screen to Space/8.png";
+import fromScreen9 from "./assets/From Screen to Space/9.png";
 
 // Hidden Order images
 import hiddenMain from "./assets/Hidden Order/main.png";
@@ -453,12 +460,47 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [fromScreenCover, fromScreenFig1],
+        image: fromScreenCover,
+      },
+      {
+        title: "",
+        desc: "",
+        image: fromScreenFig1,
       },
       {
         title: "",
         desc:
-          "It translates elements from the film's content, cinematography, visual composition, and objects' symbolism into spatial design.<br><br>Through mapping character relationships and narrative progression, I developed a spatial circulation framework that reflects the film’s underlying social tension and hierarchy. The movement of characters and shifts in perspective within the film became the basis for generating spatial sequences and transitions.",
+          "It translates elements from the film's content, cinematography, visual composition, and objects' symbolism into spatial design.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [fromScreen3, fromScreen4],
+      },
+      {
+        title: "",
+        desc:
+          "Through mapping character relationships and narrative progression, I developed a spatial circulation framework that reflects the film’s underlying social tension and hierarchy. The movement of characters and shifts in perspective within the film became the basis for generating spatial sequences and transitions.",
+      },
+      {
+        title: "",
+        desc: "",
+        image: fromScreen5,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [fromScreen6, fromScreen7],
+      },
+      {
+        title: "",
+        desc: "",
+        image: fromScreen8,
+      },
+      {
+        title: "",
+        desc: "",
+        image: fromScreen9,
       },
     ],
   },
