@@ -451,6 +451,11 @@ const projectData = {
     image: fromScreenCover,
     scenes: [
       {
+        title: "",
+        desc: "",
+        image: fromScreenCover,
+      },
+      {
         title: "Figure 1",
         desc: "",
         image: fromScreenFig1,
