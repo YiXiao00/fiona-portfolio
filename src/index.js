@@ -447,18 +447,18 @@ const projectData = {
   "project-k": {
     title: "From Screen to Space",
     desc:
-      "Film has long been an important source of inspiration for my spatial thinking. The use of lighting, framing, and camera movement in cinema offers valuable lessons for how space can be constructed, revealed, and experienced.<br><br>This project was developed as an academic exploration aimed at expanding my narrative thinking and visual expression through cinematic storytelling. By analyzing film not only as a story but as a spatial system, I sought to translate cinematic language into spatial design strategies.<br><br>I chose the Korean film <em>Parasite</em> as the primary reference. It translates elements from the film's content, cinematography, visual composition, and objects' symbolism into spatial design.<br><br>Through mapping character relationships and narrative progression, I developed a spatial circulation framework that reflects the film’s underlying social tension and hierarchy. The movement of characters and shifts in perspective within the film became the basis for generating spatial sequences and transitions.",
+      "Film has long been an important source of inspiration for my spatial thinking. The use of lighting, framing, and camera movement in cinema offers valuable lessons for how space can be constructed, revealed, and experienced.<br><br>This project was developed as an academic exploration aimed at expanding my narrative thinking and visual expression through cinematic storytelling. By analyzing film not only as a story but as a spatial system, I sought to translate cinematic language into spatial design strategies.<br><br>I chose the Korean film <em>Parasite</em> as the primary reference.",
     image: fromScreenCover,
     scenes: [
       {
         title: "",
         desc: "",
-        image: fromScreenCover,
+        images: [fromScreenCover, fromScreenFig1],
       },
       {
-        title: "Figure 1",
-        desc: "",
-        image: fromScreenFig1,
+        title: "",
+        desc:
+          "It translates elements from the film's content, cinematography, visual composition, and objects' symbolism into spatial design.<br><br>Through mapping character relationships and narrative progression, I developed a spatial circulation framework that reflects the film’s underlying social tension and hierarchy. The movement of characters and shifts in perspective within the film became the basis for generating spatial sequences and transitions.",
       },
     ],
   },
