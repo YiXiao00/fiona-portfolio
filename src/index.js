@@ -108,6 +108,34 @@ import fromScreen7 from "./assets/From Screen to Space/7.png";
 import fromScreen8 from "./assets/From Screen to Space/8.png";
 import fromScreen9 from "./assets/From Screen to Space/9.png";
 
+// Where Light Moves (Modulightor) images
+import modulightorMain from "./assets/Modulightor/main.png";
+import modulightor1 from "./assets/Modulightor/1.png";
+import modulightor2 from "./assets/Modulightor/2.png";
+import modulightor3 from "./assets/Modulightor/3.png";
+import modulightor4 from "./assets/Modulightor/4.png";
+import modulightor5 from "./assets/Modulightor/5.png";
+import modulightor6 from "./assets/Modulightor/6.png";
+import modulightor7 from "./assets/Modulightor/7.png";
+import modulightor8 from "./assets/Modulightor/8.png";
+import modulightor9 from "./assets/Modulightor/9.png";
+import modulightor10 from "./assets/Modulightor/10.png";
+import modulightor11 from "./assets/Modulightor/11.png";
+import modulightor12 from "./assets/Modulightor/12.png";
+import modulightor13 from "./assets/Modulightor/13.png";
+import modulightor14 from "./assets/Modulightor/14.png";
+import modulightor15 from "./assets/Modulightor/15.png";
+import modulightor16 from "./assets/Modulightor/16.png";
+import modulightor17 from "./assets/Modulightor/17.png";
+import modulightor18 from "./assets/Modulightor/18.png";
+import modulightor19 from "./assets/Modulightor/19.png";
+import modulightor20 from "./assets/Modulightor/20.png";
+import modulightor21 from "./assets/Modulightor/21.png";
+import modulightor22 from "./assets/Modulightor/22.png";
+import modulightor23 from "./assets/Modulightor/23.png";
+import modulightor24 from "./assets/Modulightor/24.png";
+import modulightor25 from "./assets/Modulightor/25.png";
+
 // Hidden Order images
 import hiddenMain from "./assets/Hidden Order/main.png";
 import hiddenSameline1 from "./assets/Hidden Order/sameline1.GIF";
@@ -504,6 +532,93 @@ const projectData = {
       },
     ],
   },
+  "project-l": {
+    title: "Where Light Moves",
+    subtitle: "An Adaptive Interior System for the Modulightor Duplex",
+    desc: "",
+    image: modulightorMain,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: modulightorMain,
+        layout: "title-image",
+      },
+      {
+        title: "",
+        desc:
+          "This project reimagines the Modulightor duplex as an adaptive collective interior system.<br><br>Through movable and foldable architectural elements, the space continuously reconfigures itself to support a wide range of social, cultural, and restorative activities.<br><br>Rather than relying on fixed programs, the interior operates as a flexible framework, responsive to use, light, and environmental conditions which allowing the space to shift between gathering, making, exhibiting, and resting.",
+        image: modulightor1,
+        layout: "side-by-side",
+      },
+      {
+        title: "Grid system",
+        desc:
+          "I began with this grid system.<br>The red lines represent reference axes taken from the building's perimeter.<br>The blue dashed lines indicate sightlines extending from the four corners.<br><br>Because the space is small, I wanted to stretch the visual depth as much as possible, so no walls or partitions are placed along these sightlines. The intersection of the two blue lines marks the location of the mirror.",
+        images: [modulightor2, modulightor3, modulightor4],
+        layout: "nested-grid",
+      },
+      {
+        title: "Transformation & Light",
+        desc:
+          "In response to light conditions and spatial characteristics, the structural interventions were adjusted to enable spatial adaptability.",
+        images: [modulightor5, modulightor6, modulightor7],
+        layout: "nested-grid",
+      },
+      {
+        title: "",
+        desc:
+          "Operable ceiling modules open or close according to sunlight and temperature, while aerial yoga equipment is suspended within the double-height zone. Foldable and movable components allow the space to shift seamlessly between different programs.",
+        images: [modulightor8, modulightor9, modulightor10, modulightor11],
+        layout: "nested-grid-4",
+      },
+      {
+        title: "Plant Boxes",
+        desc:
+          "A misting pipe system is integrated as a spatial and ecological element, weaving through the interior to support vine growth through automated hydration.<br><br>Beyond sustaining the plants, the fine mist reveals the geometry of light, making illumination visible and atmospheric as it drifts through the space.",
+        image: modulightor12,
+        layout: "side-by-side",
+        reversed: true,
+      },
+      {
+        title: "",
+        desc: "",
+        image: modulightor13,
+      },
+      {
+        title: "",
+        desc:
+          "I continue Rudolph's predominantly white palette, but introduce variations in translucency, reflectiveness, and surface smoothness.",
+        images: [modulightor14, modulightor15],
+        layout: "text-image-split",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [modulightor16, modulightor17],
+      },
+      {
+        title: "",
+        desc: "",
+        image: modulightor18,
+      },
+      {
+        title: "Models and Sketches",
+        desc: "",
+        images: [modulightor19, modulightor20, modulightor21],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [modulightor22, modulightor23],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [modulightor24, modulightor25],
+      },
+    ],
+  },
   "project-h": {
     title: "Hidden Order | CAA Graduation Season 2024 World Tree",
     desc: "<strong>Site:</strong> Zhejiang Library, Hangzhou, China<br><strong>Time:</strong> 6/1/2024-6/10/2024",
@@ -740,13 +855,18 @@ function setupProjectDetail() {
   function renderAll(projectKey) {
     const data = projectData[projectKey];
     if (!data || !detailContent) return;
-    detailTitle.textContent = data.title || "";
+    // Hide title if project has subtitle (will be shown in first scene)
+    if (data.subtitle) {
+      detailTitle.textContent = "";
+    } else {
+      detailTitle.textContent = data.title || "";
+    }
     // build scenes list
     if (Array.isArray(data.scenes) && data.scenes.length > 0) {
-      // Show top-level description first if it exists
+      // Show top-level description first if it exists (only if no subtitle)
       // Note: data.image is only used for homepage thumbnail, not displayed in project details
       const topDesc =
-        data.desc
+        data.desc && !data.subtitle
           ? `<div class="scene-block">
               ${data.desc ? `<div class="detail-desc">${data.desc}</div>` : ""}
             </div>`
@@ -770,6 +890,71 @@ function setupProjectDetail() {
                   <iframe src="${pdfSrc}" width="100%" height="800px" style="border: none;"></iframe>
                   <div class="mt-2">
                     <a href="${pdfSrc}" target="_blank" class="btn btn-outline-primary">在新窗口中打开 PDF</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+          
+          // Handle nested grid layout (2 images stacked vertically on left, 1 on right)
+          if (scene?.layout === "nested-grid" && images.length === 3) {
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+                <div class="detail-nested-grid mt-3">
+                  <div class="detail-nested-left">
+                    <div class="detail-image-stack">
+                      <div class="stack-item"><img src="${images[0]}" alt="Image 1" class="img-fluid" /></div>
+                      <div class="stack-item"><img src="${images[1]}" alt="Image 2" class="img-fluid" /></div>
+                    </div>
+                  </div>
+                  <div class="detail-nested-right">
+                    <img src="${images[2]}" alt="Image 3" class="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+          
+          // Handle text-image-split layout (left: image; right: image top, text bottom)
+          if (scene?.layout === "text-image-split" && images.length === 2 && safeDesc) {
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                <div class="detail-text-image-split mt-3">
+                  <div class="detail-split-left">
+                    <img src="${images[0]}" alt="Image" class="img-fluid" />
+                  </div>
+                  <div class="detail-split-right">
+                    <div class="detail-split-image">
+                      <img src="${images[1]}" alt="Image" class="img-fluid" />
+                    </div>
+                    <div class="detail-split-text">
+                      <div class="detail-desc">${safeDesc}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+          
+          // Handle nested grid layout (1 image on left, 3 images stacked vertically on right)
+          if (scene?.layout === "nested-grid-4" && images.length === 4) {
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+                <div class="detail-nested-grid-4 mt-3">
+                  <div class="detail-nested-left-4">
+                    <img src="${images[0]}" alt="Image 1" class="img-fluid" />
+                  </div>
+                  <div class="detail-nested-right-4">
+                    <div class="detail-image-stack">
+                      <div class="stack-item"><img src="${images[1]}" alt="Image 2" class="img-fluid" /></div>
+                      <div class="stack-item"><img src="${images[2]}" alt="Image 3" class="img-fluid" /></div>
+                      <div class="stack-item"><img src="${images[3]}" alt="Image 4" class="img-fluid" /></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -819,18 +1004,45 @@ function setupProjectDetail() {
             `;
           }
           
-          // Handle side-by-side layout (image left, text right)
+          // Handle title-image layout (title and subtitle left, image right)
+          if (scene?.layout === "title-image" && imgSrc && data.subtitle) {
+            return `
+              <div class="scene-block">
+                <div class="detail-title-image">
+                  <div class="detail-title-text">
+                    <h2 class="detail-title-inline">${data.title}</h2>
+                    <div class="detail-subtitle">${data.subtitle}</div>
+                  </div>
+                  <div class="detail-title-image-right">
+                    <img src="${imgSrc}" alt="${data.title}" class="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+          
+          // Handle side-by-side layout (image left, text right, or reversed)
           if (scene?.layout === "side-by-side" && imgSrc && safeDesc) {
+            const reversed = scene?.reversed || false;
             return `
               <div class="scene-block">
                 ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
-                <div class="detail-side-by-side">
+                <div class="detail-side-by-side${reversed ? " reversed" : ""}">
+                  ${reversed ? `
+                  <div class="detail-side-text">
+                    <div class="detail-desc">${safeDesc}</div>
+                  </div>
+                  <div class="detail-side-image">
+                    <img src="${imgSrc}" alt="${safeTitle}" class="img-fluid" />
+                  </div>
+                  ` : `
                   <div class="detail-side-image">
                     <img src="${imgSrc}" alt="${safeTitle}" class="img-fluid" />
                   </div>
                   <div class="detail-side-text">
                     <div class="detail-desc">${safeDesc}</div>
                   </div>
+                  `}
                 </div>
               </div>
             `;
@@ -850,6 +1062,219 @@ function setupProjectDetail() {
         })
         .join("");
       detailContent.innerHTML = topDesc + blocks;
+      
+      // Adjust all grid layouts to have same height in each row, container size = image size
+      const allGrids = detailContent.querySelectorAll(".detail-image-grid");
+      allGrids.forEach((grid) => {
+        const items = Array.from(grid.querySelectorAll(".grid-item"));
+        if (items.length > 1) {
+          const images = Array.from(grid.querySelectorAll("img"));
+          
+          // Wait for all images to load
+          let loadedCount = 0;
+          const totalImages = images.length;
+          
+          const adjustRowHeights = () => {
+            loadedCount++;
+            if (loadedCount === totalImages) {
+              requestAnimationFrame(() => {
+                // Get grid width (should be 100% of container)
+                const gridWidth = grid.offsetWidth;
+                const gap = parseFloat(getComputedStyle(grid).gap) || 12; // Default 0.75rem = 12px
+                
+                // Get image data with aspect ratios
+                const imageData = images.map((img) => {
+                  if (img.complete && img.naturalWidth && img.naturalHeight) {
+                    const aspectRatio = img.naturalWidth / img.naturalHeight;
+                    return { img, aspectRatio };
+                  }
+                  return null;
+                }).filter(data => data !== null);
+                
+                if (imageData.length === 0) return;
+                
+                // Calculate the common height that makes total width = gridWidth
+                // Total width = sum of (height * aspectRatio) + gaps
+                // gridWidth = height * (sum of aspectRatios) + gap * (numImages - 1)
+                // height = (gridWidth - gap * (numImages - 1)) / (sum of aspectRatios)
+                const numImages = imageData.length;
+                const totalGapWidth = gap * (numImages - 1);
+                const sumAspectRatios = imageData.reduce((sum, data) => sum + data.aspectRatio, 0);
+                const commonHeight = (gridWidth - totalGapWidth) / sumAspectRatios;
+                
+                // Set all items and images to the calculated dimensions
+                items.forEach((item, idx) => {
+                  const data = imageData[idx];
+                  if (data) {
+                    const imgWidth = commonHeight * data.aspectRatio;
+                    
+                    // Set item dimensions to match image exactly
+                    item.style.width = `${imgWidth}px`;
+                    item.style.height = `${commonHeight}px`;
+                    item.style.minWidth = '0';
+                    item.style.minHeight = '0';
+                    item.style.flexShrink = '0';
+                    
+                    // Set image dimensions to match item exactly
+                    data.img.style.width = `${imgWidth}px`;
+                    data.img.style.height = `${commonHeight}px`;
+                    data.img.style.objectFit = 'contain';
+                    data.img.style.display = 'block';
+                  }
+                });
+                
+                // Set grid height to match image height (container = image size)
+                grid.style.height = `${commonHeight}px`;
+              });
+            }
+          };
+          
+          images.forEach((img) => {
+            if (img.complete) {
+              adjustRowHeights();
+            } else {
+              img.addEventListener("load", adjustRowHeights, { once: true });
+            }
+          });
+        }
+      });
+      
+      // Adjust nested-grid-4 layout: calculate total height of right side images and match left side
+      const nestedGrid4Containers = detailContent.querySelectorAll(".detail-nested-grid-4");
+      nestedGrid4Containers.forEach((container) => {
+        const leftImg = container.querySelector(".detail-nested-left-4 img");
+        const rightStack = container.querySelector(".detail-nested-right-4 .detail-image-stack");
+        const rightImages = Array.from(container.querySelectorAll(".detail-nested-right-4 .stack-item img"));
+        
+        if (leftImg && rightStack && rightImages.length === 3) {
+          const adjustHeights = () => {
+            // Wait a bit for layout to settle
+            requestAnimationFrame(() => {
+              // Image dimensions:
+              // Image 8: 2072x1841 (aspect ratio: 2072/1841 ≈ 1.125)
+              // Images 9,10,11: 667x667 each (aspect ratio: 1)
+              // Algorithm:
+              // 1. First ensure image 8 height = total height of images 9,10,11
+              // 2. Then scale all images proportionally based on container width
+              
+              if (leftImg.complete && leftImg.naturalWidth && leftImg.naturalHeight && 
+                  rightImages.every(img => img.complete && img.naturalWidth && img.naturalHeight)) {
+                
+                // Get container dimensions
+                const containerWidth = container.offsetWidth;
+                const leftWidthRatio = 2 / (2 + 1); // ~66.7%
+                const rightWidthRatio = 1 / (2 + 1); // ~33.3%
+                const leftMaxWidth = containerWidth * leftWidthRatio;
+                const rightMaxWidth = containerWidth * rightWidthRatio;
+                const gap = 0; // No gap between images
+                
+                // Step 1: Calculate ideal dimensions where image 8 height = images 9,10,11 total height
+                const leftAspectRatio = leftImg.naturalWidth / leftImg.naturalHeight; // 2072/1841 ≈ 1.125
+                const rightAspectRatio = 1; // 667x667
+                
+                // Let H = height of image 8 = total height of images 9,10,11
+                // Image 8: width = H × 1.125, height = H
+                // Images 9,10,11: each height = H / 3, each width = H / 3 (no gap)
+                // Right side total width needed = H / 3
+                
+                // We need to find H such that:
+                // - Image 8 width (H × 1.125) <= leftMaxWidth
+                // - Right side width (H / 3) <= rightMaxWidth
+                // - Use the constraint that gives smaller H
+                
+                // From left side: H × 1.125 <= leftMaxWidth => H <= leftMaxWidth / 1.125
+                const maxHFromLeft = leftMaxWidth / leftAspectRatio;
+                
+                // From right side: H / 3 <= rightMaxWidth => H <= rightMaxWidth × 3
+                const maxHFromRight = rightMaxWidth * 3;
+                
+                // Use the smaller constraint to ensure both fit
+                const targetHeight = Math.min(maxHFromLeft, maxHFromRight);
+                
+                // Step 2: Calculate actual dimensions
+                const leftHeight = targetHeight;
+                const leftWidth = targetHeight * leftAspectRatio;
+                
+                const singleRightHeight = targetHeight / 3;
+                const singleRightWidth = singleRightHeight; // aspect ratio = 1
+                const rightTotalHeight = singleRightHeight * 3;
+                
+                // Step 3: Apply scaling if needed (shouldn't be needed if calculation is correct)
+                let finalLeftWidth = leftWidth;
+                let finalLeftHeight = leftHeight;
+                let finalRightWidth = singleRightWidth;
+                let finalRightHeight = singleRightHeight;
+                
+                if (leftWidth > leftMaxWidth) {
+                  const scale = leftMaxWidth / leftWidth;
+                  finalLeftWidth = leftMaxWidth;
+                  finalLeftHeight = leftHeight * scale;
+                }
+                
+                if (singleRightWidth > rightMaxWidth) {
+                  const scale = rightMaxWidth / singleRightWidth;
+                  finalRightWidth = rightMaxWidth;
+                  finalRightHeight = singleRightHeight * scale;
+                  // Recalculate total height
+                  const newRightTotalHeight = finalRightHeight * 3;
+                  // Adjust left to match
+                  finalLeftHeight = newRightTotalHeight;
+                  finalLeftWidth = finalLeftHeight * leftAspectRatio;
+                  if (finalLeftWidth > leftMaxWidth) {
+                    const leftScale = leftMaxWidth / finalLeftWidth;
+                    finalLeftWidth = leftMaxWidth;
+                    finalLeftHeight = finalLeftHeight * leftScale;
+                  }
+                }
+                
+                // Step 4: Apply dimensions
+                leftImg.style.width = `${finalLeftWidth}px`;
+                leftImg.style.height = `${finalLeftHeight}px`;
+                
+                const leftContainer = leftImg.parentElement;
+                leftContainer.style.height = `${finalLeftHeight}px`;
+                
+                rightStack.style.height = `${finalRightHeight * 3}px`;
+                
+                rightImages.forEach((img) => {
+                  const stackItem = img.closest(".stack-item");
+                  if (stackItem) {
+                    stackItem.style.height = `${finalRightHeight}px`;
+                    img.style.width = `${finalRightWidth}px`;
+                    img.style.height = `${finalRightHeight}px`;
+                  }
+                });
+              }
+            });
+          };
+          
+          // Wait for all images to load
+          let loadedCount = 0;
+          const totalImages = rightImages.length + 1;
+          
+          const checkAndAdjust = () => {
+            loadedCount++;
+            if (loadedCount === totalImages) {
+              adjustHeights();
+            }
+          };
+          
+          // Add load listeners
+          if (leftImg.complete) {
+            checkAndAdjust();
+          } else {
+            leftImg.addEventListener("load", checkAndAdjust, { once: true });
+          }
+          
+          rightImages.forEach((img) => {
+            if (img.complete) {
+              checkAndAdjust();
+            } else {
+              img.addEventListener("load", checkAndAdjust, { once: true });
+            }
+          });
+        }
+      });
       
       // Adjust equal-height grids to have the same height and match image sizes
       const equalHeightGrids = detailContent.querySelectorAll(".detail-image-grid.equal-height");

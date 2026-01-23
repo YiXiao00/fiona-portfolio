@@ -182,7 +182,7 @@
     .detail-image img {
       width: 100%;
       height: auto;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 2px;
     }
     .detail-image-center {
@@ -207,6 +207,39 @@
         display: block;
       }
     }
+    .detail-title-image {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      .detail-title-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        white-space: nowrap;
+        .detail-title-inline {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 0;
+          line-height: 1.2;
+        }
+        .detail-subtitle {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: #666;
+          line-height: 1.3;
+        }
+      }
+      .detail-title-image-right {
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 2px;
+        }
+      }
+    }
     .detail-side-by-side {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -228,47 +261,172 @@
         }
       }
     }
-    .detail-image-grid {
+    .detail-nested-grid {
       display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
       gap: 0.75rem;
       align-items: stretch;
-      &.grid-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      &.grid-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      &.grid-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      &.grid-3-2 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        // First 3 images: normal flow (1, 2, 3)
-        // Last 2 images: left-aligned
-        .grid-item:nth-child(4) {
-          grid-column: 1;
+      .detail-nested-left {
+        display: flex;
+        flex-direction: column;
+        .detail-image-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          flex: 1;
+          .stack-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              border-radius: 2px;
+            }
+          }
         }
-        .grid-item:nth-child(5) {
-          grid-column: 2;
-        }
       }
-      &.grid-1 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .grid-item {
-        aspect-ratio: 4 / 3;
-        overflow: hidden;
+      .detail-nested-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           border-radius: 2px;
+        }
+      }
+    }
+    .detail-text-image-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      align-items: stretch;
+      .detail-split-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 2px;
+        }
+      }
+      .detail-split-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        .detail-split-image {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 0;
+          img {
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+            border-radius: 2px;
+          }
+        }
+        .detail-split-text {
+          flex-shrink: 0;
+          .detail-desc {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .detail-nested-grid-4 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+      align-items: start;
+      .detail-nested-left-4 {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 0;
+        img {
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          object-position: top;
+          border-radius: 2px;
+        }
+      }
+      .detail-nested-right-4 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .detail-image-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          height: 100%;
+          .stack-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+    .detail-image-grid {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      width: 100%;
+      flex-wrap: nowrap;
+      &.grid-2 {
+        // Will be handled by JavaScript
+      }
+      &.grid-3 {
+        // Will be handled by JavaScript
+      }
+      &.grid-4 {
+        // Will be handled by JavaScript
+      }
+      &.grid-3-2 {
+        // Will be handled by JavaScript
+        .grid-item:nth-child(4) {
+          // Will be handled by JavaScript
+        }
+        .grid-item:nth-child(5) {
+          // Will be handled by JavaScript
+        }
+      }
+      &.grid-1 {
+        // Will be handled by JavaScript
+      }
+      .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        img {
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          border-radius: 2px;
+          display: block;
         }
       }
       &.no-crop {
         .grid-item {
-          aspect-ratio: auto;
-          overflow: visible;
           img {
             object-fit: contain;
             height: auto;
