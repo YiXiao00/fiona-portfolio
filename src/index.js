@@ -99,8 +99,8 @@ import rulesSmall5 from "./assets/15 Rules for Rebuilding the World/small5.png";
 
 // From Screen to Space images
 import fromScreenCover from "./assets/From Screen to Space/1andfengmian.png";
-import fromScreenFig1 from "./assets/From Screen to Space/2.png";
-import fromScreen3 from "./assets/From Screen to Space/3.png";
+import fromScreenFig1 from "./assets/From Screen to Space/2refine.png";
+import fromScreen3 from "./assets/From Screen to Space/3refine.png";
 import fromScreen4 from "./assets/From Screen to Space/4.png";
 import fromScreen5 from "./assets/From Screen to Space/5.png";
 import fromScreen6 from "./assets/From Screen to Space/6.png";
