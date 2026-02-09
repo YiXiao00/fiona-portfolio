@@ -35,13 +35,13 @@
 }
 
 // 为固定导航栏添加body padding
-body {
-  padding-top: 56px; // Bootstrap默认导航栏高度
-  
-  @media screen and (orientation: landscape) and (max-height: 600px) {
-    padding-top: 40px; // 横屏模式下减少padding
-  }
-}
+// body {
+//   padding-top: 56px; // Bootstrap默认导航栏高度
+//   
+//   @media screen and (orientation: landscape) and (max-height: 600px) {
+//     padding-top: 40px; // 横屏模式下减少padding
+//   }
+// }
 
 // 平滑滚动
 html {

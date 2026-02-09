@@ -1,12 +1,31 @@
+// Logo Header
+.logo-header {
+  padding: 0 0 0 1rem;
+  margin: 0;
+  text-align: left;
+  line-height: 0;
+  vertical-align: top;
+  
+  .logo-image {
+    max-width: 90px;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+  }
+}
+
 // Three Column Layout Styles
 .three-column-layout {
-  min-height: 100vh;
+  height: 100vh;
   background: #fff;
   color: #000;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   .container-fluid {
     padding-left: 1rem;
@@ -14,12 +33,16 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow: hidden;
   }
 
   .row {
     flex: 1;
     display: flex;
     align-items: stretch;
+    height: 100%;
+    overflow: hidden;
   }
 
   .section-head {
@@ -28,33 +51,62 @@
     letter-spacing: 0.08em;
     margin-bottom: 1rem;
     text-transform: uppercase;
+    text-align: left;
   }
 
   .section-text {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+    text-align: left;
+
+    &.desc-with-quote {
+      text-align: left;
+      font-weight: bold;
+
+      .desc-body {
+        display: block;
+        padding-left: 1em;
+        text-align: left;
+        font-weight: bold;
+      }
+    }
   }
 
-  .section-link a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-    font-size: 1.2rem;
+  .section-link {
+    text-align: left;
+    
+    a {
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+      font-size: 1.2rem;
+    }
+  }
+
+  body.page-is-home & .back-home-wrap {
+    display: none;
   }
 
   .content-block {
     margin-bottom: 2rem;
   }
 
+  .logo-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
   // Column 1: About & Contact - Fixed
   .column-about {
     padding-right: 1.5rem;
     position: sticky;
-    top: 2rem;
+    top: 0;
     height: fit-content;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
+    max-height: calc(100vh - 2rem);
+    overflow: visible;
+    text-align: left;
   }
 
   // Column 2: Project Categories - Fixed
@@ -62,10 +114,11 @@
     padding-right: 1rem;
     padding-left: 0.5rem;
     position: sticky;
-    top: 2rem;
+    top: 0;
     height: fit-content;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
+    max-height: calc(100vh - 2rem);
+    overflow: visible;
+    text-align: left;
 
     .category-title {
       font-size: 1.2rem;
@@ -73,12 +126,14 @@
       margin-bottom: 0.5rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      text-align: left;
     }
 
     .project-list {
       list-style: none;
       padding: 0;
       margin: 0 0 1.5rem 0;
+      text-align: left;
     }
 
     .project-list li {
@@ -119,7 +174,7 @@
   .column-images {
     padding-left: 1rem;
     overflow-y: auto;
-    max-height: calc(100vh - 4rem);
+    height: 100%;
     display: flex;
     flex-direction: column;
 

@@ -178,6 +178,8 @@ import silverCirculation from "./assets/Silver Valley Exhibition/circulation.png
 import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
 import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
 
+import horizontalImage from "./assets/horizontal.png";
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -1550,6 +1552,7 @@ function setupProjectDetail() {
     if (!data) return;
 
     currentProjectKey = projectKey;
+    document.body.classList.remove("page-is-home");
     // set active state for project links
     links.forEach((n) => n.classList.remove("is-active"));
     const correspondingLink = document.querySelector(`.project-link[data-project="${projectKey}"]`);
@@ -1573,6 +1576,7 @@ function setupProjectDetail() {
   // Function to show home (image grid)
   function showHome(updateHistory = true) {
     currentProjectKey = null;
+    document.body.classList.add("page-is-home");
     // clear active state
     links.forEach((n) => n.classList.remove("is-active"));
     
@@ -1648,6 +1652,17 @@ function setupProjectDetail() {
     }
   });
 
+  // Resume link: open horizontal.png in lightbox (same as project images)
+  const resumeLink = document.querySelector(".resume-link");
+  const resumeImageEl = document.getElementById("resumeImage");
+  if (resumeLink && resumeImageEl) {
+    resumeImageEl.setAttribute("src", horizontalImage);
+    resumeLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openLightboxFromElement(resumeImageEl);
+    });
+  }
+
   // Check URL on page load
   const hash = window.location.hash;
   if (hash && hash.startsWith("#project=")) {
@@ -1659,6 +1674,7 @@ function setupProjectDetail() {
     }
   } else {
     // Set initial history state for home
+    document.body.classList.add("page-is-home");
     window.history.replaceState({ project: null }, "", "#");
   }
 
