@@ -110,31 +110,31 @@ import fromScreen9 from "./assets/From Screen to Space/9.png";
 
 // Where Light Moves (Modulightor) images
 import modulightorMain from "./assets/Modulightor/main.png";
-import modulightor1 from "./assets/Modulightor/1.png";
-import modulightor2 from "./assets/Modulightor/2.png";
-import modulightor3 from "./assets/Modulightor/3.png";
-import modulightor4 from "./assets/Modulightor/4.png";
-import modulightor5 from "./assets/Modulightor/5.png";
-import modulightor6 from "./assets/Modulightor/6.png";
-import modulightor7 from "./assets/Modulightor/7.png";
-import modulightor8 from "./assets/Modulightor/8.png";
-import modulightor9 from "./assets/Modulightor/9.png";
-import modulightor10 from "./assets/Modulightor/10.png";
-import modulightor11 from "./assets/Modulightor/11.png";
-import modulightor12 from "./assets/Modulightor/12.png";
-import modulightor13 from "./assets/Modulightor/13.png";
-import modulightor14 from "./assets/Modulightor/14.png";
-import modulightor15 from "./assets/Modulightor/15.png";
-import modulightor16 from "./assets/Modulightor/16.png";
-import modulightor17 from "./assets/Modulightor/17.png";
-import modulightor18 from "./assets/Modulightor/18.png";
-import modulightor19 from "./assets/Modulightor/19.png";
-import modulightor20 from "./assets/Modulightor/20.png";
-import modulightor21 from "./assets/Modulightor/21.png";
-import modulightor22 from "./assets/Modulightor/22.png";
-import modulightor23 from "./assets/Modulightor/23.png";
-import modulightor24 from "./assets/Modulightor/24.png";
-import modulightor25 from "./assets/Modulightor/25.png";
+import modulightor1 from "./assets/Modulightor/1mod.png";
+import modulightor2 from "./assets/Modulightor/2mod.png";
+import modulightor3 from "./assets/Modulightor/3mod.png";
+import modulightor4 from "./assets/Modulightor/4mod.png";
+import modulightor5 from "./assets/Modulightor/5mod.png";
+import modulightor6 from "./assets/Modulightor/6mod.png";
+import modulightor7 from "./assets/Modulightor/7mod.png";
+import modulightor8 from "./assets/Modulightor/8mod.png";
+import modulightor9 from "./assets/Modulightor/9mod.gif";
+import modulightor10 from "./assets/Modulightor/10mod.gif";
+import modulightor11 from "./assets/Modulightor/11mod.gif";
+import modulightor12 from "./assets/Modulightor/12mod.png";
+import modulightor13 from "./assets/Modulightor/13mod.png";
+import modulightor14 from "./assets/Modulightor/14mod.png";
+import modulightor15 from "./assets/Modulightor/15mod.png";
+import modulightor16 from "./assets/Modulightor/16mod.png";
+import modulightor17 from "./assets/Modulightor/17mod.png";
+import modulightor18 from "./assets/Modulightor/18mod.png";
+import modulightor19 from "./assets/Modulightor/19mod.png";
+import modulightor20 from "./assets/Modulightor/20mod.png";
+import modulightor21 from "./assets/Modulightor/21mod.png";
+import modulightor22 from "./assets/Modulightor/22mod.png";
+import modulightor23 from "./assets/Modulightor/23mod.png";
+import modulightor24 from "./assets/Modulightor/24mod.png";
+import modulightor25 from "./assets/Modulightor/25mod.png";
 
 // Hidden Order images
 import hiddenMain from "./assets/Hidden Order/main.png";
@@ -617,7 +617,12 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [modulightor24, modulightor25],
+        image: modulightor24,
+      },
+      {
+        title: "",
+        desc: "",
+        image: modulightor25,
       },
     ],
   },
@@ -873,7 +878,7 @@ function setupProjectDetail() {
               ${data.desc ? `<div class="detail-desc">${data.desc}</div>` : ""}
             </div>`
           : "";
-      
+
       const blocks = data.scenes
         .map((scene) => {
           const safeTitle = scene?.title ? String(scene.title) : "";
@@ -881,7 +886,7 @@ function setupProjectDetail() {
           const imgSrc = scene?.image || "";
           const images = scene?.images || [];
           const pdfSrc = scene?.pdf || "";
-          
+
           // Handle PDF
           if (pdfSrc) {
             return `
@@ -897,7 +902,7 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle nested grid layout (2 images stacked vertically on left, 1 on right)
           if (scene?.layout === "nested-grid" && images.length === 3) {
             return `
@@ -918,7 +923,7 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle text-image-split layout (left: image; right: image top, text bottom)
           if (scene?.layout === "text-image-split" && images.length === 2 && safeDesc) {
             return `
@@ -940,7 +945,7 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle nested grid layout (1 image on left, 3 images stacked vertically on right)
           if (scene?.layout === "nested-grid-4" && images.length === 4) {
             return `
@@ -962,12 +967,12 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle multi-image grid layout
           if (images.length > 1) {
             let gridClass = "grid-2";
             let customGridStyle = "";
-            
+
             // Check if custom width ratios are provided
             if (scene?.widthRatios && Array.isArray(scene.widthRatios) && scene.widthRatios.length === images.length) {
               // Use custom width ratios (convert to fr units)
@@ -984,14 +989,14 @@ function setupProjectDetail() {
                 gridClass = "grid-3-2"; // Special 3+2 layout for 5 images
               }
             }
-            
+
             const noCropClass = scene?.noCrop ? " no-crop" : "";
             const equalHeightClass = scene?.equalHeight ? " equal-height" : "";
             const flexEqualHeightClass = scene?.flexEqualHeight ? " flex-equal-height" : "";
-            
+
             // If flexEqualHeight is used, don't use grid classes
             const finalGridClass = flexEqualHeightClass ? "" : gridClass;
-            
+
             const gridImages = images
               .map((img, idx) => `<div class="grid-item"><img src="${img}" alt="Image ${idx + 1}" class="img-fluid" /></div>`)
               .join("");
@@ -1005,7 +1010,7 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle title-image layout (title and subtitle left, image right)
           if (scene?.layout === "title-image" && imgSrc && data.subtitle) {
             return `
@@ -1022,7 +1027,7 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle side-by-side layout (image left, text right, or reversed)
           if (scene?.layout === "side-by-side" && imgSrc && safeDesc) {
             const reversed = scene?.reversed || false;
@@ -1049,7 +1054,7 @@ function setupProjectDetail() {
               </div>
             `;
           }
-          
+
           // Handle single image
           const centerClass = scene?.center ? " detail-image-center" : "";
           const scaleClass = scene?.scale ? " detail-image-scaled" : "";
@@ -1064,18 +1069,18 @@ function setupProjectDetail() {
         })
         .join("");
       detailContent.innerHTML = topDesc + blocks;
-      
+
       // Adjust all grid layouts to have same height in each row, container size = image size
       const allGrids = detailContent.querySelectorAll(".detail-image-grid");
       allGrids.forEach((grid) => {
         const items = Array.from(grid.querySelectorAll(".grid-item"));
         if (items.length > 1) {
           const images = Array.from(grid.querySelectorAll("img"));
-          
+
           // Wait for all images to load
           let loadedCount = 0;
           const totalImages = images.length;
-          
+
           const adjustRowHeights = () => {
             loadedCount++;
             if (loadedCount === totalImages) {
@@ -1083,7 +1088,7 @@ function setupProjectDetail() {
                 // Get grid width (should be 100% of container)
                 const gridWidth = grid.offsetWidth;
                 const gap = parseFloat(getComputedStyle(grid).gap) || 12; // Default 0.75rem = 12px
-                
+
                 // Get image data with aspect ratios
                 const imageData = images.map((img) => {
                   if (img.complete && img.naturalWidth && img.naturalHeight) {
@@ -1092,9 +1097,9 @@ function setupProjectDetail() {
                   }
                   return null;
                 }).filter(data => data !== null);
-                
+
                 if (imageData.length === 0) return;
-                
+
                 // Calculate the common height that makes total width = gridWidth
                 // Total width = sum of (height * aspectRatio) + gaps
                 // gridWidth = height * (sum of aspectRatios) + gap * (numImages - 1)
@@ -1103,20 +1108,20 @@ function setupProjectDetail() {
                 const totalGapWidth = gap * (numImages - 1);
                 const sumAspectRatios = imageData.reduce((sum, data) => sum + data.aspectRatio, 0);
                 const commonHeight = (gridWidth - totalGapWidth) / sumAspectRatios;
-                
+
                 // Set all items and images to the calculated dimensions
                 items.forEach((item, idx) => {
                   const data = imageData[idx];
                   if (data) {
                     const imgWidth = commonHeight * data.aspectRatio;
-                    
+
                     // Set item dimensions to match image exactly
                     item.style.width = `${imgWidth}px`;
                     item.style.height = `${commonHeight}px`;
                     item.style.minWidth = '0';
                     item.style.minHeight = '0';
                     item.style.flexShrink = '0';
-                    
+
                     // Set image dimensions to match item exactly
                     data.img.style.width = `${imgWidth}px`;
                     data.img.style.height = `${commonHeight}px`;
@@ -1124,13 +1129,13 @@ function setupProjectDetail() {
                     data.img.style.display = 'block';
                   }
                 });
-                
+
                 // Set grid height to match image height (container = image size)
                 grid.style.height = `${commonHeight}px`;
               });
             }
           };
-          
+
           images.forEach((img) => {
             if (img.complete) {
               adjustRowHeights();
@@ -1140,14 +1145,14 @@ function setupProjectDetail() {
           });
         }
       });
-      
+
       // Adjust nested-grid-4 layout: calculate total height of right side images and match left side
       const nestedGrid4Containers = detailContent.querySelectorAll(".detail-nested-grid-4");
       nestedGrid4Containers.forEach((container) => {
         const leftImg = container.querySelector(".detail-nested-left-4 img");
         const rightStack = container.querySelector(".detail-nested-right-4 .detail-image-stack");
         const rightImages = Array.from(container.querySelectorAll(".detail-nested-right-4 .stack-item img"));
-        
+
         if (leftImg && rightStack && rightImages.length === 3) {
           const adjustHeights = () => {
             // Wait a bit for layout to settle
@@ -1158,10 +1163,10 @@ function setupProjectDetail() {
               // Algorithm:
               // 1. First ensure image 8 height = total height of images 9,10,11
               // 2. Then scale all images proportionally based on container width
-              
-              if (leftImg.complete && leftImg.naturalWidth && leftImg.naturalHeight && 
-                  rightImages.every(img => img.complete && img.naturalWidth && img.naturalHeight)) {
-                
+
+              if (leftImg.complete && leftImg.naturalWidth && leftImg.naturalHeight &&
+                rightImages.every(img => img.complete && img.naturalWidth && img.naturalHeight)) {
+
                 // Get container dimensions
                 const containerWidth = container.offsetWidth;
                 const leftWidthRatio = 2 / (2 + 1); // ~66.7%
@@ -1169,50 +1174,50 @@ function setupProjectDetail() {
                 const leftMaxWidth = containerWidth * leftWidthRatio;
                 const rightMaxWidth = containerWidth * rightWidthRatio;
                 const gap = 0; // No gap between images
-                
+
                 // Step 1: Calculate ideal dimensions where image 8 height = images 9,10,11 total height
                 const leftAspectRatio = leftImg.naturalWidth / leftImg.naturalHeight; // 2072/1841 ≈ 1.125
                 const rightAspectRatio = 1; // 667x667
-                
+
                 // Let H = height of image 8 = total height of images 9,10,11
                 // Image 8: width = H × 1.125, height = H
                 // Images 9,10,11: each height = H / 3, each width = H / 3 (no gap)
                 // Right side total width needed = H / 3
-                
+
                 // We need to find H such that:
                 // - Image 8 width (H × 1.125) <= leftMaxWidth
                 // - Right side width (H / 3) <= rightMaxWidth
                 // - Use the constraint that gives smaller H
-                
+
                 // From left side: H × 1.125 <= leftMaxWidth => H <= leftMaxWidth / 1.125
                 const maxHFromLeft = leftMaxWidth / leftAspectRatio;
-                
+
                 // From right side: H / 3 <= rightMaxWidth => H <= rightMaxWidth × 3
                 const maxHFromRight = rightMaxWidth * 3;
-                
+
                 // Use the smaller constraint to ensure both fit
                 const targetHeight = Math.min(maxHFromLeft, maxHFromRight);
-                
+
                 // Step 2: Calculate actual dimensions
                 const leftHeight = targetHeight;
                 const leftWidth = targetHeight * leftAspectRatio;
-                
+
                 const singleRightHeight = targetHeight / 3;
                 const singleRightWidth = singleRightHeight; // aspect ratio = 1
                 const rightTotalHeight = singleRightHeight * 3;
-                
+
                 // Step 3: Apply scaling if needed (shouldn't be needed if calculation is correct)
                 let finalLeftWidth = leftWidth;
                 let finalLeftHeight = leftHeight;
                 let finalRightWidth = singleRightWidth;
                 let finalRightHeight = singleRightHeight;
-                
+
                 if (leftWidth > leftMaxWidth) {
                   const scale = leftMaxWidth / leftWidth;
                   finalLeftWidth = leftMaxWidth;
                   finalLeftHeight = leftHeight * scale;
                 }
-                
+
                 if (singleRightWidth > rightMaxWidth) {
                   const scale = rightMaxWidth / singleRightWidth;
                   finalRightWidth = rightMaxWidth;
@@ -1228,16 +1233,16 @@ function setupProjectDetail() {
                     finalLeftHeight = finalLeftHeight * leftScale;
                   }
                 }
-                
+
                 // Step 4: Apply dimensions
                 leftImg.style.width = `${finalLeftWidth}px`;
                 leftImg.style.height = `${finalLeftHeight}px`;
-                
+
                 const leftContainer = leftImg.parentElement;
                 leftContainer.style.height = `${finalLeftHeight}px`;
-                
+
                 rightStack.style.height = `${finalRightHeight * 3}px`;
-                
+
                 rightImages.forEach((img) => {
                   const stackItem = img.closest(".stack-item");
                   if (stackItem) {
@@ -1249,25 +1254,25 @@ function setupProjectDetail() {
               }
             });
           };
-          
+
           // Wait for all images to load
           let loadedCount = 0;
           const totalImages = rightImages.length + 1;
-          
+
           const checkAndAdjust = () => {
             loadedCount++;
             if (loadedCount === totalImages) {
               adjustHeights();
             }
           };
-          
+
           // Add load listeners
           if (leftImg.complete) {
             checkAndAdjust();
           } else {
             leftImg.addEventListener("load", checkAndAdjust, { once: true });
           }
-          
+
           rightImages.forEach((img) => {
             if (img.complete) {
               checkAndAdjust();
@@ -1277,13 +1282,13 @@ function setupProjectDetail() {
           });
         }
       });
-      
+
       // Adjust equal-height grids to have the same height and match image sizes
       const equalHeightGrids = detailContent.querySelectorAll(".detail-image-grid.equal-height");
-      
+
       // Store resize handlers for cleanup
       const resizeHandlers = [];
-      
+
       equalHeightGrids.forEach((grid) => {
         const items = Array.from(grid.querySelectorAll(".grid-item"));
         if (items.length > 1) {
@@ -1291,7 +1296,7 @@ function setupProjectDetail() {
           const images = Array.from(grid.querySelectorAll("img"));
           let loadedCount = 0;
           const totalImages = images.length;
-          
+
           const setEqualHeightAndSize = () => {
             // Use requestAnimationFrame to ensure DOM is fully rendered
             requestAnimationFrame(() => {
@@ -1300,7 +1305,7 @@ function setupProjectDetail() {
               // Use 0 gap for equal-height grids to make images touch each other
               const gap = 0;
               const totalAvailableWidth = gridWidth - gap * (items.length - 1);
-              
+
               // Get image natural dimensions and calculate aspect ratios
               const imageData = images.map((img, idx) => {
                 const naturalWidth = img.naturalWidth || img.width;
@@ -1314,33 +1319,33 @@ function setupProjectDetail() {
                   aspectRatio
                 };
               });
-              
+
               // Calculate heights for each image if each takes equal width
               const equalWidth = totalAvailableWidth / items.length;
               const heights = imageData.map(data => equalWidth / data.aspectRatio);
-              
+
               // Use the maximum height for all containers (to ensure same height)
               const maxHeight = Math.max(...heights);
-              
+
               // Calculate widths based on max height and aspect ratios
               const widths = imageData.map(data => maxHeight * data.aspectRatio);
               const totalWidth = widths.reduce((sum, w) => sum + w, 0);
-              
+
               // If total width exceeds available space, scale down proportionally
               let scale = 1;
               if (totalWidth > totalAvailableWidth) {
                 scale = totalAvailableWidth / totalWidth;
               }
-              
+
               // Apply scale and set container and image sizes
               imageData.forEach((data, idx) => {
                 const item = data.item;
                 const img = data.img;
-                
+
                 // Calculate final dimensions with scale
                 const containerHeight = maxHeight * scale;
                 const containerWidth = widths[idx] * scale;
-                
+
                 // Set container size
                 item.style.width = `${containerWidth}px`;
                 item.style.height = `${containerHeight}px`;
@@ -1352,7 +1357,7 @@ function setupProjectDetail() {
                 item.style.flexGrow = "0";
                 item.style.margin = "0";
                 item.style.padding = "0";
-                
+
                 // Set image size to match container
                 img.style.width = "100%";
                 img.style.height = "100%";
@@ -1365,14 +1370,14 @@ function setupProjectDetail() {
               });
             });
           };
-          
+
           if (totalImages === 0) {
             // No images, skip
             return;
           } else {
             // Check if all images are already loaded
             const allLoaded = images.every(img => img.complete && img.naturalHeight > 0);
-            
+
             if (allLoaded) {
               setTimeout(setEqualHeightAndSize, 0);
             } else {
@@ -1394,14 +1399,14 @@ function setupProjectDetail() {
                   }, { once: true });
                 }
               });
-              
+
               // Also check if all loaded after initial check
               if (loadedCount === totalImages) {
                 setTimeout(setEqualHeightAndSize, 0);
               }
             }
           }
-          
+
           // Add resize listener to recalculate on window resize
           const resizeHandler = () => {
             if (images.every(img => img.complete && img.naturalHeight > 0)) {
@@ -1412,7 +1417,7 @@ function setupProjectDetail() {
           resizeHandlers.push(resizeHandler);
         }
       });
-      
+
       // Clean up previous resize handlers when project changes
       if (window._equalHeightResizeHandlers) {
         window._equalHeightResizeHandlers.forEach(handler => {
@@ -1422,53 +1427,53 @@ function setupProjectDetail() {
       if (resizeHandlers.length > 0) {
         window._equalHeightResizeHandlers = resizeHandlers;
       }
-      
+
       // Handle flex-equal-height grids (different sizes, same height, left-aligned, consistent gaps)
       const flexEqualHeightGrids = detailContent.querySelectorAll(".detail-image-grid.flex-equal-height");
       const flexResizeHandlers = [];
-      
+
       flexEqualHeightGrids.forEach((grid) => {
         const items = Array.from(grid.querySelectorAll(".grid-item"));
         if (items.length > 1) {
           const images = Array.from(grid.querySelectorAll("img"));
           let loadedCount = 0;
           const totalImages = images.length;
-          
+
           const setFlexEqualHeight = () => {
             requestAnimationFrame(() => {
               // Reset all heights first
               items.forEach((item) => {
                 item.style.height = "auto";
               });
-              
+
               // Force a reflow
               void grid.offsetHeight;
-              
+
               // Get available width and gap
               const gridWidth = grid.offsetWidth;
               const gap = parseFloat(getComputedStyle(grid).gap) || 0.75 * 16; // Default 0.75rem in px
               const totalGap = gap * (items.length - 1);
               const availableWidth = gridWidth - totalGap;
-              
+
               // Get image natural dimensions and calculate aspect ratios
               const imageData = images.map((img, idx) => {
                 const naturalWidth = img.naturalWidth || img.width;
                 const naturalHeight = img.naturalHeight || img.height;
                 const aspectRatio = naturalWidth / naturalHeight;
-                
+
                 return {
                   img,
                   item: items[idx],
                   aspectRatio
                 };
               });
-              
+
               // Calculate height so that total width equals available width
               // Formula: availableWidth = sum(height * aspectRatio[i])
               // So: height = availableWidth / sum(aspectRatio[i])
               const totalAspectRatio = imageData.reduce((sum, data) => sum + data.aspectRatio, 0);
               const calculatedHeight = totalAspectRatio > 0 ? availableWidth / totalAspectRatio : 400;
-              
+
               // Set all items to calculated height
               if (calculatedHeight > 0) {
                 items.forEach((item) => {
@@ -1477,12 +1482,12 @@ function setupProjectDetail() {
               }
             });
           };
-          
+
           if (totalImages === 0) {
             return;
           } else {
             const allLoaded = images.every(img => img.complete && img.naturalHeight > 0);
-            
+
             if (allLoaded) {
               setTimeout(setFlexEqualHeight, 0);
             } else {
@@ -1504,13 +1509,13 @@ function setupProjectDetail() {
                   }, { once: true });
                 }
               });
-              
+
               if (loadedCount === totalImages) {
                 setTimeout(setFlexEqualHeight, 0);
               }
             }
           }
-          
+
           // Add resize listener
           const resizeHandler = () => {
             if (images.every(img => img.complete && img.naturalHeight > 0)) {
@@ -1521,7 +1526,7 @@ function setupProjectDetail() {
           flexResizeHandlers.push(resizeHandler);
         }
       });
-      
+
       // Clean up previous flex resize handlers
       if (window._flexEqualHeightResizeHandlers) {
         window._flexEqualHeightResizeHandlers.forEach(handler => {
@@ -1579,11 +1584,11 @@ function setupProjectDetail() {
     document.body.classList.add("page-is-home");
     // clear active state
     links.forEach((n) => n.classList.remove("is-active"));
-    
+
     // show grid, hide detail
     if (imageGrid) imageGrid.classList.remove("d-none");
     if (detail) detail.classList.add("d-none");
-    
+
     // Scroll to top
     window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -1606,6 +1611,27 @@ function setupProjectDetail() {
     el.addEventListener("click", () => {
       const key = el.getAttribute("data-project");
       showProjectDetail(key, el, true);
+    });
+
+    // Add hover effect from image to list item
+    el.addEventListener("mouseenter", () => {
+      const key = el.getAttribute("data-project");
+      if (key) {
+        const link = document.querySelector(`.project-link[data-project="${key}"]`);
+        if (link) {
+          link.classList.add("is-hovered");
+        }
+      }
+    });
+
+    el.addEventListener("mouseleave", () => {
+      const key = el.getAttribute("data-project");
+      if (key) {
+        const link = document.querySelector(`.project-link[data-project="${key}"]`);
+        if (link) {
+          link.classList.remove("is-hovered");
+        }
+      }
     });
   });
 
