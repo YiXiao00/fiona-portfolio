@@ -62,6 +62,18 @@ import lacertrendering4 from "./assets/LACERTA Showroom/rendering4.jpg";
 import lacertrendering5 from "./assets/LACERTA Showroom/rendering5.jpg";
 import lacertrendering6 from "./assets/LACERTA Showroom/rendering6.jpg";
 import lacertrendering7 from "./assets/LACERTA Showroom/rendering7.jpg";
+import lacertaField1 from "./assets/LACERTA Showroom/1.png";
+import lacertaField2 from "./assets/LACERTA Showroom/2.png";
+import lacertaField3 from "./assets/LACERTA Showroom/3.png";
+import lacertaField4 from "./assets/LACERTA Showroom/4.png";
+import lacertaField5 from "./assets/LACERTA Showroom/5.png";
+import lacertaField6 from "./assets/LACERTA Showroom/6.png";
+import lacertaField7 from "./assets/LACERTA Showroom/7.png";
+import lacertaField8 from "./assets/LACERTA Showroom/8.png";
+import lacertaField9 from "./assets/LACERTA Showroom/9.png";
+import lacertaField10 from "./assets/LACERTA Showroom/10.png";
+import lacertaField11 from "./assets/LACERTA Showroom/11.png";
+import lacertaField12 from "./assets/LACERTA Showroom/12.png";
 
 // From here to Eternity images
 import eternityMain1 from "./assets/From here to Eternity/main and 1.png";
@@ -380,6 +392,33 @@ const projectData = {
         title: "",
         desc: "",
         images: [lacertamodel1, lacertamodel2],
+      },
+      {
+        title: "Field Report",
+        desc: "7.15.2025",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertaField1, lacertaField2, lacertaField3, lacertaField4],
+      },
+      {
+        title: "",
+        desc: "7.23.2025",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertaField5, lacertaField6, lacertaField7, lacertaField8],
+      },
+      {
+        title: "",
+        desc: "8.8.2025",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertaField9, lacertaField10, lacertaField11, lacertaField12],
       },
     ],
   },
