@@ -92,6 +92,20 @@ import eternitySet5 from "./assets/From here to Eternity/set5.png";
 import eternitySet6 from "./assets/From here to Eternity/set6.png";
 import eternitySet7 from "./assets/From here to Eternity/set7.png";
 import eternitySet8 from "./assets/From here to Eternity/set8.png";
+import eternityIcon from "./assets/From here to Eternity/ICON.png";
+import eternityNew1 from "./assets/From here to Eternity/new1.gif";
+import eternityNew2 from "./assets/From here to Eternity/new2.png";
+import eternityNew3 from "./assets/From here to Eternity/new3.png";
+import eternity8rendering from "./assets/From here to Eternity/8rendering.png";
+import eternityFloorplan from "./assets/From here to Eternity/新平面图.png";
+import eternity1234 from "./assets/From here to Eternity/1234.png";
+import eternity13 from "./assets/From here to Eternity/13.png";
+import eternity14 from "./assets/From here to Eternity/14.png";
+import eternity15 from "./assets/From here to Eternity/15.png";
+import eternity16 from "./assets/From here to Eternity/16.png";
+import eternity17 from "./assets/From here to Eternity/17.png";
+import eternity18 from "./assets/From here to Eternity/18.png";
+import eternity19 from "./assets/From here to Eternity/19.png";
 
 // 15 Rules for Rebuilding the World images
 import rulesMain from "./assets/15 Rules for Rebuilding the World/2main.png";
@@ -147,6 +161,8 @@ import modulightor22 from "./assets/Modulightor/22mod.png";
 import modulightor23 from "./assets/Modulightor/23mod.png";
 import modulightor24 from "./assets/Modulightor/24mod.png";
 import modulightor25 from "./assets/Modulightor/25mod.png";
+import modulightorNew from "./assets/Modulightor/新图.png";
+import modulightorN1 from "./assets/Modulightor/N1.png";
 
 // Hidden Order images
 import hiddenMain from "./assets/Hidden Order/main.png";
@@ -192,6 +208,7 @@ import silverStructure from "./assets/Silver Valley Exhibition/structure.png";
 import silverCirculation from "./assets/Silver Valley Exhibition/circulation.png";
 import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
 import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
+import silverUpdate from "./assets/Silver Valley Exhibition/更新.png";
 
 import horizontalImage from "./assets/horizontal.png";
 
@@ -427,8 +444,20 @@ const projectData = {
   },
   "project-f": {
     title: "From here to eternity",
-    desc: "In 2023, marking the 70th anniversary of Eugene O'Neill's death, the title Long Day's Journey Into Night is borrowed from his iconic play — paying tribute to the tradition of the living room drama through spatial scenes.<br><br>As playwright Edward Bond once said:<br><br>\"The living room is the world.\"<br><br>This project focuses on constructing theatrical space, divided into two parts — an interior domestic setting and a stage environment. Through the use of spatial symbolism, lighting, and shadow, the design explores how physical space can embody emotional tension and narrative atmosphere, paying homage to the tradition of the drama.",
+    desc: "",
     scenes: [
+      {
+        title: "",
+        desc: "<strong>Skillset:</strong> On-Site Construction / Rhino / Adobe Suite<br><strong>Team:</strong> Media Sencenography Department in China Academy of Art (CAA)<br><strong>Role:</strong> Scene Designer/Exhibition assistance<br><strong>Timeline:</strong> May 2023 - Jun 2023<br><strong>Location:</strong> World Tourism Expo Museum, Hangzhou, China",
+        image: eternityIcon,
+        layout: "side-by-side",
+        reversed: true,
+        matchTextHeight: true,
+      },
+      {
+        title: "",
+        desc: "The exhibition hall of this project covers an area of approximately <strong>8,611 square feet</strong>, with a height of <strong>48 feet</strong>. The large concrete walls create a dramatic effect when illuminated during the day. There are a total of 26 works by independent artists, as well as several group works and one dance performance. The highlight of this design is the integration of different types of contemporary art, including videos, models, installations, stage sets, and posters, which are well arranged and presented in a large space, creating an immersive scene throughout the entire space.",
+      },
       {
         title: "",
         desc: "",
@@ -436,23 +465,60 @@ const projectData = {
       },
       {
         title: "",
-        desc: "",
-        image: eternityNew,
+        desc: "In 2023, marking the 70th anniversary of Eugene O'Neill's death, the title Long Day's Journey Into Night is borrowed from his iconic play \u2014 paying tribute to the tradition of the living room drama through spatial scenes.<br><br>As playwright Edward Bond once said:<br><br>\"The living room is the world.\"",
+      },
+      {
+        title: "Exhibition Structure",
+        desc: "Overture/Scene: Long Day's Journey into Night<br>Part One/Exhibition: Passed over LETHE<br>Part Two/Performance: Point Omega<br>Part Three/Screening: Bend of Times",
+        images: [eternityNew2, eternityNew1],
+        layout: "text-two-images",
       },
       {
         title: "",
         desc: "",
-        images: [eternity2, eternity6, eternity5],
+        image: eternityNew3,
+      },
+      {
+        title: "",
+        desc: "Narrative Context<br><br><strong>Scene Background:</strong> Late 20th century, United States, middle-class family.<br><strong>Scene Lighting:</strong> Bright, referencing Edward Hopper and <em>Shirley — Visions of Reality</em>.<br><strong>Scene Props:</strong> Referencing Gregory Crewdson, realistic photography, and the French film <em>Amour</em>.",
       },
       {
         title: "",
         desc: "",
-        image: eternity3,
+        images: [eternity8rendering, eternityFloorplan],
+      },
+      {
+        title: "",
+        desc: "This project focuses on constructing theatrical space, divided into two parts — an interior domestic setting and a stage environment. Through the use of spatial symbolism, lighting, and shadow, the design explores how physical space can embody emotional tension and narrative atmosphere, paying homage to the tradition of the drama.",
       },
       {
         title: "",
         desc: "",
-        images: [eternity4, eternity7],
+        images: [eternity3, eternity1234, eternity5],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [eternity6, eternity7],
+      },
+      {
+        title: "",
+        desc: "The space is designed to balance realism and drama, accommodating both exhibition and performance.",
+      },
+      {
+        title: "",
+        desc: "",
+        image: eternity13,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [eternity14, eternity15, eternity16, eternity17],
+      },
+      {
+        title: "",
+        desc: "",
+        images: [eternity18, eternity19],
       },
       {
         title: "",
@@ -590,6 +656,17 @@ const projectData = {
       },
       {
         title: "",
+        desc: "The Modulightor Building, located at 246 East 58th Street in Midtown Manhattan, is a late work by Paul Rudolph, designed in the late 1970s and completed in 1993.<br><br>Conceived for the lighting company Modulightor, the building explores Rudolph's mature vocabulary of modularity, vertical layering, and controlled light within an extremely narrow urban lot.",
+        image: modulightorNew,
+        layout: "side-by-side",
+      },
+      {
+        title: "",
+        desc: "",
+        image: modulightorN1,
+      },
+      {
+        title: "",
         desc:
           "This project reimagines the Modulightor duplex as an adaptive collective interior system.<br><br>Through movable and foldable architectural elements, the space continuously reconfigures itself to support a wide range of social, cultural, and restorative activities.<br><br>Rather than relying on fixed programs, the interior operates as a flexible framework, responsive to use, light, and environmental conditions which allowing the space to shift between gathering, making, exhibiting, and resting.",
         image: modulightor1,
@@ -705,7 +782,7 @@ const projectData = {
       },
       {
         title: "",
-        desc: "Video: 3 (Using projection, avoid strong light space)<br>Kinetic Art Installation: 2 (Light sources and exhibition flow according to the main viewing perspective.)<br>Photography: 1 (with 60 pieces, need a long wall, lighter place)<br>Miniature model: 14<br>(6 artworks need to be embedded in the wall,<br>with holes pre-drilled during the installation process.<br>5 artworks require custom-made display stands.<br>3 artworks need to be hung on the wall, one needs to be placed in a corner.)",
+        desc: "<strong>Video:</strong> 3 (Using projection, avoid strong light space)<br><strong>Kinetic Art Installation:</strong> 2 (Light sources and exhibition flow according to the main viewing perspective.)<br><strong>Photography:</strong> 1 (with 60 pieces, need a long wall, lighter place)<br><strong>Miniature model:</strong> 14<br>(6 artworks need to be embedded in the wall,<br>with holes pre-drilled during the installation process.<br>5 artworks require custom-made display stands.<br>3 artworks need to be hung on the wall, one needs to be placed in a corner.)",
       },
       {
         title: "",
@@ -850,6 +927,11 @@ const projectData = {
         title: "",
         desc: "The audience passes through the fragment track, drawn by a beam of red light, and enters the next space through an arched door.<br><br>The exterior of this space resembles a furnace, and people descend down a ramp 1 to observe the \"smelting\" process.",
       },
+      {
+        title: "",
+        desc: "",
+        image: silverUpdate,
+      },
     ],
   },
 };
@@ -953,6 +1035,26 @@ function setupProjectDetail() {
                   <iframe src="${pdfSrc}" width="100%" height="800px" style="border: none;"></iframe>
                   <div class="mt-2">
                     <a href="${pdfSrc}" target="_blank" class="btn btn-outline-primary">在新窗口中打开 PDF</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          // Handle text-two-images layout (50% text left, 25%+25% images right)
+          if (scene?.layout === "text-two-images" && images.length === 2 && safeDesc) {
+            return `
+              <div class="scene-block">
+                <div class="detail-text-two-images">
+                  <div class="detail-tti-text">
+                    ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                    <div class="detail-desc">${safeDesc}</div>
+                  </div>
+                  <div class="detail-tti-image">
+                    <img src="${images[0]}" alt="Image 1" class="img-fluid" />
+                  </div>
+                  <div class="detail-tti-image">
+                    <img src="${images[1]}" alt="Image 2" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -1087,10 +1189,11 @@ function setupProjectDetail() {
           // Handle side-by-side layout (image left, text right, or reversed)
           if (scene?.layout === "side-by-side" && imgSrc && safeDesc) {
             const reversed = scene?.reversed || false;
+            const matchTextHeightAttr = scene?.matchTextHeight ? ' data-match-text-height="true"' : '';
             return `
               <div class="scene-block">
                 ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
-                <div class="detail-side-by-side${reversed ? " reversed" : ""}">
+                <div class="detail-side-by-side${reversed ? " reversed" : ""}"${matchTextHeightAttr}>
                   ${reversed ? `
                   <div class="detail-side-text">
                     <div class="detail-desc">${safeDesc}</div>
@@ -1125,6 +1228,32 @@ function setupProjectDetail() {
         })
         .join("");
       detailContent.innerHTML = topDesc + blocks;
+
+      // Match side-by-side image height to text height (only for elements with matchTextHeight flag)
+      const sideBySides = detailContent.querySelectorAll('.detail-side-by-side[data-match-text-height="true"]');
+      sideBySides.forEach((container) => {
+        const textEl = container.querySelector(".detail-side-text");
+        const imgEl = container.querySelector(".detail-side-image img");
+        if (textEl && imgEl) {
+          const applyHeight = () => {
+            requestAnimationFrame(() => {
+              const textHeight = textEl.offsetHeight;
+              if (textHeight > 0) {
+                imgEl.style.height = `${textHeight * 2}px`;
+                imgEl.style.width = "auto";
+                imgEl.style.objectFit = "contain";
+              }
+            });
+          };
+          if (imgEl.complete) {
+            applyHeight();
+          } else {
+            imgEl.addEventListener("load", applyHeight, { once: true });
+          }
+          // Also handle window resize
+          window.addEventListener("resize", applyHeight);
+        }
+      });
 
       // Adjust all grid layouts to have same height in each row, container size = image size
       const allGrids = detailContent.querySelectorAll(".detail-image-grid");
