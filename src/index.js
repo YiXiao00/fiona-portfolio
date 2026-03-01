@@ -162,6 +162,9 @@ import hidden8 from "./assets/Hidden Order/8.png";
 import hidden9 from "./assets/Hidden Order/9.png";
 import hidden10 from "./assets/Hidden Order/10.png";
 import hiddenAxonometric from "./assets/Hidden Order/Axonometric drawing.png";
+import hiddenNew1 from "./assets/Hidden Order/新1.png";
+import hiddenNew2 from "./assets/Hidden Order/新2.png";
+import hiddenNew3 from "./assets/Hidden Order/新3.png";
 
 // Installation images
 import installationMain from "./assets/Installation/main.png";
@@ -689,6 +692,20 @@ const projectData = {
       {
         title: "",
         desc: "The curatorial process involved documenting each work's dimensions and lighting requirements to design an efficient spatial layout.With two separate entrances and exits, the circulation strategy became essential—ensuring a clear flow between the two access points while maintaining visual rhythm and spatial coherence across diverse works.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [hiddenNew1, hiddenNew2],
+      },
+      {
+        title: "",
+        desc: "",
+        image: hiddenNew3,
+      },
+      {
+        title: "",
+        desc: "Video: 3 (Using projection, avoid strong light space)<br>Kinetic Art Installation: 2 (Light sources and exhibition flow according to the main viewing perspective.)<br>Photography: 1 (with 60 pieces, need a long wall, lighter place)<br>Miniature model: 14<br>(6 artworks need to be embedded in the wall,<br>with holes pre-drilled during the installation process.<br>5 artworks require custom-made display stands.<br>3 artworks need to be hung on the wall, one needs to be placed in a corner.)",
       },
       {
         title: "",
