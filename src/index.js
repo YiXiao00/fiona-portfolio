@@ -209,8 +209,24 @@ import silverCirculation from "./assets/Silver Valley Exhibition/circulation.png
 import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
 import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
 import silverUpdate from "./assets/Silver Valley Exhibition/更新.png";
+import silverN1 from "./assets/Silver Valley Exhibition/n1.png";
+import silverN2 from "./assets/Silver Valley Exhibition/n2.png";
+import silverN3 from "./assets/Silver Valley Exhibition/n3.png";
+import silverN4 from "./assets/Silver Valley Exhibition/n4.png";
+import silverN5 from "./assets/Silver Valley Exhibition/n5.png";
 
 import horizontalImage from "./assets/horizontal.png";
+
+// Ploy Dream images
+import ployDream1 from "./assets/Ploy Dream/1.png";
+import ployDreamIntroVideo from "url:./assets/Ploy Dream/TDMovieOut.0.mp4";
+import ployDream2 from "./assets/Ploy Dream/2.png";
+import ployDream3 from "./assets/Ploy Dream/3.png";
+import ployDream4 from "./assets/Ploy Dream/4.png";
+import ployDream5 from "./assets/Ploy Dream/5.png";
+import ployDream6 from "./assets/Ploy Dream/6.png";
+import ployDream7 from "./assets/Ploy Dream/7.png";
+import ployDreamVideo from "url:./assets/Ploy Dream/8.mp4";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
@@ -932,6 +948,104 @@ const projectData = {
         desc: "",
         image: silverUpdate,
       },
+      {
+        title: "Crowds and Activities",
+        desc: "",
+      },
+      {
+        title: "",
+        desc: "",
+        image: silverN1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: silverN2,
+      },
+      {
+        title: "",
+        desc: "People gather in the theater through various entrances on the covered bridge, providing them with the opportunity to see other visitors arriving from different passages and experience the village's sense of community.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [silverN3, silverN4],
+      },
+      {
+        title: "",
+        desc: "Upon reaching the theater, visitors are captivated by the vintage puppet theater, where traditional local puppetry performances are staged. This relocation of the ancient theater into a modern setting creates a fascinating blend of time and space.",
+      },
+      {
+        title: "",
+        desc: "",
+        image: silverN5,
+      },
+      {
+        title: "",
+        desc: "The entire space concludes with an open-ended design. After enjoying the performance, people can continue their exploration by choosing different paths that lead to various spaces, each offering a unique charm of this quaint village.",
+      },
+    ],
+  },
+  "project-m": {
+    title: "Ploy Dream",
+    desc: "<strong>Skillset:</strong> Arduino, Touchdesigner, 3d scanning",
+    image: ployDream1,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        video: ployDreamIntroVideo,
+        autoplay: true,
+        loop: true,
+      },
+      {
+        title: "Concept",
+        desc: "This project was inspired by my experience with a dream. This dream left me unable to distinguish between the real world and reality, so I wanted to explore the boundary between dreams and reality.<br><br>Simply put, when stimulated by my surroundings, such as lights turning on or sounds increasing, I am pulled back to the real world from the dream.",
+        image: ployDream1,
+        layout: "side-by-side",
+        reversed: true,
+        splitRatio: "7fr 3fr",
+      },
+      {
+        title: "",
+        desc: "",
+        image: ployDream2,
+      },
+      {
+        title: "Visual and Structural Medium",
+        desc: "The core of this installation consists of a polyhedral structure and a projection system.<br><br>The polyhedron serves as a physical metaphor for a \"protective barrier\" of consciousness. The interior is lined with mirror-finish paper, creating a sense of infinite reflection and multi-dimensional visual depth within a limited volume. The projected content uses point cloud models converted from 3D scans, re-imagining the fleeting nature of dreams through a digital visual language.",
+      },
+      {
+        title: "",
+        desc: "",
+        image: ployDream3,
+      },
+      {
+        title: "",
+        desc: "<strong>Ultrasonic Sensor:</strong><br>Ultrasonic sensors are deployed at the boundaries of the polyhedron to monitor the distance of the audience.<br>As a viewer approaches, the system decreases the opacity of the projection, causing the imagery to fade. This symbolizes the fragility of dreams when disturbed by reality. Conversely, as the interference moves away, the dream continues in silence.",
+        image: ployDream4,
+        layout: "side-by-side",
+        reversed: true,
+        splitRatio: "7fr 3fr",
+      },
+      {
+        title: "",
+        desc: "<strong>Sound Sensor:</strong><br>A sound sensor controls the laser beams. An increase in ambient noise leads to a weakening of the laser, visually representing the collapse of the boundary between dream and reality. As the environment returns to quiet, the laser boundary becomes sharp again, re-establishing a clear subconscious field.",
+        image: ployDream5,
+        layout: "side-by-side",
+        reversed: true,
+        splitRatio: "7fr 3fr",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [ployDream6, ployDream7],
+      },
+      {
+        title: "",
+        desc: "",
+        video: ployDreamVideo,
+      },
     ],
   },
 };
@@ -1169,6 +1283,36 @@ function setupProjectDetail() {
             `;
           }
 
+          // Handle audio scene
+          if (scene?.audio) {
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+                <audio controls style="width: 100%; margin-top: 0.5rem;">
+                  <source src="${scene.audio}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            `;
+          }
+
+          // Handle video scene
+          if (scene?.video) {
+            const autoplayAttr = scene?.autoplay ? ' autoplay muted' : '';
+            const loopAttr = scene?.loop ? ' loop' : '';
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+                <video controls${autoplayAttr}${loopAttr} playsinline style="width: 100%; margin-top: 0.5rem; border-radius: 2px;">
+                  <source src="${scene.video}" type="video/mp4">
+                  Your browser does not support the video element.
+                </video>
+              </div>
+            `;
+          }
+
           // Handle title-image layout (title and subtitle left, image right)
           if (scene?.layout === "title-image" && imgSrc && data.subtitle) {
             return `
@@ -1193,7 +1337,7 @@ function setupProjectDetail() {
             return `
               <div class="scene-block">
                 ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
-                <div class="detail-side-by-side${reversed ? " reversed" : ""}"${matchTextHeightAttr}>
+                <div class="detail-side-by-side${reversed ? " reversed" : ""}"${matchTextHeightAttr}${scene?.splitRatio ? ` style="grid-template-columns: ${scene.splitRatio}"` : ""}>
                   ${reversed ? `
                   <div class="detail-side-text">
                     <div class="detail-desc">${safeDesc}</div>

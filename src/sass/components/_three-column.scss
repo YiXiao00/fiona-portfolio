@@ -22,7 +22,7 @@
   background: #fff;
   color: #000;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  padding: 0 0 2rem 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -184,6 +184,7 @@
   // Column 3: Project Images - Scrollable
   .column-images {
     padding-left: 1rem;
+    padding-bottom: 3.5rem;
     overflow-y: auto;
     height: 100%;
     display: flex;
@@ -193,6 +194,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
+      margin-bottom: 8rem;
     }
 
     .image-item {
