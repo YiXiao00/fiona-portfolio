@@ -11,120 +11,138 @@
 -->
 <!DOCTYPE html>
 <html lang="en" class="sr">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <!-- Todo: put here your site title -->
-    <title>[Fiona LAN] | Artist</title>
-    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
-    <!-- Todo: improve your SEO by adding a small description of you -->
-    <meta name="description" content="[Your name here] | Developer" />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <link rel="stylesheet" href="styles.scss" />
-    <script
-      defer
-      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
-    ></script>
+  <!-- Todo: put here your site title -->
+  <title>[Fiona LAN] | Artist</title>
+  <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
+  <meta name="keywords" content="[username], [name], skill" />
+  <!-- Todo: improve your SEO by adding a small description of you -->
+  <meta name="description" content="[Your name here] | Developer" />
 
-  </head>
+  <link rel="stylesheet" href="styles.scss" />
+  <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
-  <body>
-    <div id="top"></div>
+</head>
 
-    <!-- Logo Header -->
-    <div class="logo-header">
-      <img src="./assets/logo web.png" alt="Fiona Lan" class="logo-image">
-    </div>
+<!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
 
-    <!-- **** Three Column Layout **** -->
-    <section id="portfolio" class="three-column-layout">
-      <div class="container-fluid">
-        <div class="row h-100">
-          <!-- Column 1: About & Contact -->
-          <div class="col-lg-2 col-md-4 col-12 column-about">
-            <div class="content-block">
-              <p class="section-text desc-with-quote">"<span class="desc-body">I am a space designer and storyteller,focus on working across various media and combining them in innovative ways.</span></p>
-              <p class="section-link mt-2"><a href="#" class="resume-link">resume  &gt;&gt;</a></p>
-              <img id="resumeImage" alt="Resume" class="d-none" />
-            </div>
-            <div class="content-block">
-              <h2 class="section-head">CONTACT</h2>
-              <div class="section-text">
-                <div>(E) lllllllanxiaoyu@gmail.com</div>
-              </div>
-              <p class="section-link back-home-wrap mt-2"><a href="#top" class="back-home">Back to homepage</a></p>
-            </div>
+<body>
+  <div id="top"></div>
+
+  <!-- Logo Header -->
+  <div class="logo-header">
+    <img src="./assets/logo web.png" alt="Fiona Lan" class="logo-image">
+  </div>
+
+  <!-- **** Three Column Layout **** -->
+  <section id="portfolio" class="three-column-layout">
+    <div class="container-fluid">
+      <div class="row h-100">
+        <!-- Column 1: About & Contact -->
+        <div class="col-lg-2 col-md-4 col-12 column-about">
+          <div class="content-block">
+            <p class="section-text desc-with-quote">"<span class="desc-body">I am a space designer and storyteller,focus
+                on working across various media and combining them in innovative ways.</span></p>
+            <p class="section-link mt-2"><a href="#" class="resume-link">resume &gt;&gt;</a></p>
+            <img id="resumeImage" alt="Resume" class="d-none" />
           </div>
-
-          <!-- Column 2: Project Categories -->
-          <div class="col-lg-2 col-md-4 col-12 column-projects">
-            <div class="content-block">
-              <h2 class="section-head">PROJECTS</h2>
-              <div class="project-categories">
-                <div class="category-group">
-                  <ul class="project-list">
-                    <li><span class="project-link" data-project="project-j">Silver Valley Exhibition</span></li>
-                    <li><span class="project-link" data-project="project-b">TATAbowls Restaurant</span></li>
-                    <li><span class="project-link" data-project="project-g">15 Rules for Rebuilding the World</span></li>
-                    <li><span class="project-link" data-project="project-k">From Screen to Space</span></li>
-                    <li><span class="project-link" data-project="project-l">Where Light Moves</span></li>
-                    <li><span class="project-link" data-project="project-f">From here to eternity</span></li>
-                    <li><span class="project-link" data-project="project-e">LACERTA Showroom</span></li>
-                    <li><span class="project-link" data-project="project-c">A GRAIN OF HANGZHOU 2021</span></li>
-                    <li><span class="project-link" data-project="project-h">Hidden Order</span></li>
-                    <li><span class="project-link" data-project="project-i">Simulfactory</span></li>
-                    <li><span class="project-link" data-project="project-a">The Municipal Pigeon</span></li>
-                    <li><span class="project-link" data-project="project-d">See it</span></li>
-                    <li><span class="project-link" data-project="project-m">Ploy Dream</span></li>
-                  </ul>
-                </div>
-              </div>
+          <div class="content-block">
+            <h2 class="section-head">CONTACT</h2>
+            <div class="section-text">
+              <div>(E) lllllllanxiaoyu@gmail.com</div>
             </div>
+            <p class="section-link back-home-wrap mt-2"><a href="#top" class="back-home">Back to homepage</a></p>
           </div>
+        </div>
 
-          <!-- Column 3: Project Images -->
-          <div class="col-lg-8 col-md-4 col-12 column-images">
-            <!-- Default: image grid -->
-            <div class="image-grid" id="imageGrid">
-              <div class="image-item" data-project="project-j"><img src="./assets/Silver Valley Exhibition/main.png" alt="Silver Valley Exhibition" class="img-fluid"></div>
-              <div class="image-item" data-project="project-b"><img src="./assets/FirstInternProject/main.png" alt="Project B" class="img-fluid"></div>
-              <div class="image-item" data-project="project-g"><img src="./assets/15 Rules for Rebuilding the World/2main.png" alt="15 Rules for Rebuilding the World" class="img-fluid"></div>
-              <div class="image-item" data-project="project-k"><img src="./assets/From Screen to Space/1andfengmian.png" alt="From Screen to Space" class="img-fluid"></div>
-              <div class="image-item" data-project="project-l"><img src="./assets/Modulightor/main.png" alt="Where Light Moves" class="img-fluid"></div>
-              <div class="image-item" data-project="project-f"><img src="assets/From here to Eternity/main and 1.png" alt="Project F" class="img-fluid"></div>
-              <div class="image-item" data-project="project-e"><img src="./assets/LACERTA Showroom/wbvsCA6nVA0f60b8.png" alt="Project E" class="img-fluid"></div>
-              <div class="image-item" data-project="project-c"><img src="./assets/PhotoGal/main-notputinwebsite.png" alt="A GRAIN OF HANGZHOU 2021" class="img-fluid"></div>
-              <div class="image-item" data-project="project-h"><img src="./assets/Hidden Order/main.png" alt="Hidden Order" class="img-fluid"></div>
-              <div class="image-item" data-project="project-i"><img src="./assets/Installation/main.png" alt="Simulfactory" class="img-fluid"></div>
-              <div class="image-item" data-project="project-a"><img src="./assets/TheMunicipalPigeon/gezi4.png" alt="Project A" class="img-fluid"></div>
-              <div class="image-item" data-project="project-d"><img src="assets/SeeIt/main.png" alt="Project D" class="img-fluid"></div>
-              <div class="image-item" data-project="project-m"><img src="./assets/Ploy Dream/1.png" alt="Ploy Dream" class="img-fluid"></div>
-            </div>
-
-            <!-- Project detail: project title, scene title, description, image, nav -->
-            <div class="project-detail d-none" id="projectDetail">
-              <h2 class="detail-title" id="detailTitle"></h2>
-              <div id="detailContent"></div>
+        <!-- Column 2: Project Categories -->
+        <div class="col-lg-2 col-md-4 col-12 column-projects">
+          <div class="content-block">
+            <h2 class="section-head">PROJECTS</h2>
+            <div class="project-categories">
+              <div class="category-group">
+                <ul class="project-list">
+                  <li><span class="project-link" data-project="project-j">Silver Valley Exhibition</span></li>
+                  <li><span class="project-link" data-project="project-b">TATAbowls Restaurant</span></li>
+                  <li><span class="project-link" data-project="project-g">15 Rules for Rebuilding the World</span></li>
+                  <li><span class="project-link" data-project="project-k">From Screen to Space</span></li>
+                  <li><span class="project-link" data-project="project-l">Where Light Moves</span></li>
+                  <li><span class="project-link" data-project="project-f">From here to eternity</span></li>
+                  <li><span class="project-link" data-project="project-e">LACERTA Showroom</span></li>
+                  <li><span class="project-link" data-project="project-c">A GRAIN OF HANGZHOU 2021</span></li>
+                  <li><span class="project-link" data-project="project-h">Hidden Order</span></li>
+                  <li><span class="project-link" data-project="project-i">Simulfactory</span></li>
+                  <li><span class="project-link" data-project="project-a">The Municipal Pigeon</span></li>
+                  <li><span class="project-link" data-project="project-d">See it</span></li>
+                  <li><span class="project-link" data-project="project-m">Ploy Dream</span></li>
+                  <li><span class="project-link" data-project="project-n">Relaxing Chair</span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- /END Three Column Layout -->
 
-    <div id="imageLightbox" class="lightbox-overlay d-none" role="dialog" aria-modal="true">
-      <div class="lightbox-content">
-        <img id="lightboxImage" alt="" />
+        <!-- Column 3: Project Images -->
+        <div class="col-lg-8 col-md-4 col-12 column-images">
+          <!-- Default: image grid -->
+          <div class="image-grid" id="imageGrid">
+            <div class="image-item" data-project="project-j"><img src="./assets/Silver Valley Exhibition/main.png"
+                alt="Silver Valley Exhibition" class="img-fluid"></div>
+            <div class="image-item" data-project="project-b"><img src="./assets/FirstInternProject/main.png"
+                alt="Project B" class="img-fluid"></div>
+            <div class="image-item" data-project="project-g"><img
+                src="./assets/15 Rules for Rebuilding the World/2main.png" alt="15 Rules for Rebuilding the World"
+                class="img-fluid"></div>
+            <div class="image-item" data-project="project-k"><img src="./assets/From Screen to Space/1andfengmian.png"
+                alt="From Screen to Space" class="img-fluid"></div>
+            <div class="image-item" data-project="project-l"><img src="./assets/Modulightor/main.png"
+                alt="Where Light Moves" class="img-fluid"></div>
+            <div class="image-item" data-project="project-f"><img src="assets/From here to Eternity/main and 1.png"
+                alt="Project F" class="img-fluid"></div>
+            <div class="image-item" data-project="project-e"><img src="./assets/LACERTA Showroom/wbvsCA6nVA0f60b8.png"
+                alt="Project E" class="img-fluid"></div>
+            <div class="image-item" data-project="project-c"><img src="./assets/PhotoGal/main-notputinwebsite.png"
+                alt="A GRAIN OF HANGZHOU 2021" class="img-fluid"></div>
+            <div class="image-item" data-project="project-h"><img src="./assets/Hidden Order/main.png"
+                alt="Hidden Order" class="img-fluid"></div>
+            <div class="image-item" data-project="project-i"><img src="./assets/Installation/main.png"
+                alt="Simulfactory" class="img-fluid"></div>
+            <div class="image-item" data-project="project-a"><img src="./assets/TheMunicipalPigeon/gezi4.png"
+                alt="Project A" class="img-fluid"></div>
+            <div class="image-item" data-project="project-d"><img src="assets/SeeIt/main.png" alt="Project D"
+                class="img-fluid"></div>
+            <div class="image-item" data-project="project-m"><img src="./assets/Ploy Dream/1.png" alt="Ploy Dream"
+                class="img-fluid"></div>
+            <div class="image-item" data-project="project-n"><img src="./assets/Relaxing Chair/1.png"
+                alt="Relaxing Chair" class="img-fluid"></div>
+          </div>
+
+          <!-- Project detail: project title, scene title, description, image, nav -->
+          <div class="project-detail d-none" id="projectDetail">
+            <h2 class="detail-title" id="detailTitle"></h2>
+            <div id="detailContent"></div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+  <!-- /END Three Column Layout -->
 
-    <!-- 原 Hero+Projects 区块移除，采用极简首页 -->
+  <div id="imageLightbox" class="lightbox-overlay d-none" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <img id="lightboxImage" alt="" />
+    </div>
+  </div>
 
-    <script defer type="module" src="index.js"></script>
-  </body>
+  <!-- 原 Hero+Projects 区块移除，采用极简首页 -->
+
+  <script defer type="module" src="index.js"></script>
+</body>
+
 </html>

@@ -227,6 +227,17 @@ import ployDream5 from "./assets/Ploy Dream/5.png";
 import ployDream6 from "./assets/Ploy Dream/6.png";
 import ployDream7 from "./assets/Ploy Dream/7.png";
 import ployDreamVideo from "url:./assets/Ploy Dream/8.mp4";
+import ployDream9 from "./assets/Ploy Dream/9.png";
+import ployDream10 from "./assets/Ploy Dream/10.png";
+import ployDream11 from "./assets/Ploy Dream/11.png";
+import ployDreamFinalVideo from "url:./assets/Ploy Dream/final视频.mp4";
+
+// Relaxing Chair images
+import relaxChair1 from "./assets/Relaxing Chair/1.png";
+import relaxChair2 from "./assets/Relaxing Chair/2.png";
+import relaxChair3 from "./assets/Relaxing Chair/3.png";
+import relaxChair4 from "./assets/Relaxing Chair/4.png";
+import relaxChair5 from "./assets/Relaxing Chair/5.png";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
@@ -1045,6 +1056,62 @@ const projectData = {
         title: "",
         desc: "",
         video: ployDreamVideo,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [ployDream9, ployDream10],
+      },
+      {
+        title: "",
+        desc: "",
+        image: ployDream11,
+      },
+      {
+        title: "",
+        desc: "",
+        video: ployDreamFinalVideo,
+      },
+    ],
+  },
+  "project-n": {
+    title: "Relaxing Chair",
+    desc: "<strong>Relaxing Chair</strong><br><strong>Skillset:</strong> Arduino, Weaving net, Soldering<br><strong>Group:</strong> Fiona Lan, Artemis Jenkins, Sky Xing<br><strong>Time:</strong> 2025<br><strong>Location:</strong> 4th floor, CIT Building, Providence, RI",
+    image: relaxChair1,
+    scenes: [
+      {
+        title: "",
+        desc: "This project concerns students' use of stairwells in the CIT building (RISD building).<br>We first noticed that stairwells are naturally well-suited for sound transmission \u2014 people can clearly hear echoes within them.<br>Based on this characteristic, we began thinking about what kinds of interactive experiences could take place in a stairwell. Throughout our group discussions, we reflected on common behaviors that often happen in these spaces: the echo of footsteps, making phone calls, moments of solitude, and even emotional releases like crying.<br><br>During our interview, one student mentioned that she often takes the stairs and feels particularly exhausted by the time she reaches the fourth floor. She wished there were a place to sit and rest.",
+      },
+      {
+        title: "",
+        desc: "",
+        images: [relaxChair1, relaxChair2],
+      },
+      {
+        title: "",
+        desc: "This sparked our inspiration, and we began exploring the possibility of adding seating within the stairwell. Initially, we considered fixed or foldable chairs, but due to the complexity of woodworking and the need for reliable weight support, we shifted our focus to a suspended, woven net seat.",
+      },
+      {
+        title: "",
+        desc: "Throughout the weaving process, we experimented with different techniques and encountered various challenges \u2014 such as the ropes gathering and deforming under pressure. After continuous adjustments and trials, we eventually completed this suspended seating installation.",
+        image: relaxChair3,
+        layout: "side-by-side",
+      },
+      {
+        title: "",
+        desc: "",
+        image: relaxChair4,
+      },
+      {
+        title: "",
+        desc: "For the interactive aspect, we envisioned the seat as not only a functional resting point but also a medium for sound intervention. When someone sits down, the chair automatically plays 40Hz Binaural Beats, creating a calming and relaxing auditory environment. If the system detects a phone conversation while pressure is applied to the seat, the background music will automatically lower in volume, making space for the call.",
+      },
+      {
+        title: "",
+        desc: "Through this installation, we hope to offer people a small, overlooked corner within the stairwell \u2014 a place for brief pauses, rest, and emotional adjustment \u2014 while fostering a soft, intuitive interaction between the space and the behaviors that happen within it.",
+        image: relaxChair5,
+        layout: "side-by-side",
       },
     ],
   },
