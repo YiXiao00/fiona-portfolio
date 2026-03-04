@@ -337,6 +337,16 @@
           object-fit: contain;
           border-radius: 2px;
         }
+
+        &.align-right {
+          display: flex;
+          justify-content: flex-end;
+
+          img {
+            width: auto;
+            max-width: 100%;
+          }
+        }
       }
 
       // When reversed (text left, image right)

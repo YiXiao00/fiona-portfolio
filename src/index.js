@@ -1,243 +1,236 @@
-import initScrollReveal from "./scripts/scrollReveal";
+﻿import initScrollReveal from "./scripts/scrollReveal";
 import initTiltEffect from "./scripts/tiltAnimation";
 import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 
 // Import images for Parcel to process
 
 // Newly added scene images
-import scene1Image from "./assets/TheMunicipalPigeon/sence1.png";
-import scene2Image from "./assets/TheMunicipalPigeon/sence2.png";
-import scene3Image from "./assets/TheMunicipalPigeon/sence3.png";
-import scene4Image from "./assets/TheMunicipalPigeon/sence4.png";
-import tmp from "./assets/TheMunicipalPigeon/TMP.png";
+import scene1Image from "./assets/A (The Municipal Pigeon)/sence1.png";
+import scene2Image from "./assets/A (The Municipal Pigeon)/sence2.png";
+import scene3Image from "./assets/A (The Municipal Pigeon)/sence3.png";
+import scene4Image from "./assets/A (The Municipal Pigeon)/sence4.png";
+import tmp from "./assets/A (The Municipal Pigeon)/TMP.png";
 
 // FirstInternProject images
-import mainImage from "./assets/FirstInternProject/main.png";
-import legshDiagram from "./assets/FirstInternProject/LEGSH diagram (1).png";
-import image1 from "./assets/FirstInternProject/1.png";
-import image2 from "./assets/FirstInternProject/2.png";
-import image3 from "./assets/FirstInternProject/3.png";
-import image4 from "./assets/FirstInternProject/4.png";
-import planImage from "./assets/FirstInternProject/plan.png";
-import section1 from "./assets/FirstInternProject/section-01.png";
-import section2 from "./assets/FirstInternProject/section-02.png";
+import mainImage from "./assets/B (TATAbowls Restaurant)/main.png";
+import legshDiagram from "./assets/B (TATAbowls Restaurant)/LEGSH diagram (1).png";
+import image1 from "./assets/B (TATAbowls Restaurant)/1.png";
+import image2 from "./assets/B (TATAbowls Restaurant)/2.png";
+import image3 from "./assets/B (TATAbowls Restaurant)/3.png";
+import image4 from "./assets/B (TATAbowls Restaurant)/4.png";
+import planImage from "./assets/B (TATAbowls Restaurant)/plan.png";
+import section1 from "./assets/B (TATAbowls Restaurant)/section-01.png";
+import section2 from "./assets/B (TATAbowls Restaurant)/section-02.png";
 
 // PhotoGal images
-import photo1 from "./assets/PhotoGal/1.png";
-import photo2 from "./assets/PhotoGal/2.png";
-import photo3 from "./assets/PhotoGal/3.png";
-import photo5 from "./assets/PhotoGal/5.png";
-import photo6 from "./assets/PhotoGal/6.png";
-import photo7 from "./assets/PhotoGal/7.png";
-import photo8 from "./assets/PhotoGal/8.png";
-import photo9 from "./assets/PhotoGal/9.png";
+import photo1 from "./assets/C (A GRAIN OF HANGZHOU 2021)/1.png";
+import photo2 from "./assets/C (A GRAIN OF HANGZHOU 2021)/2.png";
+import photo3 from "./assets/C (A GRAIN OF HANGZHOU 2021)/3.png";
+import photo5 from "./assets/C (A GRAIN OF HANGZHOU 2021)/5.png";
+import photo6 from "./assets/C (A GRAIN OF HANGZHOU 2021)/6.png";
+import photo7 from "./assets/C (A GRAIN OF HANGZHOU 2021)/7.png";
+import photo8 from "./assets/C (A GRAIN OF HANGZHOU 2021)/8.png";
+import photo9 from "./assets/C (A GRAIN OF HANGZHOU 2021)/9.png";
 
 // SeeIt images
-import seeIt1 from "./assets/SeeIt/1.png";
-import seeIt2 from "./assets/SeeIt/2.png";
-import seeItMain from "./assets/SeeIt/main.png";
-import seeIt4 from "./assets/SeeIt/4.png";
-import seeIt5 from "./assets/SeeIt/5.png";
-import seeIt6_2 from "./assets/SeeIt/6-2.png";
+import seeIt1 from "./assets/D (See It)/1.png";
+import seeIt2 from "./assets/D (See It)/2.png";
+import seeItMain from "./assets/D (See It)/main.png";
+import seeIt4 from "./assets/D (See It)/4.png";
+import seeIt5 from "./assets/D (See It)/5.png";
+import seeIt6_2 from "./assets/D (See It)/6-2.png";
 // Import PDF as URL
-import seeItPdfUrl from "url:./assets/SeeIt/6-1.pdf";
+import seeItPdfUrl from "url:./assets/D (See It)/6-1.pdf";
 
 // LACERTA Showroom images (these are actually JPEG files)
-import lacertaPhoto1 from "./assets/LACERTA Showroom/photo1.jpg";
-import lacertaPhoto2 from "./assets/LACERTA Showroom/photo2.jpg";
-import lacertaPhoto3 from "./assets/LACERTA Showroom/photo3.jpg";
-import lacertaPhoto4 from "./assets/LACERTA Showroom/photo4.jpg";
-import lacertaPhoto5 from "./assets/LACERTA Showroom/photo5.jpg";
-import lacertamodel1 from "./assets/LACERTA Showroom/model1.jpg";
-import lacertamodel2 from "./assets/LACERTA Showroom/model2.jpg";
-import lacertaPlan from "./assets/LACERTA Showroom/plan.png";
-import lacertaMoodboard from "./assets/LACERTA Showroom/moodboard.png";
-import lacertaMaterial from "./assets/LACERTA Showroom/material.png";
-import lacertaPhotnew from "./assets/LACERTA Showroom/photnew.png";
-import lacertaPiger from "./assets/LACERTA Showroom/piger.png";
-import lacertrendering1 from "./assets/LACERTA Showroom/rendering1.jpg";
-import lacertrendering2 from "./assets/LACERTA Showroom/rendering2.jpg";
-import lacertrendering3 from "./assets/LACERTA Showroom/rendering3.jpg";
-import lacertrendering4 from "./assets/LACERTA Showroom/rendering4.jpg";
-import lacertrendering5 from "./assets/LACERTA Showroom/rendering5.jpg";
-import lacertrendering6 from "./assets/LACERTA Showroom/rendering6.jpg";
-import lacertrendering7 from "./assets/LACERTA Showroom/rendering7.jpg";
-import lacertaField1 from "./assets/LACERTA Showroom/1.png";
-import lacertaField2 from "./assets/LACERTA Showroom/2.png";
-import lacertaField3 from "./assets/LACERTA Showroom/3.png";
-import lacertaField4 from "./assets/LACERTA Showroom/4.png";
-import lacertaField5 from "./assets/LACERTA Showroom/5.png";
-import lacertaField6 from "./assets/LACERTA Showroom/6.png";
-import lacertaField7 from "./assets/LACERTA Showroom/7.png";
-import lacertaField8 from "./assets/LACERTA Showroom/8.png";
-import lacertaField9 from "./assets/LACERTA Showroom/9.png";
-import lacertaField10 from "./assets/LACERTA Showroom/10.png";
-import lacertaField11 from "./assets/LACERTA Showroom/11.png";
-import lacertaField12 from "./assets/LACERTA Showroom/12.png";
+import lacertaPhoto1 from "./assets/E (LACERTA Showroom)/photo1.jpg";
+import lacertaPhoto2 from "./assets/E (LACERTA Showroom)/photo2.jpg";
+import lacertaPhoto3 from "./assets/E (LACERTA Showroom)/photo3.jpg";
+import lacertaPhoto4 from "./assets/E (LACERTA Showroom)/photo4.jpg";
+import lacertaPhoto5 from "./assets/E (LACERTA Showroom)/photo5.jpg";
+import lacertamodel1 from "./assets/E (LACERTA Showroom)/model1.jpg";
+import lacertamodel2 from "./assets/E (LACERTA Showroom)/model2.jpg";
+import lacertaPlan from "./assets/E (LACERTA Showroom)/plan.png";
+import lacertaMoodboard from "./assets/E (LACERTA Showroom)/moodboard.png";
+import lacertaMaterial from "./assets/E (LACERTA Showroom)/material.png";
+import lacertaPhotnew from "./assets/E (LACERTA Showroom)/photnew.png";
+import lacertaPiger from "./assets/E (LACERTA Showroom)/piger.png";
+import lacertrendering1 from "./assets/E (LACERTA Showroom)/rendering1.jpg";
+import lacertrendering2 from "./assets/E (LACERTA Showroom)/rendering2.jpg";
+import lacertrendering3 from "./assets/E (LACERTA Showroom)/rendering3.jpg";
+import lacertrendering4 from "./assets/E (LACERTA Showroom)/rendering4.jpg";
+import lacertrendering5 from "./assets/E (LACERTA Showroom)/rendering5.jpg";
+import lacertrendering6 from "./assets/E (LACERTA Showroom)/rendering6.jpg";
+import lacertrendering7 from "./assets/E (LACERTA Showroom)/rendering7.jpg";
+import lacertaField1 from "./assets/E (LACERTA Showroom)/1.png";
+import lacertaField2 from "./assets/E (LACERTA Showroom)/2.png";
+import lacertaField3 from "./assets/E (LACERTA Showroom)/3.png";
+import lacertaField4 from "./assets/E (LACERTA Showroom)/4.png";
+import lacertaField5 from "./assets/E (LACERTA Showroom)/5.png";
+import lacertaField6 from "./assets/E (LACERTA Showroom)/6.png";
+import lacertaField7 from "./assets/E (LACERTA Showroom)/7.png";
+import lacertaField8 from "./assets/E (LACERTA Showroom)/8.png";
+import lacertaField9 from "./assets/E (LACERTA Showroom)/9.png";
+import lacertaField10 from "./assets/E (LACERTA Showroom)/10.png";
+import lacertaField11 from "./assets/E (LACERTA Showroom)/11.png";
+import lacertaField12 from "./assets/E (LACERTA Showroom)/12.png";
 
 // From here to Eternity images
-import eternityMain1 from "./assets/From here to Eternity/main and 1.png";
-import eternityNew from "./assets/From here to Eternity/NEW.png";
-import eternity2 from "./assets/From here to Eternity/2.png";
-import eternity3 from "./assets/From here to Eternity/3.png";
-import eternity4 from "./assets/From here to Eternity/4.png";
-import eternity5 from "./assets/From here to Eternity/5.png";
-import eternity6 from "./assets/From here to Eternity/6.png";
-import eternity7 from "./assets/From here to Eternity/7.png";
-import eternitySet1 from "./assets/From here to Eternity/set1.png";
-import eternitySet2 from "./assets/From here to Eternity/set2.png";
-import eternitySet3 from "./assets/From here to Eternity/set3.png";
-import eternitySet4 from "./assets/From here to Eternity/set4.png";
-import eternitySet5 from "./assets/From here to Eternity/set5.png";
-import eternitySet6 from "./assets/From here to Eternity/set6.png";
-import eternitySet7 from "./assets/From here to Eternity/set7.png";
-import eternitySet8 from "./assets/From here to Eternity/set8.png";
-import eternityIcon from "./assets/From here to Eternity/ICON.png";
-import eternityNew1 from "./assets/From here to Eternity/new1.gif";
-import eternityNew2 from "./assets/From here to Eternity/new2.png";
-import eternityNew3 from "./assets/From here to Eternity/new3.png";
-import eternity8rendering from "./assets/From here to Eternity/8rendering.png";
-import eternityFloorplan from "./assets/From here to Eternity/新平面图.png";
-import eternity1234 from "./assets/From here to Eternity/1234.png";
-import eternity13 from "./assets/From here to Eternity/13.png";
-import eternity14 from "./assets/From here to Eternity/14.png";
-import eternity15 from "./assets/From here to Eternity/15.png";
-import eternity16 from "./assets/From here to Eternity/16.png";
-import eternity17 from "./assets/From here to Eternity/17.png";
-import eternity18 from "./assets/From here to Eternity/18.png";
-import eternity19 from "./assets/From here to Eternity/19.png";
+import eternityMain1 from "./assets/F (From here to Eternity)/main and 1.png";
+import eternityNew from "./assets/F (From here to Eternity)/NEW.png";
+import eternity2 from "./assets/F (From here to Eternity)/2.png";
+import eternity3 from "./assets/F (From here to Eternity)/3.png";
+import eternity4 from "./assets/F (From here to Eternity)/4.png";
+import eternity5 from "./assets/F (From here to Eternity)/5.png";
+import eternity6 from "./assets/F (From here to Eternity)/6.png";
+import eternity7 from "./assets/F (From here to Eternity)/7.png";
+import eternitySet1 from "./assets/F (From here to Eternity)/set1.png";
+import eternitySet2 from "./assets/F (From here to Eternity)/set2.png";
+import eternitySet3 from "./assets/F (From here to Eternity)/set3.png";
+import eternitySet4 from "./assets/F (From here to Eternity)/set4.png";
+import eternitySet5 from "./assets/F (From here to Eternity)/set5.png";
+import eternitySet6 from "./assets/F (From here to Eternity)/set6.png";
+import eternitySet7 from "./assets/F (From here to Eternity)/set7.png";
+import eternitySet8 from "./assets/F (From here to Eternity)/set8.png";
+import eternityIcon from "./assets/F (From here to Eternity)/ICON.png";
+import eternityNew1 from "./assets/F (From here to Eternity)/new1.gif";
+import eternityNew2 from "./assets/F (From here to Eternity)/new2.png";
+import eternityNew3 from "./assets/F (From here to Eternity)/new3.png";
+import eternity8rendering from "./assets/F (From here to Eternity)/8rendering.png";
+import eternityFloorplan from "./assets/F (From here to Eternity)/新平面图.png";
+import eternity1234 from "./assets/F (From here to Eternity)/1234.png";
+import eternity13 from "./assets/F (From here to Eternity)/13.png";
+import eternity14 from "./assets/F (From here to Eternity)/14.png";
+import eternity15 from "./assets/F (From here to Eternity)/15.png";
+import eternity16 from "./assets/F (From here to Eternity)/16.png";
+import eternity17 from "./assets/F (From here to Eternity)/17.png";
+import eternity18 from "./assets/F (From here to Eternity)/18.png";
+import eternity19 from "./assets/F (From here to Eternity)/19.png";
 
 // 15 Rules for Rebuilding the World images
-import rulesMain from "./assets/15 Rules for Rebuilding the World/2main.png";
-import rules1 from "./assets/15 Rules for Rebuilding the World/1.png";
-import rules2main from "./assets/15 Rules for Rebuilding the World/2main.png";
-import rules3 from "./assets/15 Rules for Rebuilding the World/3.png";
-import rules4 from "./assets/15 Rules for Rebuilding the World/4.png";
-import rules5 from "./assets/15 Rules for Rebuilding the World/5.png";
-import rules6modul from "./assets/15 Rules for Rebuilding the World/6modul.png";
-import rules7elevation from "./assets/15 Rules for Rebuilding the World/7elevation.png";
-import rules8plan from "./assets/15 Rules for Rebuilding the World/8PLAN .png";
-import rulesSmall1 from "./assets/15 Rules for Rebuilding the World/small1.png";
-import rulesSmall2 from "./assets/15 Rules for Rebuilding the World/small2.png";
-import rulesSmall3 from "./assets/15 Rules for Rebuilding the World/small3.png";
-import rulesSmall4 from "./assets/15 Rules for Rebuilding the World/small4.png";
-import rulesSmall5 from "./assets/15 Rules for Rebuilding the World/small5.png";
+import rulesMain from "./assets/G (15 Rules for Rebuilding the World)/2main.png";
+import rules1 from "./assets/G (15 Rules for Rebuilding the World)/1.png";
+import rules2main from "./assets/G (15 Rules for Rebuilding the World)/2main.png";
+import rules3 from "./assets/G (15 Rules for Rebuilding the World)/3.png";
+import rules4 from "./assets/G (15 Rules for Rebuilding the World)/4.png";
+import rules5 from "./assets/G (15 Rules for Rebuilding the World)/5.png";
+import rules6modul from "./assets/G (15 Rules for Rebuilding the World)/6modul.png";
+import rules7elevation from "./assets/G (15 Rules for Rebuilding the World)/7elevation.png";
+import rules8plan from "./assets/G (15 Rules for Rebuilding the World)/8PLAN .png";
+import rulesSmall1 from "./assets/G (15 Rules for Rebuilding the World)/small1.png";
+import rulesSmall2 from "./assets/G (15 Rules for Rebuilding the World)/small2.png";
+import rulesSmall3 from "./assets/G (15 Rules for Rebuilding the World)/small3.png";
+import rulesSmall4 from "./assets/G (15 Rules for Rebuilding the World)/small4.png";
+import rulesSmall5 from "./assets/G (15 Rules for Rebuilding the World)/small5.png";
 
 // From Screen to Space images
-import fromScreenCover from "./assets/From Screen to Space/1andfengmian.png";
-import fromScreenFig1 from "./assets/From Screen to Space/2refine.png";
-import fromScreen3 from "./assets/From Screen to Space/3refine.png";
-import fromScreen4 from "./assets/From Screen to Space/4.png";
-import fromScreen5 from "./assets/From Screen to Space/5.png";
-import fromScreen6 from "./assets/From Screen to Space/6.png";
-import fromScreen7 from "./assets/From Screen to Space/7.png";
-import fromScreen8 from "./assets/From Screen to Space/8.png";
-import fromScreen9 from "./assets/From Screen to Space/9.png";
+import fromScreenCover from "./assets/K (From Screen to Space)/1andfengmian.png";
+import fromScreenFig1 from "./assets/K (From Screen to Space)/2refine.png";
+import fromScreen3 from "./assets/K (From Screen to Space)/3refine.png";
+import fromScreen4 from "./assets/K (From Screen to Space)/4.png";
+import fromScreen5 from "./assets/K (From Screen to Space)/5.png";
+import fromScreen6 from "./assets/K (From Screen to Space)/6.png";
+import fromScreen7 from "./assets/K (From Screen to Space)/7.png";
+import fromScreen8 from "./assets/K (From Screen to Space)/8.png";
+import fromScreen9 from "./assets/K (From Screen to Space)/9.png";
 
 // Where Light Moves (Modulightor) images
-import modulightorMain from "./assets/Modulightor/main.png";
-import modulightor1 from "./assets/Modulightor/1mod.png";
-import modulightor2 from "./assets/Modulightor/2mod.png";
-import modulightor3 from "./assets/Modulightor/3mod.png";
-import modulightor4 from "./assets/Modulightor/4mod.png";
-import modulightor5 from "./assets/Modulightor/5mod.png";
-import modulightor6 from "./assets/Modulightor/6mod.png";
-import modulightor7 from "./assets/Modulightor/7mod.png";
-import modulightor8 from "./assets/Modulightor/8mod.png";
-import modulightor9 from "./assets/Modulightor/9mod.gif";
-import modulightor10 from "./assets/Modulightor/10mod.gif";
-import modulightor11 from "./assets/Modulightor/11mod.gif";
-import modulightor12 from "./assets/Modulightor/12mod.png";
-import modulightor13 from "./assets/Modulightor/13mod.png";
-import modulightor14 from "./assets/Modulightor/14mod.png";
-import modulightor15 from "./assets/Modulightor/15mod.png";
-import modulightor16 from "./assets/Modulightor/16mod.png";
-import modulightor17 from "./assets/Modulightor/17mod.png";
-import modulightor18 from "./assets/Modulightor/18mod.png";
-import modulightor19 from "./assets/Modulightor/19mod.png";
-import modulightor20 from "./assets/Modulightor/20mod.png";
-import modulightor21 from "./assets/Modulightor/21mod.png";
-import modulightor22 from "./assets/Modulightor/22mod.png";
-import modulightor23 from "./assets/Modulightor/23mod.png";
-import modulightor24 from "./assets/Modulightor/24mod.png";
-import modulightor25 from "./assets/Modulightor/25mod.png";
-import modulightorNew from "./assets/Modulightor/新图.png";
-import modulightorN1 from "./assets/Modulightor/N1.png";
+import modulightorMain from "./assets/L (Where Light Moves)/main.png";
+import modulightor1 from "./assets/L (Where Light Moves)/1mod.png";
+import modulightor2 from "./assets/L (Where Light Moves)/2mod.png";
+import modulightor3 from "./assets/L (Where Light Moves)/3mod.png";
+import modulightor4 from "./assets/L (Where Light Moves)/4mod.png";
+import modulightor5 from "./assets/L (Where Light Moves)/5mod.png";
+import modulightor6 from "./assets/L (Where Light Moves)/6mod.png";
+import modulightor7 from "./assets/L (Where Light Moves)/7mod.png";
+import modulightor8 from "./assets/L (Where Light Moves)/8mod.png";
+import modulightor9 from "./assets/L (Where Light Moves)/9mod.gif";
+import modulightor10 from "./assets/L (Where Light Moves)/10mod.gif";
+import modulightor11 from "./assets/L (Where Light Moves)/11mod.gif";
+import modulightor12 from "./assets/L (Where Light Moves)/12mod.png";
+import modulightor13 from "./assets/L (Where Light Moves)/13mod.png";
+import modulightor14 from "./assets/L (Where Light Moves)/14mod.png";
+import modulightor15 from "./assets/L (Where Light Moves)/15mod.png";
+import modulightor16 from "./assets/L (Where Light Moves)/16mod.png";
+import modulightor17 from "./assets/L (Where Light Moves)/17mod.png";
+import modulightor18 from "./assets/L (Where Light Moves)/18mod.png";
+import modulightor19 from "./assets/L (Where Light Moves)/19mod.png";
+import modulightor20 from "./assets/L (Where Light Moves)/20mod.png";
+import modulightor21 from "./assets/L (Where Light Moves)/21mod.png";
+import modulightor22 from "./assets/L (Where Light Moves)/22mod.png";
+import modulightor23 from "./assets/L (Where Light Moves)/23mod.png";
+import modulightor24 from "./assets/L (Where Light Moves)/24mod.png";
+import modulightor25 from "./assets/L (Where Light Moves)/25mod.png";
+import modulightorNew from "./assets/L (Where Light Moves)/新图.png";
+import modulightorN1 from "./assets/L (Where Light Moves)/N1.png";
 
 // Hidden Order images
-import hiddenMain from "./assets/Hidden Order/main.png";
-import hiddenSameline1 from "./assets/Hidden Order/sameline1.GIF";
-import hidden1 from "./assets/Hidden Order/1.png";
-import hidden2 from "./assets/Hidden Order/2.png";
-import hidden3 from "./assets/Hidden Order/3.png";
-import hidden4 from "./assets/Hidden Order/4.png";
-import hidden5 from "./assets/Hidden Order/5.png";
-import hidden6 from "./assets/Hidden Order/6.png";
-import hidden7 from "./assets/Hidden Order/7.png";
-import hidden8 from "./assets/Hidden Order/8.png";
-import hidden9 from "./assets/Hidden Order/9.png";
-import hidden10 from "./assets/Hidden Order/10.png";
-import hiddenAxonometric from "./assets/Hidden Order/Axonometric drawing.png";
-import hiddenNew1 from "./assets/Hidden Order/新1.png";
-import hiddenNew2 from "./assets/Hidden Order/新2.png";
-import hiddenNew3 from "./assets/Hidden Order/新3.png";
+import hiddenMain from "./assets/H (Hidden Order)/main.png";
+import hiddenSameline1 from "./assets/H (Hidden Order)/sameline1.GIF";
+import hidden1 from "./assets/H (Hidden Order)/1.png";
+import hidden2 from "./assets/H (Hidden Order)/2.png";
+import hidden3 from "./assets/H (Hidden Order)/3.png";
+import hidden4 from "./assets/H (Hidden Order)/4.png";
+import hidden5 from "./assets/H (Hidden Order)/5.png";
+import hidden6 from "./assets/H (Hidden Order)/6.png";
+import hidden7 from "./assets/H (Hidden Order)/7.png";
+import hidden8 from "./assets/H (Hidden Order)/8.png";
+import hiddenAxonometric from "./assets/H (Hidden Order)/Axonometric drawing.png";
+import hiddenNew1 from "./assets/H (Hidden Order)/新1.png";
+import hiddenNew2 from "./assets/H (Hidden Order)/新2.png";
+import hiddenNew3 from "./assets/H (Hidden Order)/新3.png";
 
 // Installation images
-import installationMain from "./assets/Installation/main.png";
-import installation1 from "./assets/Installation/1.png";
-import installation3 from "./assets/Installation/3.png";
-import installation4 from "./assets/Installation/4.png";
-import installation5 from "./assets/Installation/5.png";
-import installation6 from "./assets/Installation/6.png";
-import installation7 from "./assets/Installation/7.png";
-import installation8 from "./assets/Installation/8.png";
-import installationAnalyze1 from "./assets/Installation/analyze1.png";
-import installationAnalyze2 from "./assets/Installation/analyze2.png";
+import installationMain from "./assets/I (Simulfactory)/main.png";
+import installation1 from "./assets/I (Simulfactory)/1.png";
+import installation3 from "./assets/I (Simulfactory)/3.png";
+import installation4 from "./assets/I (Simulfactory)/4.png";
+import installation5 from "./assets/I (Simulfactory)/5.png";
+import installation6 from "./assets/I (Simulfactory)/6.png";
+import installation7 from "./assets/I (Simulfactory)/7.png";
+import installation8 from "./assets/I (Simulfactory)/8.png";
+import installationAnalyze1 from "./assets/I (Simulfactory)/analyze1.png";
+import installationAnalyze2 from "./assets/I (Simulfactory)/analyze2.png";
 
 // Silver Valley Exhibition images
-import silverMain from "./assets/Silver Valley Exhibition/main.png";
-import silver1 from "./assets/Silver Valley Exhibition/1.png";
-import silver2 from "./assets/Silver Valley Exhibition/2.png";
-import silver3 from "./assets/Silver Valley Exhibition/3.png";
-import silver4 from "./assets/Silver Valley Exhibition/4.png";
-import silver6 from "./assets/Silver Valley Exhibition/6.png";
-import silver7 from "./assets/Silver Valley Exhibition/7.png";
-import silver8 from "./assets/Silver Valley Exhibition/8.png";
-import silverSite from "./assets/Silver Valley Exhibition/site.png";
-import silverStructure from "./assets/Silver Valley Exhibition/structure.png";
-import silverCirculation from "./assets/Silver Valley Exhibition/circulation.png";
-import silverFloorplan from "./assets/Silver Valley Exhibition/floorplan.png";
-import silverNarrative from "./assets/Silver Valley Exhibition/narrative.png";
-import silverUpdate from "./assets/Silver Valley Exhibition/更新.png";
-import silverN1 from "./assets/Silver Valley Exhibition/n1.png";
-import silverN2 from "./assets/Silver Valley Exhibition/n2.png";
-import silverN3 from "./assets/Silver Valley Exhibition/n3.png";
-import silverN4 from "./assets/Silver Valley Exhibition/n4.png";
-import silverN5 from "./assets/Silver Valley Exhibition/n5.png";
+import silverMain from "./assets/J (Silver Valley Exhibition)/main.png";
+import silver1 from "./assets/J (Silver Valley Exhibition)/1.png";
+import silver2 from "./assets/J (Silver Valley Exhibition)/2.png";
+import silver3 from "./assets/J (Silver Valley Exhibition)/3.png";
+import silver4 from "./assets/J (Silver Valley Exhibition)/4.png";
+import silver6 from "./assets/J (Silver Valley Exhibition)/6.png";
+import silver7 from "./assets/J (Silver Valley Exhibition)/7.png";
+import silver8 from "./assets/J (Silver Valley Exhibition)/8.png";
+import silverSite from "./assets/J (Silver Valley Exhibition)/site.png";
+import silverStructure from "./assets/J (Silver Valley Exhibition)/structure.png";
+import silverCirculation from "./assets/J (Silver Valley Exhibition)/circulation.png";
+import silverFloorplan from "./assets/J (Silver Valley Exhibition)/floorplan.png";
+import silverNarrative from "./assets/J (Silver Valley Exhibition)/narrative.png";
+
+import silverN1 from "./assets/J (Silver Valley Exhibition)/n1.png";
+import silverN2 from "./assets/J (Silver Valley Exhibition)/n2.png";
+import silverN3 from "./assets/J (Silver Valley Exhibition)/n3.png";
+import silverN4 from "./assets/J (Silver Valley Exhibition)/n4.png";
+import silverN5 from "./assets/J (Silver Valley Exhibition)/n5.png";
 
 import horizontalImage from "./assets/horizontal.png";
 
 // Ploy Dream images
-import ployDream1 from "./assets/Ploy Dream/1.png";
-import ployDreamIntroVideo from "url:./assets/Ploy Dream/TDMovieOut.0.mp4";
-import ployDream2 from "./assets/Ploy Dream/2.png";
-import ployDream3 from "./assets/Ploy Dream/3.png";
-import ployDream4 from "./assets/Ploy Dream/4.png";
-import ployDream5 from "./assets/Ploy Dream/5.png";
-import ployDream6 from "./assets/Ploy Dream/6.png";
-import ployDream7 from "./assets/Ploy Dream/7.png";
-import ployDreamVideo from "url:./assets/Ploy Dream/8.mp4";
-import ployDream9 from "./assets/Ploy Dream/9.png";
-import ployDream10 from "./assets/Ploy Dream/10.png";
-import ployDream11 from "./assets/Ploy Dream/11.png";
-import ployDreamFinalVideo from "url:./assets/Ploy Dream/final视频.mp4";
+import ployDream1 from "./assets/M (Ploy Dream)/1.png";
+import ployDreamIntroVideo from "url:./assets/M (Ploy Dream)/TDMovieOut.0.mp4";
+import ployDream2 from "./assets/M (Ploy Dream)/2.png";
+import ployDream3 from "./assets/M (Ploy Dream)/3.png";
+
+import ployDreamVideo from "url:./assets/M (Ploy Dream)/8.mp4";
+
+import ployDreamFinalVideo from "url:./assets/M (Ploy Dream)/final视频.mp4";
 
 // Relaxing Chair images
-import relaxChair1 from "./assets/Relaxing Chair/1.png";
-import relaxChair2 from "./assets/Relaxing Chair/2.png";
-import relaxChair3 from "./assets/Relaxing Chair/3.png";
-import relaxChair4 from "./assets/Relaxing Chair/4.png";
-import relaxChair5 from "./assets/Relaxing Chair/5.png";
+import relaxChair1 from "./assets/N (Relaxing Chair)/1.png";
+import relaxChair2 from "./assets/N (Relaxing Chair)/2.png";
+import relaxChair3 from "./assets/N (Relaxing Chair)/3.png";
+
+import relaxChair5 from "./assets/N (Relaxing Chair)/5.png";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
@@ -835,11 +828,6 @@ const projectData = {
         title: "",
         desc: "I also participated in both the installation and de-installation of the exhibition.<br><br>Due to the large scale of certain photographic works and display structures, we coordinated an early move-in sequence to ensure safe handling before closing the walls.<br><br>Pieces requiring electrical connections were positioned first, with dedicated openings left in the wall system for power access and cable management.",
       },
-      {
-        title: "",
-        desc: "",
-        images: [hidden9, hidden10],
-      },
     ],
   },
   "project-i": {
@@ -955,11 +943,6 @@ const projectData = {
         desc: "The audience passes through the fragment track, drawn by a beam of red light, and enters the next space through an arched door.<br><br>The exterior of this space resembles a furnace, and people descend down a ramp 1 to observe the \"smelting\" process.",
       },
       {
-        title: "",
-        desc: "",
-        image: silverUpdate,
-      },
-      {
         title: "Crowds and Activities",
         desc: "",
       },
@@ -999,7 +982,7 @@ const projectData = {
   },
   "project-m": {
     title: "Ploy Dream",
-    desc: "<strong>Skillset:</strong> Arduino, Touchdesigner, 3d scanning",
+    desc: "<strong>Skillset:</strong> Arduino IDE, Touchdesigner",
     image: ployDream1,
     scenes: [
       {
@@ -1033,39 +1016,8 @@ const projectData = {
       },
       {
         title: "",
-        desc: "<strong>Ultrasonic Sensor:</strong><br>Ultrasonic sensors are deployed at the boundaries of the polyhedron to monitor the distance of the audience.<br>As a viewer approaches, the system decreases the opacity of the projection, causing the imagery to fade. This symbolizes the fragility of dreams when disturbed by reality. Conversely, as the interference moves away, the dream continues in silence.",
-        image: ployDream4,
-        layout: "side-by-side",
-        reversed: true,
-        splitRatio: "7fr 3fr",
-      },
-      {
-        title: "",
-        desc: "<strong>Sound Sensor:</strong><br>A sound sensor controls the laser beams. An increase in ambient noise leads to a weakening of the laser, visually representing the collapse of the boundary between dream and reality. As the environment returns to quiet, the laser boundary becomes sharp again, re-establishing a clear subconscious field.",
-        image: ployDream5,
-        layout: "side-by-side",
-        reversed: true,
-        splitRatio: "7fr 3fr",
-      },
-      {
-        title: "",
-        desc: "",
-        images: [ployDream6, ployDream7],
-      },
-      {
-        title: "",
         desc: "",
         video: ployDreamVideo,
-      },
-      {
-        title: "",
-        desc: "",
-        images: [ployDream9, ployDream10],
-      },
-      {
-        title: "",
-        desc: "",
-        image: ployDream11,
       },
       {
         title: "",
@@ -1076,7 +1028,7 @@ const projectData = {
   },
   "project-n": {
     title: "Relaxing Chair",
-    desc: "<strong>Relaxing Chair</strong><br><strong>Skillset:</strong> Arduino, Weaving net, Soldering<br><strong>Group:</strong> Fiona Lan, Artemis Jenkins, Sky Xing<br><strong>Time:</strong> 2025<br><strong>Location:</strong> 4th floor, CIT Building, Providence, RI",
+    desc: "<strong>Relaxing Chair</strong><br><strong>Skillset:</strong> Arduino IDE<br><strong>Group:</strong> Fiona Lan, Artemis Jenkins, Sky Xing<br><strong>Time:</strong> 2025<br><strong>Location:</strong> 4th floor, CIT Building, Providence, RI",
     image: relaxChair1,
     scenes: [
       {
@@ -1097,11 +1049,6 @@ const projectData = {
         desc: "Throughout the weaving process, we experimented with different techniques and encountered various challenges \u2014 such as the ropes gathering and deforming under pressure. After continuous adjustments and trials, we eventually completed this suspended seating installation.",
         image: relaxChair3,
         layout: "side-by-side",
-      },
-      {
-        title: "",
-        desc: "",
-        image: relaxChair4,
       },
       {
         title: "",
@@ -1409,7 +1356,7 @@ function setupProjectDetail() {
                   <div class="detail-side-text">
                     <div class="detail-desc">${safeDesc}</div>
                   </div>
-                  <div class="detail-side-image">
+                  <div class="detail-side-image${scene?.alignRight ? ' align-right' : ''}">
                     <img src="${imgSrc}" alt="${safeTitle}" class="img-fluid" />
                   </div>
                   ` : `
