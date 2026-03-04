@@ -994,7 +994,7 @@ const projectData = {
       },
       {
         title: "Concept",
-        desc: "This project was inspired by my experience with a dream. This dream left me unable to distinguish between the real world and reality, so I wanted to explore the boundary between dreams and reality.<br><br>Simply put, when stimulated by my surroundings, such as lights turning on or sounds increasing, I am pulled back to the real world from the dream.",
+        desc: "This project was inspired by my experience with a dream. This dream left me unable to distinguish between the dream world and reality, so I wanted to explore the boundary between dreams and reality.<br><br>Simply put, when stimulated by my surroundings, such as lights turning on or sounds increasing, I am pulled back to the real world from the dream.",
         image: ployDream1,
         layout: "side-by-side",
         reversed: true,
