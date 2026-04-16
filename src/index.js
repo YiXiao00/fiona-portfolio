@@ -1,4 +1,4 @@
-﻿import initScrollReveal from "./scripts/scrollReveal";
+import initScrollReveal from "./scripts/scrollReveal";
 import initTiltEffect from "./scripts/tiltAnimation";
 import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 
@@ -231,6 +231,22 @@ import relaxChair2 from "./assets/N (Relaxing Chair)/2.png";
 import relaxChair3 from "./assets/N (Relaxing Chair)/3.png";
 
 import relaxChair5 from "./assets/N (Relaxing Chair)/5.png";
+
+// The Unreal City images
+import unrealCity1 from "./assets/O (The unreal city)/otherwork_01.png";
+import unrealCity2 from "./assets/O (The unreal city)/otherwork_02.png";
+import unrealCity3 from "./assets/O (The unreal city)/otherwork_03.png";
+import unrealCity4 from "./assets/O (The unreal city)/otherwork_04.png";
+import unrealCity5 from "./assets/O (The unreal city)/otherwork_05.png";
+import unrealCity6 from "./assets/O (The unreal city)/otherwork_06.png";
+import unrealCity7 from "./assets/O (The unreal city)/otherwork_07.png";
+import unrealCity8 from "./assets/O (The unreal city)/otherwork_08.png";
+
+// Outsiders images
+import outsiders1 from "./assets/P (Outsiders)/pic1.png";
+import outsiders2 from "./assets/P (Outsiders)/pic2.png";
+import outsiders3 from "./assets/P (Outsiders)/pic3.png";
+import outsiders4 from "./assets/P (Outsiders)/pic4.png";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
@@ -1059,6 +1075,80 @@ const projectData = {
         desc: "Through this installation, we hope to offer people a small, overlooked corner within the stairwell \u2014 a place for brief pauses, rest, and emotional adjustment \u2014 while fostering a soft, intuitive interaction between the space and the behaviors that happen within it.",
         image: relaxChair5,
         layout: "side-by-side",
+      },
+    ],
+  },
+  "project-o": {
+    title: "The Unreal City",
+    desc: "",
+    image: unrealCity1,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: unrealCity1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity3,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity4,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity5,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity6,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity7,
+      },
+      {
+        title: "",
+        desc: "",
+        image: unrealCity8,
+      },
+    ],
+  },
+  "project-p": {
+    title: "Outsiders",
+    desc: "",
+    image: outsiders1,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: outsiders1,
+      },
+      {
+        title: "",
+        desc: "",
+        image: outsiders2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: outsiders3,
+      },
+      {
+        title: "",
+        desc: "",
+        image: outsiders4,
       },
     ],
   },
@@ -2073,14 +2163,55 @@ function setupBackHome() {
   });
 }
 
+function setupScrollFade() {
+  const columnImages = document.querySelector(".column-images");
+  const projectDetail = document.getElementById("projectDetail");
+  const overlay = document.getElementById("scrollFadeOverlay");
+  if (!columnImages || !overlay) return;
+
+  function getActiveScrollContainer() {
+    // When project detail is visible, it's the scroll container
+    if (projectDetail && !projectDetail.classList.contains("d-none")) {
+      return projectDetail;
+    }
+    // Otherwise the column-images itself scrolls (image grid view)
+    return columnImages;
+  }
+
+  function checkScroll() {
+    const container = getActiveScrollContainer();
+    const threshold = 30;
+    const atBottom = container.scrollHeight - container.scrollTop - container.clientHeight < threshold;
+    overlay.classList.toggle("hidden", atBottom);
+  }
+
+  // Listen on both containers
+  columnImages.addEventListener("scroll", checkScroll, { passive: true });
+  if (projectDetail) {
+    projectDetail.addEventListener("scroll", checkScroll, { passive: true });
+  }
+
+  // Check on initial load
+  checkScroll();
+
+  // Re-check when content changes (e.g. switching between grid and detail)
+  const observer = new MutationObserver(() => {
+    requestAnimationFrame(checkScroll);
+  });
+  observer.observe(columnImages, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+}
+
 // initialize after DOM ready
 let projectDetailHandlers = null;
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     projectDetailHandlers = setupProjectDetail();
     setupBackHome();
+    setupScrollFade();
   });
 } else {
   projectDetailHandlers = setupProjectDetail();
   setupBackHome();
+  setupScrollFade();
 }
+
