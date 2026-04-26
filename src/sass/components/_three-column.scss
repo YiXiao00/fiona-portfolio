@@ -753,6 +753,19 @@
 
   // Mobile responsive
   @media (max-width: 768px) {
+    height: auto;
+    overflow: visible;
+
+    .container-fluid {
+      overflow: visible;
+      height: auto;
+    }
+
+    .row {
+      overflow: visible;
+      height: auto;
+      flex-wrap: wrap;
+    }
 
     .column-about,
     .column-projects,
@@ -762,6 +775,7 @@
       margin-bottom: 2rem;
       position: static;
       max-height: none;
+      height: auto;
       overflow-y: visible;
     }
 
