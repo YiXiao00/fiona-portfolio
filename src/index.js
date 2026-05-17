@@ -349,7 +349,7 @@ const projectData = {
     ],
   },
   "project-c": {
-    title: "A GRAIN OF HANGZHOU 2021",
+    title: "A Grain of HangZhou",
     desc: "The exhibition is located on the first floor of the CAA Nanshan Campus, within a semi-circular gallery space strongly shaped by daylight. Running from 9:00 to 18:00, the show is highly influenced by the shifting quality of natural light throughout the day.<br><br>Titled Hangzhou Visual Chronicle, the exhibition presents the work of forty students, each documenting the city from a unique perspective through black-and-white documentary photography. The works are organized into thematic sections and displayed at varied scales. In addition to framed prints, the exhibition incorporates lightboxes, posters, postcards, and other graphic formats to extend the visual narrative.",
     image: null,
     scenes: [
@@ -1209,14 +1209,18 @@ const projectData = {
       {
         title: "Pause",
         desc: "",
-        images: [domesticating2, domesticating1],
-        equalHeight: true,
+        image: domesticating2,
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticating1,
       },
       {
         title: "",
         desc: "",
         images: [domesticatingFurniture1, domesticatingFloorPlan1],
-        equalHeight: true,
+        layout: "images-fill-row",
         imageRotations: [0, -90],
         swapAspectRatio: [false, true],
       },
@@ -1235,7 +1239,7 @@ const projectData = {
         title: "",
         desc: "",
         images: [domesticatingFurniture2, domesticatingFloorPlan2],
-        equalHeight: true,
+        layout: "images-fill-row",
         imageRotations: [0, -90],
         swapAspectRatio: [false, true],
       },
@@ -1254,7 +1258,7 @@ const projectData = {
         title: "",
         desc: "",
         images: [domesticatingFurniture3, domesticatingFloorPlan3],
-        equalHeight: true,
+        layout: "images-fill-row",
         imageRotations: [0, -90],
         swapAspectRatio: [false, true],
       },
@@ -1272,12 +1276,12 @@ const projectData = {
         title: "",
         desc: "",
         images: [domesticatingFurniture4, domesticatingFloorPlan4],
-        equalHeight: true,
+        layout: "images-fill-row",
         imageRotations: [0, -90],
         swapAspectRatio: [false, true],
       },
       {
-        title: "",
+        title: "Ideation and Framework",
         desc: "",
         image: domesticatingSpaces,
       },
@@ -1405,6 +1409,32 @@ function setupProjectDetail() {
                   <div class="mt-2">
                     <a href="${pdfSrc}" target="_blank" class="btn btn-outline-primary">在新窗口中打开 PDF</a>
                   </div>
+                </div>
+              </div>
+            `;
+          }
+
+          // Handle images-fill-row layout (two images, equal height, fill containers)
+          if (scene?.layout === "images-fill-row" && images.length === 2) {
+            const rotations = scene?.imageRotations || [];
+            const swapAspect = scene?.swapAspectRatio || [];
+            const imageCols = images
+              .map((img, idx) => {
+                const rot = rotations[idx] ?? 0;
+                const swapAttr = swapAspect[idx] ? ' data-swap-aspect="true"' : "";
+                const rotAttr = rot ? ` data-rotate="${rot}"` : "";
+                if (rot) {
+                  return `<div class="detail-itr-image"${swapAttr}${rotAttr}><div class="detail-itr-rotate"><img src="${img}" alt="Image ${idx + 1}"${rotAttr} /></div></div>`;
+                }
+                return `<div class="detail-itr-image"${swapAttr}><img src="${img}" alt="Image ${idx + 1}" /></div>`;
+              })
+              .join("");
+            return `
+              <div class="scene-block">
+                ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+                <div class="detail-images-fill-row" data-match-row-height="true">
+                  ${imageCols}
                 </div>
               </div>
             `;
@@ -1663,40 +1693,79 @@ function setupProjectDetail() {
       detailContent.innerHTML = topDesc + blocks;
 
       // Match images-text-row: two images + text, equal row height
-      const imagesTextRows = detailContent.querySelectorAll(
-        '.detail-images-text-row[data-match-row-height="true"]'
+      const fillRowContainers = detailContent.querySelectorAll(
+        '.detail-images-text-row[data-match-row-height="true"], .detail-images-fill-row[data-match-row-height="true"]'
       );
-      imagesTextRows.forEach((container) => {
+      fillRowContainers.forEach((container) => {
         const imageCols = container.querySelectorAll(".detail-itr-image");
         const textCol = container.querySelector(".detail-itr-text");
         const imgs = container.querySelectorAll(".detail-itr-image img");
 
         const applyRowHeight = () => {
           requestAnimationFrame(() => {
-            const colWidth =
-              imageCols[0]?.offsetWidth || container.offsetWidth / 3;
-            let maxHeight = textCol ? textCol.offsetHeight : 0;
-            imgs.forEach((img) => {
-              if (img.naturalWidth && img.naturalHeight) {
-                const h = colWidth * (img.naturalHeight / img.naturalWidth);
-                maxHeight = Math.max(maxHeight, h);
+            if (imgs.length < 2 || !container.offsetWidth) return;
+
+            const gap = parseFloat(getComputedStyle(container).gap) || 12;
+            const containerWidth = container.offsetWidth;
+
+            const aspects = Array.from(imgs).map((img, idx) => {
+              const col = imageCols[idx];
+              const swap = col?.dataset?.swapAspect === "true";
+              const w = img.naturalWidth || img.width;
+              const h = img.naturalHeight || img.height;
+              if (!w || !h) return 1;
+              return swap ? h / w : w / h;
+            });
+            const sumAspect = aspects.reduce((sum, ar) => sum + ar, 0);
+
+            let textWidth = 0;
+            if (textCol) {
+              const prevFlex = textCol.style.flex;
+              textCol.style.flex = "0 0 auto";
+              textCol.style.width = "max-content";
+              textCol.style.maxWidth = `${Math.floor(containerWidth * 0.45)}px`;
+              textWidth = textCol.offsetWidth;
+              textCol.style.flex = prevFlex || "1 1 auto";
+              textCol.style.width = "";
+              textCol.style.maxWidth = "";
+            }
+
+            const numGaps = textCol ? imgs.length : Math.max(0, imgs.length - 1);
+            const rowHeight = (containerWidth - textWidth - gap * numGaps) / sumAspect;
+            if (rowHeight <= 0) return;
+
+            imageCols.forEach((col, idx) => {
+              const colWidth = rowHeight * aspects[idx];
+              const rotateVal = col?.dataset?.rotate;
+              col.style.width = `${colWidth}px`;
+              col.style.height = `${rowHeight}px`;
+              col.style.flexShrink = "0";
+              col.style.display = "flex";
+              col.style.alignItems = "center";
+              col.style.justifyContent = "center";
+              col.style.overflow = "hidden";
+
+              const rotateWrap = col.querySelector(".detail-itr-rotate");
+              if (rotateWrap && rotateVal) {
+                rotateWrap.style.width = `${rowHeight}px`;
+                rotateWrap.style.height = `${colWidth}px`;
+                rotateWrap.style.transform = `rotate(${rotateVal}deg)`;
+                rotateWrap.style.transformOrigin = "center center";
+                rotateWrap.style.flexShrink = "0";
+              }
+
+              const img = col.querySelector("img");
+              if (img) {
+                img.style.width = "100%";
+                img.style.height = "100%";
+                img.style.objectFit = "contain";
+                img.style.transform = "";
+                img.style.maxWidth = "none";
               }
             });
-            if (maxHeight > 0) {
-              imageCols.forEach((col) => {
-                col.style.height = `${maxHeight}px`;
-                const img = col.querySelector("img");
-                if (img) {
-                  img.style.height = "100%";
-                  img.style.width = "100%";
-                  img.style.objectFit = "contain";
-                }
-              });
-              if (textCol) {
-                textCol.style.minHeight = `${maxHeight}px`;
-                textCol.style.display = "flex";
-                textCol.style.alignItems = "center";
-              }
+
+            if (textCol) {
+              textCol.style.minHeight = `${rowHeight}px`;
             }
           });
         };
