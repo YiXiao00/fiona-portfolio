@@ -248,6 +248,32 @@ import outsiders2 from "./assets/P (Outsiders)/pic2.png";
 import outsiders3 from "./assets/P (Outsiders)/pic3.png";
 import outsiders4 from "./assets/P (Outsiders)/pic4.png";
 
+// Domesticating Duration images
+import domesticating1 from "./assets/Q (Domesticating Duration)/1.png";
+import domesticating2 from "./assets/Q (Domesticating Duration)/2.png";
+import domesticating3 from "./assets/Q (Domesticating Duration)/3.png";
+import domesticating4 from "./assets/Q (Domesticating Duration)/4.png";
+import domesticating5 from "./assets/Q (Domesticating Duration)/5.png";
+import domesticating6 from "./assets/Q (Domesticating Duration)/6.png";
+import domesticating7 from "./assets/Q (Domesticating Duration)/7.png";
+import domesticating8 from "./assets/Q (Domesticating Duration)/8.png";
+import domesticating9 from "./assets/Q (Domesticating Duration)/9.png";
+import domesticating10 from "./assets/Q (Domesticating Duration)/10.png";
+import domesticatingDrawing from "./assets/Q (Domesticating Duration)/drawing.png";
+import domesticatingSpaces from "./assets/Q (Domesticating Duration)/每个空间.png";
+import domesticatingFurniture1 from "./assets/Q (Domesticating Duration)/funiture1.png";
+import domesticatingFurniture2 from "./assets/Q (Domesticating Duration)/funiture2.png";
+import domesticatingFurniture3 from "./assets/Q (Domesticating Duration)/funiture3.png";
+import domesticatingFurniture4 from "./assets/Q (Domesticating Duration)/funiture4.png";
+import domesticatingFloorPlan1 from "./assets/Q (Domesticating Duration)/floor plan-01.png";
+import domesticatingFloorPlan2 from "./assets/Q (Domesticating Duration)/floor plan-02.png";
+import domesticatingFloorPlan3 from "./assets/Q (Domesticating Duration)/floor plan-03.png";
+import domesticatingFloorPlan4 from "./assets/Q (Domesticating Duration)/floor plan-04.png";
+import domesticatingMaterial from "./assets/Q (Domesticating Duration)/material.png";
+import domesticatingModule from "./assets/Q (Domesticating Duration)/模块.png";
+import domesticatingExterior from "./assets/Q (Domesticating Duration)/建筑外轮廓.png";
+import domesticatingStairs from "./assets/Q (Domesticating Duration)/建筑楼梯.png";
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -1152,6 +1178,121 @@ const projectData = {
       },
     ],
   },
+  "project-q": {
+    title: "Domesticating Duration",
+    subtitle: "Domesticating Duration: Pause, Fast-forward, Slow-Motion, Rewind",
+    desc: "",
+    image: domesticating1,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        layout: "title-image",
+      },
+      {
+        title: "RISD Graduate Thesis 2026",
+        desc:
+          "<strong>An experiment in manipulating time perception as a retail concept.</strong><br><br>Using the \"home\" as a narrative thread, the design guides visitors through everyday domestic scenes—the bedroom, the living room, the bathroom, and the dining room. These archetypes are deconstructed into four distinct experiences of temporal flow: <strong>Pause, Fast-Forward, Slow-Motion, and Rewind.</strong> Guided by Peter Zumthor's Atmospheres and contemporary art interventions, the design translates the abstract concept of time into a tangible, human-centric environment. Through precise manipulations of materiality, light, and spatial proportions, the architecture physically dictates the experience.",
+      },
+      {
+        title: "",
+        desc:
+          "<strong>Challenge of building:</strong> lacks an ADA-compliant system.<br><br><strong>Intervention:</strong> ramp, elevator",
+        images: [domesticatingExterior, domesticatingStairs],
+        layout: "images-text-row",
+      },
+      {
+        title: "Material Palette",
+        desc: "",
+        image: domesticatingMaterial,
+      },
+      {
+        title: "Pause",
+        desc: "",
+        images: [domesticating2, domesticating1],
+        equalHeight: true,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [domesticatingFurniture1, domesticatingFloorPlan1],
+        equalHeight: true,
+        imageRotations: [0, -90],
+        swapAspectRatio: [false, true],
+      },
+      {
+        title: "Fast-Forward",
+        desc: "",
+        image: domesticating3,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [domesticating4, domesticating5],
+        equalHeight: true,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [domesticatingFurniture2, domesticatingFloorPlan2],
+        equalHeight: true,
+        imageRotations: [0, -90],
+        swapAspectRatio: [false, true],
+      },
+      {
+        title: "Slow-Motion",
+        desc: "",
+        images: [domesticating6, domesticating8],
+        equalHeight: true,
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticating7,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [domesticatingFurniture3, domesticatingFloorPlan3],
+        equalHeight: true,
+        imageRotations: [0, -90],
+        swapAspectRatio: [false, true],
+      },
+      {
+        title: "Rewind",
+        desc: "",
+        image: domesticating9,
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticating10,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [domesticatingFurniture4, domesticatingFloorPlan4],
+        equalHeight: true,
+        imageRotations: [0, -90],
+        swapAspectRatio: [false, true],
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticatingSpaces,
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticatingModule,
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticatingDrawing,
+      },
+    ],
+  },
 };
 
 function setupProjectDetail() {
@@ -1178,6 +1319,15 @@ function setupProjectDetail() {
     const altText = imgEl.getAttribute("alt") || detailTitle?.textContent || "Project image";
     lightboxImage.setAttribute("src", src);
     lightboxImage.setAttribute("alt", altText);
+
+    const rotate = imgEl.getAttribute("data-rotate") || imgEl.dataset.rotate;
+    if (rotate && rotate !== "0") {
+      lightboxImage.style.transform = `rotate(${rotate}deg)`;
+    } else if (imgEl.style.transform) {
+      lightboxImage.style.transform = imgEl.style.transform;
+    } else {
+      lightboxImage.style.transform = "";
+    }
   }
 
   function openLightboxFromElement(imgEl) {
@@ -1202,6 +1352,7 @@ function setupProjectDetail() {
     const handleTransitionEnd = () => {
       lightbox.classList.add("d-none");
       lightboxImage.setAttribute("src", "");
+      lightboxImage.style.transform = "";
       currentLightboxIndex = -1;
       currentLightboxImages = [];
       lightbox.removeEventListener("transitionend", handleTransitionEnd);
@@ -1253,6 +1404,26 @@ function setupProjectDetail() {
                   <iframe src="${pdfSrc}" width="100%" height="800px" style="border: none;"></iframe>
                   <div class="mt-2">
                     <a href="${pdfSrc}" target="_blank" class="btn btn-outline-primary">在新窗口中打开 PDF</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          // Handle images-text-row layout (two images left, text right, equal row height)
+          if (scene?.layout === "images-text-row" && images.length === 2 && safeDesc) {
+            return `
+              <div class="scene-block">
+                <div class="detail-images-text-row" data-match-row-height="true">
+                  <div class="detail-itr-image">
+                    <img src="${images[0]}" alt="Image 1" class="img-fluid" />
+                  </div>
+                  <div class="detail-itr-image">
+                    <img src="${images[1]}" alt="Image 2" class="img-fluid" />
+                  </div>
+                  <div class="detail-itr-text">
+                    ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
+                    <div class="detail-desc">${safeDesc}</div>
                   </div>
                 </div>
               </div>
@@ -1373,8 +1544,16 @@ function setupProjectDetail() {
             // If flexEqualHeight is used, don't use grid classes
             const finalGridClass = flexEqualHeightClass ? "" : gridClass;
 
+            const rotations = scene?.imageRotations || [];
+            const swapAspect = scene?.swapAspectRatio || [];
             const gridImages = images
-              .map((img, idx) => `<div class="grid-item"><img src="${img}" alt="Image ${idx + 1}" class="img-fluid" /></div>`)
+              .map((img, idx) => {
+                const rot = rotations[idx] ?? 0;
+                const swapAttr = swapAspect[idx] ? ' data-swap-aspect="true"' : "";
+                const rotAttr = rot ? ` data-rotate="${rot}"` : "";
+                const imgStyle = rot ? ` style="transform: rotate(${rot}deg);"` : "";
+                return `<div class="grid-item"${swapAttr}><img src="${img}" alt="Image ${idx + 1}" class="img-fluid"${rotAttr}${imgStyle} /></div>`;
+              })
               .join("");
             return `
               <div class="scene-block">
@@ -1417,18 +1596,24 @@ function setupProjectDetail() {
             `;
           }
 
-          // Handle title-image layout (title and subtitle left, image right)
-          if (scene?.layout === "title-image" && imgSrc && data.subtitle) {
+          // Handle title-image layout (title and subtitle left, optional image right)
+          if (scene?.layout === "title-image" && data.subtitle) {
+            const imageCol = imgSrc
+              ? `<div class="detail-title-image-right">
+                    <img src="${imgSrc}" alt="${data.title}" class="img-fluid" />
+                  </div>`
+              : "";
+            const wrapperClass = imgSrc
+              ? "detail-title-image"
+              : "detail-title-image detail-title-image--text-only";
             return `
               <div class="scene-block">
-                <div class="detail-title-image">
+                <div class="${wrapperClass}">
                   <div class="detail-title-text">
                     <h2 class="detail-title-inline">${data.title}</h2>
                     <div class="detail-subtitle">${data.subtitle}</div>
                   </div>
-                  <div class="detail-title-image-right">
-                    <img src="${imgSrc}" alt="${data.title}" class="img-fluid" />
-                  </div>
+                  ${imageCol}
                 </div>
               </div>
             `;
@@ -1477,6 +1662,69 @@ function setupProjectDetail() {
         .join("");
       detailContent.innerHTML = topDesc + blocks;
 
+      // Match images-text-row: two images + text, equal row height
+      const imagesTextRows = detailContent.querySelectorAll(
+        '.detail-images-text-row[data-match-row-height="true"]'
+      );
+      imagesTextRows.forEach((container) => {
+        const imageCols = container.querySelectorAll(".detail-itr-image");
+        const textCol = container.querySelector(".detail-itr-text");
+        const imgs = container.querySelectorAll(".detail-itr-image img");
+
+        const applyRowHeight = () => {
+          requestAnimationFrame(() => {
+            const colWidth =
+              imageCols[0]?.offsetWidth || container.offsetWidth / 3;
+            let maxHeight = textCol ? textCol.offsetHeight : 0;
+            imgs.forEach((img) => {
+              if (img.naturalWidth && img.naturalHeight) {
+                const h = colWidth * (img.naturalHeight / img.naturalWidth);
+                maxHeight = Math.max(maxHeight, h);
+              }
+            });
+            if (maxHeight > 0) {
+              imageCols.forEach((col) => {
+                col.style.height = `${maxHeight}px`;
+                const img = col.querySelector("img");
+                if (img) {
+                  img.style.height = "100%";
+                  img.style.width = "100%";
+                  img.style.objectFit = "contain";
+                }
+              });
+              if (textCol) {
+                textCol.style.minHeight = `${maxHeight}px`;
+                textCol.style.display = "flex";
+                textCol.style.alignItems = "center";
+              }
+            }
+          });
+        };
+
+        let loaded = 0;
+        const total = imgs.length;
+        if (total === 0) {
+          applyRowHeight();
+        } else {
+          imgs.forEach((img) => {
+            if (img.complete) {
+              loaded++;
+              if (loaded === total) applyRowHeight();
+            } else {
+              img.addEventListener(
+                "load",
+                () => {
+                  loaded++;
+                  if (loaded === total) applyRowHeight();
+                },
+                { once: true }
+              );
+            }
+          });
+        }
+        window.addEventListener("resize", applyRowHeight);
+      });
+
       // Match side-by-side image height to text height (only for elements with matchTextHeight flag)
       const sideBySides = detailContent.querySelectorAll('.detail-side-by-side[data-match-text-height="true"]');
       sideBySides.forEach((container) => {
@@ -1523,9 +1771,12 @@ function setupProjectDetail() {
                 const gap = parseFloat(getComputedStyle(grid).gap) || 12; // Default 0.75rem = 12px
 
                 // Get image data with aspect ratios
-                const imageData = images.map((img) => {
+                const imageData = images.map((img, idx) => {
                   if (img.complete && img.naturalWidth && img.naturalHeight) {
-                    const aspectRatio = img.naturalWidth / img.naturalHeight;
+                    const item = items[idx];
+                    const swap = item?.dataset?.swapAspect === "true";
+                    let aspectRatio = img.naturalWidth / img.naturalHeight;
+                    if (swap) aspectRatio = img.naturalHeight / img.naturalWidth;
                     return { img, aspectRatio };
                   }
                   return null;
@@ -1735,18 +1986,20 @@ function setupProjectDetail() {
             requestAnimationFrame(() => {
               // Get grid width
               const gridWidth = grid.offsetWidth;
-              // Use 0 gap for equal-height grids to make images touch each other
-              const gap = 0;
+              const gap = parseFloat(getComputedStyle(grid).gap) || 12;
               const totalAvailableWidth = gridWidth - gap * (items.length - 1);
 
               // Get image natural dimensions and calculate aspect ratios
               const imageData = images.map((img, idx) => {
+                const item = items[idx];
+                const swap = item?.dataset?.swapAspect === "true";
                 const naturalWidth = img.naturalWidth || img.width;
                 const naturalHeight = img.naturalHeight || img.height;
-                const aspectRatio = naturalWidth / naturalHeight;
+                let aspectRatio = naturalWidth / naturalHeight;
+                if (swap) aspectRatio = naturalHeight / naturalWidth;
                 return {
                   img,
-                  item: items[idx],
+                  item,
                   naturalWidth,
                   naturalHeight,
                   aspectRatio
