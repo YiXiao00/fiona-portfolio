@@ -1182,7 +1182,7 @@ const projectData = {
     title: "Domesticating Duration",
     subtitle: "Domesticating Duration: Pause, Fast-forward, Slow-Motion, Rewind",
     desc: "",
-    image: domesticating1,
+    image: domesticating2,
     scenes: [
       {
         title: "",
