@@ -260,6 +260,7 @@ import domesticating8 from "./assets/Q (Domesticating Duration)/8.png";
 import domesticating9 from "./assets/Q (Domesticating Duration)/9.png";
 import domesticating10 from "./assets/Q (Domesticating Duration)/10.png";
 import domesticatingDrawing from "./assets/Q (Domesticating Duration)/drawing.png";
+import domesticatingExplode from "./assets/Q (Domesticating Duration)/explode.png";
 import domesticatingSpaces from "./assets/Q (Domesticating Duration)/每个空间.png";
 import domesticatingFurniture1 from "./assets/Q (Domesticating Duration)/funiture1.png";
 import domesticatingFurniture2 from "./assets/Q (Domesticating Duration)/funiture2.png";
@@ -1281,19 +1282,15 @@ const projectData = {
         swapAspectRatio: [false, true],
       },
       {
-        title: "Ideation and Framework",
+        title: "Exploded Diagram",
         desc: "",
-        image: domesticatingSpaces,
+        image: domesticatingExplode,
       },
       {
         title: "",
         desc: "",
-        image: domesticatingModule,
-      },
-      {
-        title: "",
-        desc: "",
-        image: domesticatingDrawing,
+        images: [domesticatingSpaces, domesticatingModule, domesticatingDrawing],
+        equalHeight: true,
       },
     ],
   },
