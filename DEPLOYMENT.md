@@ -61,7 +61,7 @@ git push -u origin main
 
 ## 更新构建配置（如果需要）
 
-如果你的仓库名称不是 `simplefolio-master`，需要更新 `package.json` 中的 `build:github` 脚本：
+如果你的仓库名称不是 `fiona-portfolio`，需要更新 `package.json` 中的 `build:github` 脚本：
 
 ```json
 "build:github": "parcel build --public-url /YOUR_REPO_NAME/"

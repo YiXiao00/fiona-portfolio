@@ -47,7 +47,7 @@ This portfolio website presents the work of **Fiona LAN**, a Spatial Designer fo
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd simplefolio-master
+cd fiona-portfolio
 ```
 
 2. Install dependencies:
@@ -129,12 +129,3 @@ import projectMain from "./assets/[ProjectName]/main.png";
 - **Custom width ratios**: `{ images: [img1, img2, img3], widthRatios: [6.4, 3.3, 5.3] }`
 - **No crop**: `{ images: [img1, img2], noCrop: true }`
 - **Centered & scaled**: `{ image: img, center: true, scale: 0.5 }`
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-Built with [Simplefolio](https://github.com/cobiwave/simplefolio) template by [Jacobo Martinez](https://github.com/cobiwave)
