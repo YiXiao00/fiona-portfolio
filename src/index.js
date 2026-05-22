@@ -2483,18 +2483,16 @@ function setupBackHome() {
 }
 
 function setupScrollFade() {
-  const columnImages = document.querySelector(".column-images");
+  const columnImagesBody = document.getElementById("columnImagesBody");
   const projectDetail = document.getElementById("projectDetail");
   const overlay = document.getElementById("scrollFadeOverlay");
-  if (!columnImages || !overlay) return;
+  if (!columnImagesBody || !overlay) return;
 
   function getActiveScrollContainer() {
-    // When project detail is visible, it's the scroll container
     if (projectDetail && !projectDetail.classList.contains("d-none")) {
       return projectDetail;
     }
-    // Otherwise the column-images itself scrolls (image grid view)
-    return columnImages;
+    return columnImagesBody;
   }
 
   function checkScroll() {
@@ -2504,20 +2502,20 @@ function setupScrollFade() {
     overlay.classList.toggle("hidden", atBottom);
   }
 
-  // Listen on both containers
-  columnImages.addEventListener("scroll", checkScroll, { passive: true });
+  columnImagesBody.addEventListener("scroll", checkScroll, { passive: true });
   if (projectDetail) {
     projectDetail.addEventListener("scroll", checkScroll, { passive: true });
   }
 
-  // Check on initial load
   checkScroll();
 
-  // Re-check when content changes (e.g. switching between grid and detail)
   const observer = new MutationObserver(() => {
     requestAnimationFrame(checkScroll);
   });
-  observer.observe(columnImages, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+  observer.observe(columnImagesBody, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+  if (document.body) {
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+  }
 }
 
 // initialize after DOM ready

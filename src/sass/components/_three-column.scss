@@ -131,6 +131,10 @@
 
   // Column 2: Project Categories - scrollable list within remaining viewport height
   .column-projects {
+    --project-dot-size: 6px;
+    --project-dot-gap: 0.4rem;
+    --project-name-indent: calc(var(--project-dot-size) + var(--project-dot-gap));
+
     padding-right: 1rem;
     padding-left: 0.5rem;
     display: flex;
@@ -151,6 +155,7 @@
 
     .section-head {
       flex-shrink: 0;
+      padding-left: var(--project-name-indent);
     }
 
     .project-categories {
@@ -185,52 +190,67 @@
     }
 
     .project-list li span {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--project-dot-gap);
       color: #000;
       cursor: pointer;
       transition: color 0.2s ease;
+
+      // 圆点占位在文字左侧，避免负定位被 overflow 裁切
+      &::before {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        width: var(--project-dot-size);
+        height: var(--project-dot-size);
+        border-radius: 50%;
+        background: transparent;
+      }
 
       &:hover {
         color: #666;
       }
 
-      &.is-hovered {
-        background-color: #f0f0f0;
-        border: 1px solid #000;
-        border-radius: 4px;
-        padding: 0 0.25rem;
-        margin-left: calc(-0.25rem - 1px); // 保持文字对齐不受 padding 和 border 影响
+      &.is-hovered:not(.is-active) {
+        color: #999;
+
+        &::before {
+          background: #000;
+        }
       }
 
       &.is-active {
         color: #000;
         font-weight: 700;
-        position: relative;
-      }
 
-      &.is-active::before {
-        content: "";
-        position: absolute;
-        left: -10px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 6px;
-        height: 6px;
-        background: #000;
-        border-radius: 50%;
+        &::before {
+          background: #000;
+        }
       }
     }
   }
 
-  // Column 3: Project Images - Scrollable
+  // Column 3: Project Images
   .column-images {
     padding-left: 1rem;
-    padding-bottom: 3.5rem;
-    overflow-y: auto;
+    overflow: hidden;
     height: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
+
+    .column-images-body {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    body.page-is-home & .column-images-body {
+      overflow-y: auto;
+    }
 
     .image-grid {
       display: grid;
@@ -262,34 +282,35 @@
         filter: brightness(1.1);
       }
     }
-  }
 
-  // Bottom gradient fade hint
-  .scroll-fade-overlay {
-    position: sticky;
-    bottom: 0;
-    height: 140px;
-    margin-top: -140px;
-    background: linear-gradient(
-      to bottom,
-      rgba(254, 251, 246, 0) 0%,
-      rgba(254, 251, 246, 0.5) 35%,
-      rgba(254, 251, 246, 0.85) 65%,
-      rgba(254, 251, 246, 1) 100%
-    );
-    pointer-events: none;
-    z-index: 10;
-    flex-shrink: 0;
-    transition: opacity 0.4s ease;
+    // Bottom gradient fade — pinned to visible column bottom (not scroll content end)
+    .scroll-fade-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 49px;
+      background: linear-gradient(
+        to bottom,
+        rgba(254, 251, 246, 0) 0%,
+        rgba(254, 251, 246, 0.5) 35%,
+        rgba(254, 251, 246, 0.85) 65%,
+        rgba(254, 251, 246, 1) 100%
+      );
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity 0.4s ease;
 
-    &.hidden {
-      opacity: 0;
+      &.hidden {
+        opacity: 0;
+      }
     }
   }
 
   // Project detail view
   .project-detail {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
     position: relative;
     padding-bottom: 3.5rem; // space for fixed nav
@@ -919,6 +940,10 @@
       max-height: none;
       height: auto;
       overflow-y: visible;
+    }
+
+    .column-images .scroll-fade-overlay {
+      display: none;
     }
 
     .column-projects {
