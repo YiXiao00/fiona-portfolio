@@ -275,6 +275,20 @@ import domesticatingModule from "./assets/Q (Domesticating Duration)/模块.png"
 import domesticatingExterior from "./assets/Q (Domesticating Duration)/建筑外轮廓.png";
 import domesticatingStairs from "./assets/Q (Domesticating Duration)/建筑楼梯.png";
 
+// Fill and Full images
+import fillMain from "./assets/R (Fill and Full)/main.png";
+import fillNarrative from "./assets/R (Fill and Full)/narrative.png";
+import fillFinal from "./assets/R (Fill and Full)/final.png";
+import fillChair from "./assets/R (Fill and Full)/chair.png";
+import fillLamp from "./assets/R (Fill and Full)/lamp.png";
+import fillTable from "./assets/R (Fill and Full)/table.png";
+import fillStructure from "./assets/R (Fill and Full)/structure.png";
+import fillPlan from "./assets/R (Fill and Full)/plan.png";
+import fillDay1 from "./assets/R (Fill and Full)/day1.png";
+import fillShow2 from "./assets/R (Fill and Full)/show2.png";
+import fillLivestream1 from "./assets/R (Fill and Full)/livestream1.png";
+import fillLivestream2 from "./assets/R (Fill and Full)/livestream2.png";
+
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
@@ -1294,6 +1308,46 @@ const projectData = {
       },
     ],
   },
+  "project-r": {
+    title: "Fill and Full",
+    desc: "",
+    image: fillMain,
+    scenes: [
+      {
+        title: "",
+        desc: "",
+        image: fillNarrative,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [fillFinal, fillChair, fillLamp, fillTable],
+        flexEqualHeight: true,
+      },
+      {
+        title: "",
+        desc: "",
+        image: fillStructure,
+      },
+      {
+        title: "",
+        desc: "",
+        image: fillPlan,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [fillDay1, fillShow2],
+        equalHeight: true,
+      },
+      {
+        title: "",
+        desc: "",
+        image: fillLivestream2,
+        hoverImage: fillLivestream1,
+      },
+    ],
+  },
 };
 
 function setupProjectDetail() {
@@ -1678,11 +1732,21 @@ function setupProjectDetail() {
           const centerClass = scene?.center ? " detail-image-center" : "";
           const scaleClass = scene?.scale ? " detail-image-scaled" : "";
           const scaleStyle = scene?.scale ? ` style="width: ${scene.scale * 100}%; height: auto; margin: 0 auto;"` : "";
+          const hoverImg = scene?.hoverImage || "";
+          let imageHtml = "";
+          if (imgSrc && hoverImg) {
+            imageHtml = `<div class="detail-image mt-3 detail-hover-swap${centerClass}${scaleClass}">
+              <img src="${imgSrc}" alt="${safeTitle}" class="img-fluid detail-hover-swap-base"${scaleStyle} />
+              <img src="${hoverImg}" alt="${safeTitle}" class="img-fluid detail-hover-swap-overlay" />
+            </div>`;
+          } else if (imgSrc) {
+            imageHtml = `<div class="detail-image mt-3${centerClass}${scaleClass}"><img src="${imgSrc}" alt="${safeTitle}" class="img-fluid"${scaleStyle} /></div>`;
+          }
           return `
             <div class="scene-block">
               ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
               ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
-              ${imgSrc ? `<div class="detail-image mt-3${centerClass}${scaleClass}"><img src="${imgSrc}" alt="${safeTitle}" class="img-fluid"${scaleStyle} /></div>` : ""}
+              ${imageHtml}
             </div>
           `;
         })
