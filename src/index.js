@@ -423,7 +423,7 @@ const projectData = {
   "project-e": {
     title: "LACERTA Showroom",
     desc: "<strong>Site:</strong> He Dong Mansion, Shanghai<br><strong>Time:</strong> 2025<br><br>Developed during my professional internship, this project centers on the design of a Shanghai showroom for the fashion brand LACERTA. My responsibilities spanned from conceptualization to execution—encompassing vendor coordination, material sourcing and sample selection, as well as on-site construction monitoring to ensure the precise realization of the design intent.",
-    image: lacertaHero,
+    image: lacertaCabinetWithObjects,
     scenes: [
       {
         title: "",
