@@ -42,38 +42,19 @@ import seeIt6_2 from "./assets/D (See It)/6-2.png";
 // Import PDF as URL
 import seeItPdfUrl from "url:./assets/D (See It)/6-1.pdf";
 
-// LACERTA Showroom images (these are actually JPEG files)
-import lacertaPhoto1 from "./assets/E (LACERTA Showroom)/photo1.jpg";
-import lacertaPhoto2 from "./assets/E (LACERTA Showroom)/photo2.jpg";
-import lacertaPhoto3 from "./assets/E (LACERTA Showroom)/photo3.jpg";
-import lacertaPhoto4 from "./assets/E (LACERTA Showroom)/photo4.jpg";
-import lacertaPhoto5 from "./assets/E (LACERTA Showroom)/photo5.jpg";
-import lacertamodel1 from "./assets/E (LACERTA Showroom)/model1.jpg";
-import lacertamodel2 from "./assets/E (LACERTA Showroom)/model2.jpg";
-import lacertaPlan from "./assets/E (LACERTA Showroom)/plan.png";
+// LACERTA Showroom images
+import lacertaHero from "./assets/E (LACERTA Showroom)/hero image.png";
 import lacertaMoodboard from "./assets/E (LACERTA Showroom)/moodboard.png";
 import lacertaMaterial from "./assets/E (LACERTA Showroom)/material.png";
-import lacertaPhotnew from "./assets/E (LACERTA Showroom)/photnew.png";
-import lacertaPiger from "./assets/E (LACERTA Showroom)/piger.png";
-import lacertrendering1 from "./assets/E (LACERTA Showroom)/rendering1.jpg";
-import lacertrendering2 from "./assets/E (LACERTA Showroom)/rendering2.jpg";
-import lacertrendering3 from "./assets/E (LACERTA Showroom)/rendering3.jpg";
-import lacertrendering4 from "./assets/E (LACERTA Showroom)/rendering4.jpg";
-import lacertrendering5 from "./assets/E (LACERTA Showroom)/rendering5.jpg";
-import lacertrendering6 from "./assets/E (LACERTA Showroom)/rendering6.jpg";
-import lacertrendering7 from "./assets/E (LACERTA Showroom)/rendering7.jpg";
-import lacertaField1 from "./assets/E (LACERTA Showroom)/1.png";
-import lacertaField2 from "./assets/E (LACERTA Showroom)/2.png";
-import lacertaField3 from "./assets/E (LACERTA Showroom)/3.png";
-import lacertaField4 from "./assets/E (LACERTA Showroom)/4.png";
-import lacertaField5 from "./assets/E (LACERTA Showroom)/5.png";
-import lacertaField6 from "./assets/E (LACERTA Showroom)/6.png";
-import lacertaField7 from "./assets/E (LACERTA Showroom)/7.png";
-import lacertaField8 from "./assets/E (LACERTA Showroom)/8.png";
-import lacertaField9 from "./assets/E (LACERTA Showroom)/9.png";
-import lacertaField10 from "./assets/E (LACERTA Showroom)/10.png";
-import lacertaField11 from "./assets/E (LACERTA Showroom)/11.png";
-import lacertaField12 from "./assets/E (LACERTA Showroom)/12.png";
+import lacertaFloorplan from "./assets/E (LACERTA Showroom)/floorplan.png";
+import lacertaCabinetPlain from "./assets/E (LACERTA Showroom)/cabinet.png";
+import lacertaCabinetWithObjects from "./assets/E (LACERTA Showroom)/cabinet with objects.png";
+import lacertaRankPlain from "./assets/E (LACERTA Showroom)/rank.png";
+import lacertaRankWithObjects from "./assets/E (LACERTA Showroom)/rank with objects.png";
+import lacertaCabinet2Plain from "./assets/E (LACERTA Showroom)/cabinet2.png";
+import lacertaCabinet2WithObjects from "./assets/E (LACERTA Showroom)/cabinet2 with objects.png";
+import lacertaTechnical from "./assets/E (LACERTA Showroom)/05.单体图-改 (1)-布局1.png";
+import lacertaFieldReport from "./assets/E (LACERTA Showroom)/Field Report.png";
 
 // From here to Eternity images
 import eternityMain1 from "./assets/F (From here to Eternity)/main and 1.png";
@@ -441,81 +422,64 @@ const projectData = {
   },
   "project-e": {
     title: "LACERTA Showroom",
-    desc: "<strong>Site:</strong> He Dong Mansion, Shanghai<br><strong>Time:</strong> 2025<br>This project was designed for the fashion brand LACERTA, creating a multifunctional space that integrates office, reception, and retail functions. <br>",
+    desc: "<strong>Site:</strong> He Dong Mansion, Shanghai<br><strong>Time:</strong> 2025<br><br>Developed during my professional internship, this project centers on the design of a Shanghai showroom for the fashion brand LACERTA. My responsibilities spanned from conceptualization to execution—encompassing vendor coordination, material sourcing and sample selection, as well as on-site construction monitoring to ensure the precise realization of the design intent.",
+    image: lacertaHero,
     scenes: [
       {
-        title: "Moodboard",
+        title: "",
+        desc: "",
+        image: lacertaHero,
+      },
+      {
+        title: "",
+        desc: "Through a deep deconstruction of the brand's identity and offline operational needs, I custom-designed a modular display system that perfectly integrates material aesthetics, ergonomic precision, and dynamic spatial layouts.",
+      },
+      {
+        title: "",
         desc: "",
         images: [lacertaMoodboard, lacertaMaterial],
+        flexEqualHeight: true,
+        widthRatios: [1, 1.7],
+      },
+      {
+        title: "",
+        desc: "",
+        image: lacertaFloorplan,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertaCabinetPlain, lacertaRankPlain],
+        hoverImages: [lacertaCabinetWithObjects, lacertaRankWithObjects],
+        flexEqualHeight: true,
+      },
+      {
+        title: "Materiality & Form:",
+        desc: "The primary structure utilizes rich, deep walnut wood, contrasted with the industrial coolness of brushed stainless steel. Furthermore, the clever integration of hemispherical decorative elements directly echoes the overall spatial design language, ensuring visual and conceptual cohesion. This fusion of material and form injects the space with an understated yet avant-garde aesthetic.",
+      },
+      {
+        title: "Display Logic:",
+        desc: `<ul>
+<li>The overall cabinet height is precisely set at 36 inches. This serves as the ideal ergonomic height for customers viewing jewelry, while the flat top surface simultaneously meets the client's practical operational needs, functioning as a temporary workbench for laying out blueprints or organizing garments.</li>
+<li>The top tier features a jewelry drawer beneath ultra-clear glass, utilizing the deep walnut base to visually anchor and highlight the brand's subtle product colors. The lower two shelves are calibrated to 11.8 inches (30 cm)—based on the average volume of bags and footwear—perfectly accommodating an upright display while maintaining visual "breathing room."</li>
+<li>Featuring a bespoke knob mechanism for free height adjustment, these racks can flexibly convert into a double-tiered structure to maximize merchandising capacity within a limited footprint.</li>
+</ul>`,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [lacertaCabinet2Plain, lacertaTechnical],
+        hoverImages: [lacertaCabinet2WithObjects],
         flexEqualHeight: true,
       },
       {
         title: "",
-        desc: "",
-        image: lacertaPhotnew,
+        desc: "Dynamic Spatial Layout: Recognizing that the venue frequently hosts pop-up and community events, all wooden fixtures are equipped with concealed, heavy-duty casters. This transforms a static retail display into a dynamic spatial planning system, offering tremendous flexibility for spatial reconfiguration.",
       },
       {
         title: "",
         desc: "",
-        images: [lacertaPhoto1, lacertaPhoto4],
-        noCrop: true,
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertaPhoto2, lacertaPhoto3],
-      },
-      {
-        title: "Plan",
-        desc: "The original site was a square-shaped room. The design process began with understanding the studio's operational needs, including equipment, staff capacity, and workflow — as well as the quantity and type of garments to be displayed in the showroom. The spatial layout and atmosphere were developed in response to the brand's distinctive identity and aesthetic tone.",
-        image: lacertaPlan,
-      },
-      {
-        title: "",
-        desc: "Based on the brand's needs, I designed a mobile display cabinet whose materials and color palette align with the overall aesthetic of the showroom.<br>The top section features a pull-out drawer intended for accessories, while the lower compartment is designed with increased height to accommodate bags and shoes.",
-        image: lacertaPiger,
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertrendering1, lacertrendering5, lacertrendering7],
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertrendering3, lacertrendering4],
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertamodel1, lacertamodel2],
-      },
-      {
-        title: "Field Report",
-        desc: "7.15.2025",
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertaField1, lacertaField2, lacertaField3, lacertaField4],
-      },
-      {
-        title: "",
-        desc: "7.23.2025",
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertaField5, lacertaField6, lacertaField7, lacertaField8],
-      },
-      {
-        title: "",
-        desc: "8.8.2025",
-      },
-      {
-        title: "",
-        desc: "",
-        images: [lacertaField9, lacertaField10, lacertaField11, lacertaField12],
+        image: lacertaFieldReport,
       },
     ],
   },
@@ -1309,7 +1273,7 @@ const projectData = {
     ],
   },
   "project-r": {
-    title: "Fill and Full",
+    title: "Fill and Full (Ongoing...)",
     desc: "",
     image: fillMain,
     scenes: [
@@ -1359,12 +1323,38 @@ function setupProjectDetail() {
   const detailContent = document.getElementById("detailContent");
   const lightbox = document.getElementById("imageLightbox");
   const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCompare = document.getElementById("lightboxCompare");
+  const lightboxCompareLeft = document.getElementById("lightboxCompareLeft");
+  const lightboxCompareRight = document.getElementById("lightboxCompareRight");
 
   if (!links.length || !imageGrid || !detail || !detailContent) return;
 
   let currentProjectKey = null;
   let currentLightboxImages = [];
   let currentLightboxIndex = -1;
+  let lightboxCompareMode = false;
+
+  function resetLightboxView() {
+    if (!lightboxImage || !lightboxCompare) return;
+    lightboxImage.classList.remove("d-none");
+    lightboxCompare.classList.add("d-none");
+    lightboxCompare.setAttribute("aria-hidden", "true");
+    lightboxCompareMode = false;
+  }
+
+  function showLightboxCompare(baseSrc, compareSrc, altText = "Project image") {
+    if (!lightboxCompare || !lightboxCompareLeft || !lightboxCompareRight || !lightboxImage) return;
+    lightboxCompareMode = true;
+    currentLightboxImages = [];
+    currentLightboxIndex = -1;
+    lightboxImage.classList.add("d-none");
+    lightboxCompare.classList.remove("d-none");
+    lightboxCompare.setAttribute("aria-hidden", "false");
+    lightboxCompareLeft.setAttribute("src", baseSrc);
+    lightboxCompareRight.setAttribute("src", compareSrc);
+    lightboxCompareLeft.setAttribute("alt", altText);
+    lightboxCompareRight.setAttribute("alt", `${altText} (with objects)`);
+  }
 
   function updateLightboxImage() {
     if (!lightboxImage || currentLightboxIndex < 0 || !currentLightboxImages.length) return;
@@ -1387,14 +1377,24 @@ function setupProjectDetail() {
 
   function openLightboxFromElement(imgEl) {
     if (!lightbox || !lightboxImage) return;
-    const candidates = Array.from(detailContent.querySelectorAll("img"));
-    currentLightboxImages = candidates.filter((img) => img instanceof HTMLImageElement);
-    currentLightboxIndex = currentLightboxImages.indexOf(imgEl);
-    if (currentLightboxIndex < 0) {
-      currentLightboxImages.unshift(imgEl);
-      currentLightboxIndex = 0;
+    const compareSrc = imgEl.getAttribute("data-compare-src");
+    if (compareSrc) {
+      const baseSrc = imgEl.getAttribute("src") || "";
+      const altText = imgEl.getAttribute("alt") || detailTitle?.textContent || "Project image";
+      showLightboxCompare(baseSrc, compareSrc, altText);
+    } else {
+      resetLightboxView();
+      const candidates = Array.from(detailContent.querySelectorAll("img")).filter(
+        (img) => !img.classList.contains("detail-hover-swap-overlay")
+      );
+      currentLightboxImages = candidates.filter((img) => img instanceof HTMLImageElement);
+      currentLightboxIndex = currentLightboxImages.indexOf(imgEl);
+      if (currentLightboxIndex < 0) {
+        currentLightboxImages.unshift(imgEl);
+        currentLightboxIndex = 0;
+      }
+      updateLightboxImage();
     }
-    updateLightboxImage();
     lightbox.classList.remove("d-none");
     requestAnimationFrame(() => lightbox.classList.add("is-active"));
     document.body.classList.add("lightbox-open");
@@ -1408,6 +1408,9 @@ function setupProjectDetail() {
       lightbox.classList.add("d-none");
       lightboxImage.setAttribute("src", "");
       lightboxImage.style.transform = "";
+      if (lightboxCompareLeft) lightboxCompareLeft.setAttribute("src", "");
+      if (lightboxCompareRight) lightboxCompareRight.setAttribute("src", "");
+      resetLightboxView();
       currentLightboxIndex = -1;
       currentLightboxImages = [];
       lightbox.removeEventListener("transitionend", handleTransitionEnd);
@@ -1416,9 +1419,19 @@ function setupProjectDetail() {
   }
 
   function shiftLightbox(step) {
-    if (!lightbox?.classList.contains("is-active") || currentLightboxImages.length === 0) return;
+    if (lightboxCompareMode || !lightbox?.classList.contains("is-active") || currentLightboxImages.length === 0) return;
     currentLightboxIndex = (currentLightboxIndex + step + currentLightboxImages.length) % currentLightboxImages.length;
     updateLightboxImage();
+  }
+
+  function getGridPrimaryImages(grid) {
+    return Array.from(grid.querySelectorAll(".grid-item"))
+      .map(
+        (item) =>
+          item.querySelector(".detail-hover-swap-base") ||
+          item.querySelector("img:not(.detail-hover-swap-overlay)")
+      )
+      .filter(Boolean);
   }
 
   function renderAll(projectKey) {
@@ -1627,12 +1640,17 @@ function setupProjectDetail() {
 
             const rotations = scene?.imageRotations || [];
             const swapAspect = scene?.swapAspectRatio || [];
+            const hoverImages = scene?.hoverImages || [];
             const gridImages = images
               .map((img, idx) => {
                 const rot = rotations[idx] ?? 0;
                 const swapAttr = swapAspect[idx] ? ' data-swap-aspect="true"' : "";
                 const rotAttr = rot ? ` data-rotate="${rot}"` : "";
                 const imgStyle = rot ? ` style="transform: rotate(${rot}deg);"` : "";
+                const hoverImg = hoverImages[idx] || "";
+                if (hoverImg) {
+                  return `<div class="grid-item detail-hover-swap"${swapAttr}><img src="${img}" alt="Image ${idx + 1}" class="img-fluid detail-hover-swap-base" data-compare-src="${hoverImg}"${rotAttr}${imgStyle} /><img src="${hoverImg}" alt="" class="img-fluid detail-hover-swap-overlay" aria-hidden="true" /></div>`;
+                }
                 return `<div class="grid-item"${swapAttr}><img src="${img}" alt="Image ${idx + 1}" class="img-fluid"${rotAttr}${imgStyle} /></div>`;
               })
               .join("");
@@ -1886,7 +1904,7 @@ function setupProjectDetail() {
       allGrids.forEach((grid) => {
         const items = Array.from(grid.querySelectorAll(".grid-item"));
         if (items.length > 1) {
-          const images = Array.from(grid.querySelectorAll("img"));
+          const images = getGridPrimaryImages(grid);
 
           // Wait for all images to load
           let loadedCount = 0;
@@ -2251,7 +2269,7 @@ function setupProjectDetail() {
       flexEqualHeightGrids.forEach((grid) => {
         const items = Array.from(grid.querySelectorAll(".grid-item"));
         if (items.length > 1) {
-          const images = Array.from(grid.querySelectorAll("img"));
+          const images = getGridPrimaryImages(grid);
           let loadedCount = 0;
           const totalImages = images.length;
 
