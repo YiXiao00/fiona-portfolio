@@ -21,6 +21,9 @@ import image4 from "./assets/B (TATAbowls Restaurant)/4.png";
 import planImage from "./assets/B (TATAbowls Restaurant)/plan.png";
 import section1 from "./assets/B (TATAbowls Restaurant)/section-01.png";
 import section2 from "./assets/B (TATAbowls Restaurant)/section-02.png";
+import tataMenu from "./assets/B (TATAbowls Restaurant)/menu.png";
+import tataMenu2 from "./assets/B (TATAbowls Restaurant)/menu2.png";
+import tataMenu3 from "./assets/B (TATAbowls Restaurant)/menu3.png";
 
 // PhotoGal images
 import photo1 from "./assets/C (A GRAIN OF HANGZHOU 2021)/1.png";
@@ -44,8 +47,11 @@ import seeItPdfUrl from "url:./assets/D (See It)/6-1.pdf";
 
 // LACERTA Showroom images
 import lacertaHero from "./assets/E (LACERTA Showroom)/hero image.png";
+import lacertaPhoto1 from "./assets/E (LACERTA Showroom)/photo1.png";
+import lacertaPhoto2 from "./assets/E (LACERTA Showroom)/photo2.png";
+import lacertaPhoto3 from "./assets/E (LACERTA Showroom)/photo3.png";
 import lacertaMoodboard from "./assets/E (LACERTA Showroom)/moodboard.png";
-import lacertaMaterial from "./assets/E (LACERTA Showroom)/material.png";
+import lacertaMaterial from "./assets/E (LACERTA Showroom)/材料.png";
 import lacertaFloorplan from "./assets/E (LACERTA Showroom)/floorplan.png";
 import lacertaCabinetPlain from "./assets/E (LACERTA Showroom)/cabinet.png";
 import lacertaCabinetWithObjects from "./assets/E (LACERTA Showroom)/cabinet with objects.png";
@@ -258,6 +264,8 @@ import domesticatingStairs from "./assets/Q (Domesticating Duration)/建筑楼�
 
 // Fill and Full images
 import fillMain from "./assets/R (Fill and Full)/main.png";
+import fillMoodboard from "./assets/R (Fill and Full)/moodboard.png";
+import fillTouchpoint from "./assets/R (Fill and Full)/touchpoint.png";
 import fillNarrative from "./assets/R (Fill and Full)/narrative.png";
 import fillFinal from "./assets/R (Fill and Full)/final.png";
 import fillChair from "./assets/R (Fill and Full)/chair.png";
@@ -312,35 +320,52 @@ const projectData = {
   },
   "project-b": {
     title: "TaTaBowls Restaurant",
-    desc:
-      "<strong>Site:</strong> Legoland Shanghai<br><strong>Time:</strong> 2025<br>Situated within the newly opened Legoland in Shanghai, the restaurant draws its visual identity from the vibrant palette of LEGO bricks. Contrasting materials and modular compositions transform the interior into a playful, kinetic landscape — an environment that blurs the boundary between dining and play, extending the park's immersive narrative beyond its rides and attractions.",
+    desc: "<strong>Site:</strong> Legoland Shanghai<br><strong>Time:</strong> 2025",
     image: mainImage,
-    // scenes是项目细节页的分场景数据，每个元素对应一个详细的“分镜”或内容块，包括标题、描述、配图等，用于在详情页分步展示项目的不同设计/表现环节。
     scenes: [
       {
-        title: "LEGSH Diagram",
+        title: "",
         desc: "",
-        image: legshDiagram,
+        images: [image1, image2, image3, image4],
+      },
+      {
+        title: "",
+        desc: "Located within the newly opened LEGOLAND Shanghai, this restaurant draws its visual language from the bold, iconic palette of LEGO bricks. Through material contrasts and modular spatial compositions, the interior is transformed into an immersive, playful environment — one that blurs the boundary between dining and play, extending the park's narrative experience seamlessly from attractions into the dining space.",
       },
       {
         title: "",
         desc: "",
-        images: [image1, image2, image3, image4], // Four-grid layout
+        images: [legshDiagram, planImage],
+        flexEqualHeight: true,
       },
       {
-        title: "PLAN",
-        desc: "",
-        image: planImage,
+        title: "",
+        desc: "As a design intern on this project, I was deeply involved across multiple phases, from spatial detailing and FF&E coordination to visual branding execution and the studio's PR outreach:<br><br><strong>Spatial Detailing & FF&E Support:</strong><br>Assisted the team in producing precise interior technical drawings and supported the selection and procurement of FF&E. During the furniture proposal phase, I helped finalize the selection of dining chairs from the Danish design brand HAY. Their signature vibrant colors and minimalist, modular design language perfectly aligned with the visual DNA of Lego bricks, while also meeting the heavy durability requirements of a high-traffic restaurant. Additionally, I assisted in calculating quantities and tracking the overall FF&E budget.<br><br><strong>Studio PR & Editorial Marketing:</strong><br>Assisted in distilling and writing the core design concepts, and created visual presentation materials for the studio's external marketing. I also supported the project's media outreach by formatting and publishing content for design-focused WeChat Official Accounts, Rednotes and contacting professional industry media platforms for project submissions, helping to boost both the project's and the studio's visibility.<br><br><strong>Client Visual Branding:</strong><br>Executed the physical visual assets for the Tatabowls restaurant, including custom brand menus and display posters. Working within the overarching design framework, I ensured that the 2D graphic system remained highly consistent with the narrative of the 3D spatial environment.",
       },
       {
-        title: "Section 1",
+        title: "",
         desc: "",
         image: section1,
       },
       {
-        title: "Section 2",
+        title: "",
         desc: "",
         image: section2,
+      },
+      {
+        title: "",
+        desc: "The menu cover is finished in leather, ensuring durability while adding a tactile richness to the overall design. The cover and A-board share a consistent deep green palette, accented by geometric color pops in teal, red, and yellow, creating a visual dialogue between the TataBowlS brand identity and the energetic language of the LEGOLAND environment.<br><br>A rounded typeface is used throughout the bilingual typesetting, striking a balance between playfulness and legibility while maintaining strong brand recognition.<br><br>Full Chinese-English labeling across all materials ensures clarity across every touchpoint, with careful consideration for the park's international visitors.",
+      },
+      {
+        title: "",
+        desc: "",
+        image: tataMenu,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [tataMenu2, tataMenu3],
+        flexEqualHeight: true,
       },
     ],
   },
@@ -427,12 +452,14 @@ const projectData = {
     scenes: [
       {
         title: "",
-        desc: "",
+        desc: "Through a deep deconstruction of the brand's identity and offline operational needs, I custom-designed a modular display system that perfectly integrates material aesthetics, ergonomic precision, and dynamic spatial layouts.",
         image: lacertaHero,
+        descBelowImage: true,
       },
       {
         title: "",
-        desc: "Through a deep deconstruction of the brand's identity and offline operational needs, I custom-designed a modular display system that perfectly integrates material aesthetics, ergonomic precision, and dynamic spatial layouts.",
+        desc: "",
+        images: [lacertaPhoto1, lacertaPhoto2, lacertaPhoto3],
       },
       {
         title: "",
@@ -440,6 +467,10 @@ const projectData = {
         images: [lacertaMoodboard, lacertaMaterial],
         flexEqualHeight: true,
         widthRatios: [1, 1.7],
+      },
+      {
+        title: "Millwork",
+        desc: "",
       },
       {
         title: "",
@@ -777,12 +808,8 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: modulightor24,
-      },
-      {
-        title: "",
-        desc: "",
-        image: modulightor25,
+        images: [modulightor24, modulightor25],
+        flexEqualHeight: true,
       },
     ],
   },
@@ -1170,8 +1197,17 @@ const projectData = {
       },
       {
         title: "RISD Graduate Thesis 2026",
+        desc: "<strong>An experiment in manipulating time perception as a retail concept.</strong>",
+      },
+      {
+        title: "",
+        desc: "",
+        image: domesticating7,
+      },
+      {
+        title: "",
         desc:
-          "<strong>An experiment in manipulating time perception as a retail concept.</strong><br><br>Using the \"home\" as a narrative thread, the design guides visitors through everyday domestic scenes—the bedroom, the living room, the bathroom, and the dining room. These archetypes are deconstructed into four distinct experiences of temporal flow: <strong>Pause, Fast-Forward, Slow-Motion, and Rewind.</strong> Guided by Peter Zumthor's Atmospheres and contemporary art interventions, the design translates the abstract concept of time into a tangible, human-centric environment. Through precise manipulations of materiality, light, and spatial proportions, the architecture physically dictates the experience.",
+          "Using the \"home\" as a narrative thread, the design guides visitors through everyday domestic scenes—the bedroom, the living room, the bathroom, and the dining room. These archetypes are deconstructed into four distinct experiences of temporal flow: <strong>Pause, Fast-Forward, Slow-Motion, and Rewind.</strong> Guided by Peter Zumthor's Atmospheres and contemporary art interventions, the design translates the abstract concept of time into a tangible, human-centric environment. Through precise manipulations of materiality, light, and spatial proportions, the architecture physically dictates the experience.",
       },
       {
         title: "",
@@ -1274,9 +1310,19 @@ const projectData = {
   },
   "project-r": {
     title: "Fill and Full (Ongoing...)",
-    desc: "",
+    desc: "Youyun is an independent fashion designer born in Shanghai and a graduate of Parsons School of Design in New York. After an extended period of living in the United States, she decided to relocate her practice back to Shanghai. Serving as her official debut upon her return, this Pop-up event is more than a public showcase of her eponymous brand—it is an immersive spatial narrative exploring the ultimate search for \"belonging.\"",
     image: fillMain,
     scenes: [
+      {
+        title: "",
+        desc: "",
+        images: [fillMoodboard, fillTouchpoint],
+        flexEqualHeight: true,
+      },
+      {
+        title: "Narrative",
+        desc: "Upon arriving in a new city, she obsessively curates her new environment, painstakingly filling the empty rooms with personal objects until no gaps remain. She seeks the security of a \"home\" within this dense, object-wrapped state of \"Fill and Full.\" However, as each chapter draws to a close, she is forced to confront the harsh reality of letting go—discarding objects that once provided warmth, forcibly packing the remnants of her life into cramped cardboard boxes, and stripping away the physical space to prepare for the next departure. This relentless cycle, caught between extreme possession and forced evacuation, traces her unique trajectory of finding true belonging.",
+      },
       {
         title: "",
         desc: "",
@@ -1284,25 +1330,13 @@ const projectData = {
       },
       {
         title: "",
+        desc: "For the spatial design of this Pop-up, I translated Youyun's recurring cycle of \"filling and packing\" into four morphological experiments applied to a basic three-dimensional geometry",
+      },
+      {
+        title: "",
         desc: "",
         images: [fillFinal, fillChair, fillLamp, fillTable],
         flexEqualHeight: true,
-      },
-      {
-        title: "",
-        desc: "",
-        image: fillStructure,
-      },
-      {
-        title: "",
-        desc: "",
-        image: fillPlan,
-      },
-      {
-        title: "",
-        desc: "",
-        images: [fillDay1, fillShow2],
-        equalHeight: true,
       },
       {
         title: "",
@@ -1760,11 +1794,15 @@ function setupProjectDetail() {
           } else if (imgSrc) {
             imageHtml = `<div class="detail-image mt-3${centerClass}${scaleClass}"><img src="${imgSrc}" alt="${safeTitle}" class="img-fluid"${scaleStyle} /></div>`;
           }
+          const descBlock = safeDesc
+            ? `<div class="detail-desc${scene?.descBelowImage ? " mt-3" : ""}">${safeDesc}</div>`
+            : "";
           return `
             <div class="scene-block">
               ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
-              ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
+              ${scene?.descBelowImage ? "" : descBlock}
               ${imageHtml}
+              ${scene?.descBelowImage ? descBlock : ""}
             </div>
           `;
         })
@@ -2425,6 +2463,10 @@ function setupProjectDetail() {
 
     // Scroll to top
     window.scrollTo({ top: 0, behavior: "smooth" });
+    const columnImagesBody = document.getElementById("columnImagesBody");
+    if (columnImagesBody) {
+      columnImagesBody.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
     // Update browser history
     if (updateHistory) {
@@ -2542,23 +2584,14 @@ function setupProjectDetail() {
   return { showProjectDetail, showHome };
 }
 
-function setupBackHome() {
-  const imageGrid = document.getElementById("imageGrid");
+function setupBackHome(showHome) {
   const detail = document.getElementById("projectDetail");
   const backLinks = document.querySelectorAll(".back-home");
   backLinks.forEach((a) => {
     a.addEventListener("click", (e) => {
-      // 返回到默认图片网格视图
       if (detail && !detail.classList.contains("d-none")) {
         e.preventDefault();
-        // Use history API to update URL and trigger popstate
-        window.history.pushState({ project: null }, "", "#");
-        // Manually trigger the home view
-        const links = document.querySelectorAll(".project-link[data-project]");
-        links.forEach((n) => n.classList.remove("is-active"));
-        detail.classList.add("d-none");
-        if (imageGrid) imageGrid.classList.remove("d-none");
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        showHome(true);
       }
     });
   });
@@ -2605,12 +2638,12 @@ let projectDetailHandlers = null;
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     projectDetailHandlers = setupProjectDetail();
-    setupBackHome();
+    setupBackHome(projectDetailHandlers.showHome);
     setupScrollFade();
   });
 } else {
   projectDetailHandlers = setupProjectDetail();
-  setupBackHome();
+  setupBackHome(projectDetailHandlers.showHome);
   setupScrollFade();
 }
 
