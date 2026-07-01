@@ -53,6 +53,8 @@ import lacertaPhoto3 from "./assets/E (LACERTA Showroom)/photo3.png";
 import lacertaMoodboard from "./assets/E (LACERTA Showroom)/moodboard.png";
 import lacertaMaterial from "./assets/E (LACERTA Showroom)/材料.png";
 import lacertaFloorplan from "./assets/E (LACERTA Showroom)/floorplan.png";
+import lacertaMillwork1 from "./assets/E (LACERTA Showroom)/millwork1.png";
+import lacertaMillwork2 from "./assets/E (LACERTA Showroom)/millwork2.png";
 import lacertaCabinetPlain from "./assets/E (LACERTA Showroom)/cabinet.png";
 import lacertaCabinetWithObjects from "./assets/E (LACERTA Showroom)/cabinet with objects.png";
 import lacertaRankPlain from "./assets/E (LACERTA Showroom)/rank.png";
@@ -270,7 +272,6 @@ import fillNarrative from "./assets/R (Fill and Full)/narrative.png";
 import fillFinal from "./assets/R (Fill and Full)/final.png";
 import fillChair from "./assets/R (Fill and Full)/chair.png";
 import fillLamp from "./assets/R (Fill and Full)/lamp.png";
-import fillTable from "./assets/R (Fill and Full)/table.png";
 import fillStructure from "./assets/R (Fill and Full)/structure.png";
 import fillPlan from "./assets/R (Fill and Full)/plan.png";
 import fillDay1 from "./assets/R (Fill and Full)/day1.png";
@@ -475,7 +476,8 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: lacertaFloorplan,
+        images: [lacertaMillwork1, lacertaMillwork2, lacertaFloorplan],
+        layout: "nested-grid",
       },
       {
         title: "",
@@ -1335,7 +1337,7 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [fillFinal, fillChair, fillLamp, fillTable],
+        images: [fillFinal, fillChair, fillLamp],
         flexEqualHeight: true,
       },
       {
