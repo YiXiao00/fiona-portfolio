@@ -196,11 +196,6 @@ import silverCirculation from "./assets/J (Silver Valley Exhibition)/circulation
 import silverFloorplan from "./assets/J (Silver Valley Exhibition)/floorplan.png";
 import silverNarrative from "./assets/J (Silver Valley Exhibition)/narrative.png";
 
-import silverN1 from "./assets/J (Silver Valley Exhibition)/n1.png";
-import silverN2 from "./assets/J (Silver Valley Exhibition)/n2.png";
-import silverN3 from "./assets/J (Silver Valley Exhibition)/n3.png";
-import silverN4 from "./assets/J (Silver Valley Exhibition)/n4.png";
-import silverN5 from "./assets/J (Silver Valley Exhibition)/n5.png";
 
 import horizontalImage from "./assets/horizontal.png";
 
@@ -992,42 +987,6 @@ const projectData = {
       {
         title: "",
         desc: "The audience passes through the fragment track, drawn by a beam of red light, and enters the next space through an arched door.<br><br>The exterior of this space resembles a furnace, and people descend down a ramp 1 to observe the \"smelting\" process.",
-      },
-      {
-        title: "Crowds and Activities",
-        desc: "",
-      },
-      {
-        title: "",
-        desc: "",
-        image: silverN1,
-      },
-      {
-        title: "",
-        desc: "",
-        image: silverN2,
-      },
-      {
-        title: "",
-        desc: "People gather in the theater through various entrances on the covered bridge, providing them with the opportunity to see other visitors arriving from different passages and experience the village's sense of community.",
-      },
-      {
-        title: "",
-        desc: "",
-        images: [silverN3, silverN4],
-      },
-      {
-        title: "",
-        desc: "Upon reaching the theater, visitors are captivated by the vintage puppet theater, where traditional local puppetry performances are staged. This relocation of the ancient theater into a modern setting creates a fascinating blend of time and space.",
-      },
-      {
-        title: "",
-        desc: "",
-        image: silverN5,
-      },
-      {
-        title: "",
-        desc: "The entire space concludes with an open-ended design. After enjoying the performance, people can continue their exploration by choosing different paths that lead to various spaces, each offering a unique charm of this quaint village.",
       },
     ],
   },
