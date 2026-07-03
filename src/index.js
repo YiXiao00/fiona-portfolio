@@ -1288,7 +1288,7 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [fillTable, fillNarrative],
+        images: [fillFinal, fillNarrative],
         flexEqualHeight: true,
       },
       {
@@ -1298,7 +1298,7 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [fillFinal, fillChair, fillLamp],
+        images: [fillChair, fillLamp, fillTable],
         flexEqualHeight: true,
       },
       {
