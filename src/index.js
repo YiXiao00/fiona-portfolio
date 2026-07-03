@@ -272,6 +272,7 @@ import fillNarrative from "./assets/R (Fill and Full)/narrative.png";
 import fillFinal from "./assets/R (Fill and Full)/final.png";
 import fillChair from "./assets/R (Fill and Full)/chair.png";
 import fillLamp from "./assets/R (Fill and Full)/lamp.png";
+import fillTable from "./assets/R (Fill and Full)/table.png";
 import fillStructure from "./assets/R (Fill and Full)/structure.png";
 import fillPlan from "./assets/R (Fill and Full)/plan.png";
 import fillDay1 from "./assets/R (Fill and Full)/day1.png";
@@ -1328,7 +1329,8 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: fillNarrative,
+        images: [fillTable, fillNarrative],
+        flexEqualHeight: true,
       },
       {
         title: "",
@@ -1436,22 +1438,32 @@ function setupProjectDetail() {
     document.body.classList.add("lightbox-open");
   }
 
-  function closeLightbox() {
+  function finalizeLightboxClose() {
     if (!lightbox || !lightboxImage) return;
+    lightbox.classList.add("d-none");
+    lightbox.classList.remove("is-active");
+    lightboxImage.setAttribute("src", "");
+    lightboxImage.style.transform = "";
+    if (lightboxCompareLeft) lightboxCompareLeft.setAttribute("src", "");
+    if (lightboxCompareRight) lightboxCompareRight.setAttribute("src", "");
+    resetLightboxView();
+    currentLightboxIndex = -1;
+    currentLightboxImages = [];
+    document.body.classList.remove("lightbox-open");
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImage || lightbox.classList.contains("d-none")) return;
     lightbox.classList.remove("is-active");
     document.body.classList.remove("lightbox-open");
-    const handleTransitionEnd = () => {
-      lightbox.classList.add("d-none");
-      lightboxImage.setAttribute("src", "");
-      lightboxImage.style.transform = "";
-      if (lightboxCompareLeft) lightboxCompareLeft.setAttribute("src", "");
-      if (lightboxCompareRight) lightboxCompareRight.setAttribute("src", "");
-      resetLightboxView();
-      currentLightboxIndex = -1;
-      currentLightboxImages = [];
-      lightbox.removeEventListener("transitionend", handleTransitionEnd);
+    let finalized = false;
+    const finish = () => {
+      if (finalized) return;
+      finalized = true;
+      finalizeLightboxClose();
     };
-    lightbox.addEventListener("transitionend", handleTransitionEnd, { once: true });
+    lightbox.addEventListener("transitionend", finish, { once: true });
+    window.setTimeout(finish, 350);
   }
 
   function shiftLightbox(step) {
@@ -2430,6 +2442,7 @@ function setupProjectDetail() {
     const data = projectData[projectKey];
     if (!data) return;
 
+    closeLightbox();
     currentProjectKey = projectKey;
     document.body.classList.remove("page-is-home");
     // set active state for project links
@@ -2454,6 +2467,7 @@ function setupProjectDetail() {
 
   // Function to show home (image grid)
   function showHome(updateHistory = true) {
+    closeLightbox();
     currentProjectKey = null;
     document.body.classList.add("page-is-home");
     // clear active state
@@ -2537,7 +2551,12 @@ function setupProjectDetail() {
 
   if (lightbox) {
     lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
+      const target = event.target;
+      if (
+        target === lightbox ||
+        target === lightbox.querySelector(".lightbox-content") ||
+        target === lightboxCompare
+      ) {
         closeLightbox();
       }
     });
