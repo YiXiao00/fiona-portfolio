@@ -103,6 +103,7 @@ import rules2main from "./assets/G (15 Rules for Rebuilding the World)/2main.png
 import rules3 from "./assets/G (15 Rules for Rebuilding the World)/3.png";
 import rules4 from "./assets/G (15 Rules for Rebuilding the World)/4.png";
 import rules5 from "./assets/G (15 Rules for Rebuilding the World)/5.png";
+import rulesMoodboard from "./assets/G (15 Rules for Rebuilding the World)/moodboard.png";
 import rules6modul from "./assets/G (15 Rules for Rebuilding the World)/6modul.png";
 import rules7elevation from "./assets/G (15 Rules for Rebuilding the World)/7elevation.png";
 import rules8plan from "./assets/G (15 Rules for Rebuilding the World)/8PLAN .png";
@@ -609,7 +610,7 @@ const projectData = {
   },
   "project-g": {
     title: "15 Rules for Rebuilding the World",
-    desc: "This exhibition invites you to experience Christopher Alexander's \"Fifteen Fundamental Properties\" through the evocative and immersive world of Pina Bausch's stage photography. Pina's groundbreaking stage designs and choreography transcend mere aesthetics, channeling deep emotional currents and architectural precision. <br><br>Each photograph captures these principles in action—Scale, Centers, Rhythm, Contrast, Simplicity—manifesting a vibrant tension and flow that transforms space. Through these dynamic scenes, we uncover how these properties animate space, crafting environments that pulse with a compelling, almost visceral sense of life. Prepare to step into a world where design principles are not just visible, but deeply felt, alive, and unbound.",
+    desc: "This exhibition invites you to experience Christopher Alexander's \"Fifteen Fundamental Properties\" through the evocative and immersive world of Pina Bausch's stage photography. Pina's groundbreaking stage designs and choreography transcend mere aesthetics, channeling deep emotional currents and architectural precision.",
     image: rulesMain,
     scenes: [
       {
@@ -620,32 +621,29 @@ const projectData = {
       {
         title: "",
         desc: "",
-        image: rules2main,
+        images: [rules2main, rules3],
+        flexEqualHeight: true,
+      },
+      {
+        title: "",
+        desc: "Each photograph captures these principles in action—Scale, Centers, Rhythm, Contrast, Simplicity—manifesting a vibrant tension and flow that transforms space. Through these dynamic scenes, we uncover how these properties animate space, crafting environments that pulse with a compelling, almost visceral sense of life. Prepare to step into a world where design principles are not just visible, but deeply felt, alive, and unbound.",
       },
       {
         title: "",
         desc: "",
-        image: rules3,
+        images: [rules4, rules5],
+        flexEqualHeight: true,
       },
       {
         title: "",
         desc: "",
-        image: rules4,
+        image: rulesMoodboard,
       },
       {
         title: "",
         desc: "",
-        image: rules5,
-      },
-      {
-        title: "",
-        desc: "",
-        image: rules6modul,
-      },
-      {
-        title: "",
-        desc: "",
-        image: rules7elevation,
+        images: [rules6modul, rules7elevation],
+        flexEqualHeight: true,
       },
       {
         title: "",
@@ -655,7 +653,16 @@ const projectData = {
       {
         title: "",
         desc: "",
-        images: [rulesSmall1, rulesSmall2, rulesSmall3, rulesSmall4, rulesSmall5],
+        images: [rulesSmall1, rulesSmall2, rulesSmall3],
+        flexEqualHeight: true,
+        scale: 0.7,
+      },
+      {
+        title: "",
+        desc: "",
+        images: [rulesSmall4, rulesSmall5],
+        flexEqualHeight: true,
+        scale: 0.7,
       },
     ],
   },
@@ -1641,9 +1648,17 @@ function setupProjectDetail() {
             const noCropClass = scene?.noCrop ? " no-crop" : "";
             const equalHeightClass = scene?.equalHeight ? " equal-height" : "";
             const flexEqualHeightClass = scene?.flexEqualHeight ? " flex-equal-height" : "";
+            const scaleClass = scene?.scale ? " detail-image-scaled" : "";
 
             // If flexEqualHeight is used, don't use grid classes
             const finalGridClass = flexEqualHeightClass ? "" : gridClass;
+
+            if (scene?.scale) {
+              const scaleWidth = `width: ${scene.scale * 100}%;`;
+              customGridStyle = customGridStyle
+                ? customGridStyle.replace('style="', `style="${scaleWidth} margin: 0 auto; `)
+                : ` style="${scaleWidth} margin: 0 auto;"`;
+            }
 
             const rotations = scene?.imageRotations || [];
             const swapAspect = scene?.swapAspectRatio || [];
@@ -1665,7 +1680,7 @@ function setupProjectDetail() {
               <div class="scene-block">
                 ${safeTitle ? `<h3 class="detail-scene-title">${safeTitle}</h3>` : ""}
                 ${safeDesc ? `<div class="detail-desc">${safeDesc}</div>` : ""}
-                <div class="detail-image-grid mt-3 ${finalGridClass}${noCropClass}${equalHeightClass}${flexEqualHeightClass}"${customGridStyle}>
+                <div class="detail-image-grid mt-3 ${finalGridClass}${noCropClass}${equalHeightClass}${flexEqualHeightClass}${scaleClass}"${customGridStyle}>
                   ${gridImages}
                 </div>
               </div>
